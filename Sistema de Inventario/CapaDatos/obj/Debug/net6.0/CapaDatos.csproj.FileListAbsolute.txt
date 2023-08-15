@@ -1,0 +1,36 @@
+C:\Users\Rocío\Desktop\SISTEMA DE INVENTARIO\Sistema de Inventario\CapaDatos\bin\Debug\net6.0\CapaDatos.deps.json
+C:\Users\Rocío\Desktop\SISTEMA DE INVENTARIO\Sistema de Inventario\CapaDatos\bin\Debug\net6.0\CapaDatos.dll
+C:\Users\Rocío\Desktop\SISTEMA DE INVENTARIO\Sistema de Inventario\CapaDatos\bin\Debug\net6.0\CapaDatos.pdb
+C:\Users\Rocío\Desktop\SISTEMA DE INVENTARIO\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\Rocío\Desktop\SISTEMA DE INVENTARIO\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rocío\Desktop\SISTEMA DE INVENTARIO\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.AssemblyInfoInputs.cache
+C:\Users\Rocío\Desktop\SISTEMA DE INVENTARIO\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.AssemblyInfo.cs
+C:\Users\Rocío\Desktop\SISTEMA DE INVENTARIO\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Rocío\Desktop\SISTEMA DE INVENTARIO\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.dll
+C:\Users\Rocío\Desktop\SISTEMA DE INVENTARIO\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\refint\CapaDatos.dll
+C:\Users\Rocío\Desktop\SISTEMA DE INVENTARIO\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.pdb
+C:\Users\Rocío\Desktop\SISTEMA DE INVENTARIO\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\ref\CapaDatos.dll
+C:\Users\Usuario\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\bin\Debug\net6.0\CapaDatos.deps.json
+C:\Users\Usuario\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\bin\Debug\net6.0\CapaDatos.dll
+C:\Users\Usuario\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\bin\Debug\net6.0\CapaDatos.pdb
+C:\Users\Usuario\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.dll
+C:\Users\Usuario\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\refint\CapaDatos.dll
+C:\Users\Usuario\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.pdb
+C:\Users\Usuario\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\ref\CapaDatos.dll
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\bin\Debug\net6.0\CapaDatos.deps.json
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\bin\Debug\net6.0\CapaDatos.dll
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\bin\Debug\net6.0\CapaDatos.pdb
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.AssemblyInfoInputs.cache
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.AssemblyInfo.cs
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.dll
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\refint\CapaDatos.dll
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\CapaDatos.pdb
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaDatos\obj\Debug\net6.0\ref\CapaDatos.dll
