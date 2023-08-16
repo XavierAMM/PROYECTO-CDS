@@ -1,0 +1,15 @@
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\CapaPresentacion.exe
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\CapaPresentacion.dll
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\CapaPresentacion.deps.json
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\CapaPresentacion.runtimeconfig.json
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\CapaPresentacion.pdb
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\System.Data.SqlClient.dll
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\runtimes\win-arm64\native\sni.dll
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\runtimes\win-x64\native\sni.dll
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\runtimes\win-x86\native\sni.dll
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\CapaDatos.dll
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\CapaNegocio.dll
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\CapaNegocio.pdb
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Empaquetado\CapaDatos.pdb
