@@ -134,7 +134,7 @@ namespace CapaPresentacion
 						else
 						{
 							button.BackColor = Color.SeaGreen;
-							c.Visible = true;							
+							c.Visible = true;
 						}
 					}
 				}

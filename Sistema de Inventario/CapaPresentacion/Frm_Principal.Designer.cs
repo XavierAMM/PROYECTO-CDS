@@ -181,6 +181,7 @@
 			// 
 			// pnl_View
 			// 
+			pnl_View.BackColor = Color.White;
 			pnl_View.Dock = DockStyle.Fill;
 			pnl_View.Location = new Point(183, 16);
 			pnl_View.Name = "pnl_View";

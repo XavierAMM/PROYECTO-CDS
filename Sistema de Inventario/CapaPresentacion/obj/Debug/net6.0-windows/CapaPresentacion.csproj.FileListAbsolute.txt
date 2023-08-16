@@ -93,3 +93,7 @@ C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaPresentacion\obj\
 C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaPresentacion\obj\Debug\net6.0-windows\ref\CapaPresentacion.dll
 C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.User_Control.UC_Recuperar_Contraseña.resources
 C:\Users\Usuario\Desktop\PROYECTO CDS\Sistema de Inventario\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.User_Control.UC_Recuperar_Contraseña.resources
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.User_Control.UC_Sistema.resources
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaPresentacion\bin\Debug\net6.0-windows\Guna.UI2.dll
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaPresentacion\bin\Debug\net6.0-windows\System.Management.dll
+C:\Users\Rocío\Desktop\PROYECTO CDS\Sistema de Inventario\CapaPresentacion\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
