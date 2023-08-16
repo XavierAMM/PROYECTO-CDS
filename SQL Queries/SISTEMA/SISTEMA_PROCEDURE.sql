@@ -44,3 +44,11 @@ begin
 	update MODULO set nombre = @nombre, nombre_objeto = @nombre_objeto, estado_id = @estado_id, orden = @orden
 	where modulo_id = @modulo_id
 end
+
+GO
+CREATE PROCEDURE PD_ELIMINAR_MODULO
+@modulo_id int
+as
+begin
+	delete from MODULO where modulo_id = @modulo_id
+end
