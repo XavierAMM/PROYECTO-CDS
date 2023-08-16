@@ -475,11 +475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rocío\\Desktop\\PROYECTO CDS\\Sistema de Inventario\\CapaDatos\\CapaDatos.csproj",
+      "projectUniqueName": "C:\\Users\\Rocío\\Desktop\\PROYECTO-CDS\\Sistema de Inventario\\CapaDatos\\CapaDatos.csproj",
       "projectName": "CapaDatos",
-      "projectPath": "C:\\Users\\Rocío\\Desktop\\PROYECTO CDS\\Sistema de Inventario\\CapaDatos\\CapaDatos.csproj",
+      "projectPath": "C:\\Users\\Rocío\\Desktop\\PROYECTO-CDS\\Sistema de Inventario\\CapaDatos\\CapaDatos.csproj",
       "packagesPath": "C:\\Users\\Rocío\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rocío\\Desktop\\PROYECTO CDS\\Sistema de Inventario\\CapaDatos\\obj\\",
+      "outputPath": "C:\\Users\\Rocío\\Desktop\\PROYECTO-CDS\\Sistema de Inventario\\CapaDatos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rocío\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+xcqd7l+j7A9CqlDX7JdV2H8Rm1rlsAq86ad5C8bNf3YvUI9JRBLuXaByLT3UV/BLcEku7gvTaPyoGQNS/82Vg==",
+  "dgSpecHash": "VmDtbLpszykTsO4FGDBQEyEY1TlpT13S0MAIut4BfrPe4KO9312pdq89QiA5EorCkgcDmRv3tdNVg8+QGO9tqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rocío\\Desktop\\PROYECTO CDS\\Sistema de Inventario\\CapaNegocio\\CapaNegocio.csproj",
+  "projectFilePath": "C:\\Users\\Rocío\\Desktop\\PROYECTO-CDS\\Sistema de Inventario\\CapaNegocio\\CapaNegocio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rocío\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Rocío\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

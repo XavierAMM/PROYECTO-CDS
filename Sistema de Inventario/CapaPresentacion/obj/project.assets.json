@@ -511,11 +511,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rocío\\Desktop\\PROYECTO CDS\\Sistema de Inventario\\CapaPresentacion\\CapaPresentacion.csproj",
+      "projectUniqueName": "C:\\Users\\Rocío\\Desktop\\PROYECTO-CDS\\Sistema de Inventario\\CapaPresentacion\\CapaPresentacion.csproj",
       "projectName": "CapaPresentacion",
-      "projectPath": "C:\\Users\\Rocío\\Desktop\\PROYECTO CDS\\Sistema de Inventario\\CapaPresentacion\\CapaPresentacion.csproj",
+      "projectPath": "C:\\Users\\Rocío\\Desktop\\PROYECTO-CDS\\Sistema de Inventario\\CapaPresentacion\\CapaPresentacion.csproj",
       "packagesPath": "C:\\Users\\Rocío\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rocío\\Desktop\\PROYECTO CDS\\Sistema de Inventario\\CapaPresentacion\\obj\\",
+      "outputPath": "C:\\Users\\Rocío\\Desktop\\PROYECTO-CDS\\Sistema de Inventario\\CapaPresentacion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rocío\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -532,8 +532,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\Rocío\\Desktop\\PROYECTO CDS\\Sistema de Inventario\\CapaNegocio\\CapaNegocio.csproj": {
-              "projectPath": "C:\\Users\\Rocío\\Desktop\\PROYECTO CDS\\Sistema de Inventario\\CapaNegocio\\CapaNegocio.csproj"
+            "C:\\Users\\Rocío\\Desktop\\PROYECTO-CDS\\Sistema de Inventario\\CapaNegocio\\CapaNegocio.csproj": {
+              "projectPath": "C:\\Users\\Rocío\\Desktop\\PROYECTO-CDS\\Sistema de Inventario\\CapaNegocio\\CapaNegocio.csproj"
             }
           }
         }

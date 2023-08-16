@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wwQ7nA+FmV4Sie5hsTts8Pa/xIiJAeTr+vyvvhkA/pAeu7hLuqEYx8e2RTKWaBE1Gf4r4Xsv7NbMnc1YF2AiUQ==",
+  "dgSpecHash": "zd6XlP7thQiENE0WAA03Jmjsgwm9/fWhIyhvbhsn8PNdryVbepxDZml6YV35lowvTihUpHTTldi9wGttQUv/UQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rocío\\Desktop\\PROYECTO CDS\\Sistema de Inventario\\CapaPresentacion\\CapaPresentacion.csproj",
+  "projectFilePath": "C:\\Users\\Rocío\\Desktop\\PROYECTO-CDS\\Sistema de Inventario\\CapaPresentacion\\CapaPresentacion.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rocío\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Rocío\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
