@@ -25,3 +25,22 @@ as
 begin
 	select * from ESTADO where estado_id = 1 or estado_id = 2
 end
+
+
+GO
+CREATE PROCEDURE PD_AGREGAR_MODULO
+@nombre varchar(50), @nombre_objeto varchar(50), @orden int
+AS
+BEGIN
+	insert into MODULO (nombre, nombre_objeto, estado_id, orden) values
+	(@nombre, @nombre_objeto, 1, @orden)	
+END
+
+GO
+CREATE PROCEDURE PD_ACTUALIZAR_MODULO
+@modulo_id int, @nombre varchar(50), @nombre_objeto varchar(50), @estado_id int, @orden int
+as
+begin
+	update MODULO set nombre = @nombre, nombre_objeto = @nombre_objeto, estado_id = @estado_id, orden = @orden
+	where modulo_id = @modulo_id
+end

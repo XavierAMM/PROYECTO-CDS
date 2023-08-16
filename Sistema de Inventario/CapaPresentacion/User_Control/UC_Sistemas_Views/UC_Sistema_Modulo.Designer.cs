@@ -38,36 +38,30 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnl_Actualizar = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.btn_Aceptar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pnl_Fondo = new System.Windows.Forms.Panel();
+            this.pnl_Nuevo = new System.Windows.Forms.Panel();
+            this.cmb_Estado = new System.Windows.Forms.ComboBox();
+            this.txt_Nombre = new System.Windows.Forms.TextBox();
             this.txt_Orden = new System.Windows.Forms.TextBox();
             this.txt_Objeto = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lbl_Mensaje = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbl_Cancelar = new System.Windows.Forms.Label();
-            this.lbl_Mensaje = new System.Windows.Forms.Label();
-            this.txt_Nombre = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pnl_Fondo = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmb_Estado = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Modulos)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnl_Actualizar.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.pnl_Fondo.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
+            this.pnl_Fondo.SuspendLayout();
+            this.pnl_Nuevo.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_Modulos
@@ -120,6 +114,7 @@
             this.btn_Editar.TabIndex = 3;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.UseVisualStyleBackColor = false;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // btn_Eliminar
             // 
@@ -131,6 +126,7 @@
             this.btn_Eliminar.TabIndex = 4;
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.UseVisualStyleBackColor = false;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // panel1
             // 
@@ -185,6 +181,15 @@
             this.pnl_Actualizar.Size = new System.Drawing.Size(184, 380);
             this.pnl_Actualizar.TabIndex = 7;
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.btn_Aceptar);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 227);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(172, 53);
+            this.panel8.TabIndex = 9;
+            // 
             // btn_Aceptar
             // 
             this.btn_Aceptar.BackColor = System.Drawing.SystemColors.Control;
@@ -195,6 +200,68 @@
             this.btn_Aceptar.TabIndex = 6;
             this.btn_Aceptar.Text = "Aceptar";
             this.btn_Aceptar.UseVisualStyleBackColor = false;
+            this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
+            // 
+            // pnl_Fondo
+            // 
+            this.pnl_Fondo.AutoScroll = true;
+            this.pnl_Fondo.Controls.Add(this.pnl_Nuevo);
+            this.pnl_Fondo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_Fondo.Location = new System.Drawing.Point(0, 46);
+            this.pnl_Fondo.Name = "pnl_Fondo";
+            this.pnl_Fondo.Size = new System.Drawing.Size(172, 181);
+            this.pnl_Fondo.TabIndex = 8;
+            // 
+            // pnl_Nuevo
+            // 
+            this.pnl_Nuevo.Controls.Add(this.cmb_Estado);
+            this.pnl_Nuevo.Controls.Add(this.txt_Nombre);
+            this.pnl_Nuevo.Controls.Add(this.txt_Orden);
+            this.pnl_Nuevo.Controls.Add(this.txt_Objeto);
+            this.pnl_Nuevo.Controls.Add(this.label1);
+            this.pnl_Nuevo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_Nuevo.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Nuevo.Name = "pnl_Nuevo";
+            this.pnl_Nuevo.Size = new System.Drawing.Size(172, 181);
+            this.pnl_Nuevo.TabIndex = 6;
+            // 
+            // cmb_Estado
+            // 
+            this.cmb_Estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Estado.FormattingEnabled = true;
+            this.cmb_Estado.Items.AddRange(new object[] {
+            "A",
+            "I"});
+            this.cmb_Estado.Location = new System.Drawing.Point(8, 122);
+            this.cmb_Estado.Name = "cmb_Estado";
+            this.cmb_Estado.Size = new System.Drawing.Size(152, 23);
+            this.cmb_Estado.TabIndex = 6;
+            // 
+            // txt_Nombre
+            // 
+            this.txt_Nombre.Location = new System.Drawing.Point(8, 15);
+            this.txt_Nombre.Name = "txt_Nombre";
+            this.txt_Nombre.PlaceholderText = "Nombre del Módulo";
+            this.txt_Nombre.Size = new System.Drawing.Size(154, 23);
+            this.txt_Nombre.TabIndex = 0;
+            // 
+            // txt_Orden
+            // 
+            this.txt_Orden.Location = new System.Drawing.Point(59, 82);
+            this.txt_Orden.Name = "txt_Orden";
+            this.txt_Orden.PlaceholderText = "Orden";
+            this.txt_Orden.Size = new System.Drawing.Size(103, 23);
+            this.txt_Orden.TabIndex = 4;
+            this.txt_Orden.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Orden_KeyPress);
+            // 
+            // txt_Objeto
+            // 
+            this.txt_Objeto.Location = new System.Drawing.Point(8, 47);
+            this.txt_Objeto.Name = "txt_Objeto";
+            this.txt_Objeto.PlaceholderText = "Nombre del Objeto";
+            this.txt_Objeto.Size = new System.Drawing.Size(154, 23);
+            this.txt_Objeto.TabIndex = 3;
+            this.txt_Objeto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Objeto_Nuevo_KeyPress);
             // 
             // label1
             // 
@@ -205,21 +272,24 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Orden:";
             // 
-            // txt_Orden
+            // panel6
             // 
-            this.txt_Orden.Location = new System.Drawing.Point(59, 82);
-            this.txt_Orden.Name = "txt_Orden";
-            this.txt_Orden.PlaceholderText = "Orden";
-            this.txt_Orden.Size = new System.Drawing.Size(103, 23);
-            this.txt_Orden.TabIndex = 4;
+            this.panel6.Controls.Add(this.lbl_Mensaje);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(172, 46);
+            this.panel6.TabIndex = 7;
             // 
-            // txt_Objeto
+            // lbl_Mensaje
             // 
-            this.txt_Objeto.Location = new System.Drawing.Point(8, 47);
-            this.txt_Objeto.Name = "txt_Objeto";
-            this.txt_Objeto.PlaceholderText = "Nombre del Objeto";
-            this.txt_Objeto.Size = new System.Drawing.Size(154, 23);
-            this.txt_Objeto.TabIndex = 3;
+            this.lbl_Mensaje.AutoSize = true;
+            this.lbl_Mensaje.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Mensaje.Location = new System.Drawing.Point(12, 8);
+            this.lbl_Mensaje.Name = "lbl_Mensaje";
+            this.lbl_Mensaje.Size = new System.Drawing.Size(50, 20);
+            this.lbl_Mensaje.TabIndex = 1;
+            this.lbl_Mensaje.Text = "label1";
             // 
             // panel3
             // 
@@ -243,123 +313,6 @@
             this.lbl_Cancelar.Text = "X";
             this.lbl_Cancelar.Click += new System.EventHandler(this.lbl_Cancelar_Click);
             // 
-            // lbl_Mensaje
-            // 
-            this.lbl_Mensaje.AutoSize = true;
-            this.lbl_Mensaje.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Mensaje.Location = new System.Drawing.Point(12, 8);
-            this.lbl_Mensaje.Name = "lbl_Mensaje";
-            this.lbl_Mensaje.Size = new System.Drawing.Size(50, 20);
-            this.lbl_Mensaje.TabIndex = 1;
-            this.lbl_Mensaje.Text = "label1";
-            // 
-            // txt_Nombre
-            // 
-            this.txt_Nombre.Location = new System.Drawing.Point(8, 15);
-            this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.PlaceholderText = "Nombre del Módulo";
-            this.txt_Nombre.Size = new System.Drawing.Size(154, 23);
-            this.txt_Nombre.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.lbl_Mensaje);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(172, 46);
-            this.panel6.TabIndex = 7;
-            // 
-            // pnl_Fondo
-            // 
-            this.pnl_Fondo.AutoScroll = true;
-            this.pnl_Fondo.Controls.Add(this.panel10);
-            this.pnl_Fondo.Controls.Add(this.panel9);
-            this.pnl_Fondo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_Fondo.Location = new System.Drawing.Point(0, 46);
-            this.pnl_Fondo.Name = "pnl_Fondo";
-            this.pnl_Fondo.Size = new System.Drawing.Size(172, 181);
-            this.pnl_Fondo.TabIndex = 8;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.btn_Aceptar);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 227);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(172, 53);
-            this.panel8.TabIndex = 9;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.txt_Nombre);
-            this.panel9.Controls.Add(this.txt_Orden);
-            this.panel9.Controls.Add(this.txt_Objeto);
-            this.panel9.Controls.Add(this.label1);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(155, 181);
-            this.panel9.TabIndex = 6;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.cmb_Estado);
-            this.panel10.Controls.Add(this.textBox1);
-            this.panel10.Controls.Add(this.textBox2);
-            this.panel10.Controls.Add(this.textBox3);
-            this.panel10.Controls.Add(this.label2);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 181);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(155, 181);
-            this.panel10.TabIndex = 7;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(8, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Nombre del Módulo";
-            this.textBox1.Size = new System.Drawing.Size(154, 23);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(59, 82);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "Orden";
-            this.textBox2.Size = new System.Drawing.Size(103, 23);
-            this.textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(8, 47);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PlaceholderText = "Nombre del Objeto";
-            this.textBox3.Size = new System.Drawing.Size(154, 23);
-            this.textBox3.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Orden:";
-            // 
-            // cmb_Estado
-            // 
-            this.cmb_Estado.FormattingEnabled = true;
-            this.cmb_Estado.Items.AddRange(new object[] {
-            "Seleccionar Estado...",
-            "A",
-            "I"});
-            this.cmb_Estado.Location = new System.Drawing.Point(10, 117);
-            this.cmb_Estado.Name = "cmb_Estado";
-            this.cmb_Estado.Size = new System.Drawing.Size(121, 23);
-            this.cmb_Estado.TabIndex = 6;
-            // 
             // UC_Sistema_Modulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -375,16 +328,14 @@
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.pnl_Actualizar.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.pnl_Fondo.ResumeLayout(false);
+            this.pnl_Nuevo.ResumeLayout(false);
+            this.pnl_Nuevo.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.pnl_Fondo.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -411,13 +362,8 @@
         private Label label1;
         private Panel panel8;
         private Panel pnl_Fondo;
-        private Panel panel10;
         private ComboBox cmb_Estado;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private Label label2;
-        private Panel panel9;
+        private Panel pnl_Nuevo;
         private Panel panel6;
     }
 }

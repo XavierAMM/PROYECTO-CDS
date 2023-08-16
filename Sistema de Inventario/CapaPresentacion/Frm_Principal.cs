@@ -88,8 +88,7 @@ namespace CapaPresentacion
 					btn_Menu.Click += btn_Menu_Click;
 					pnl_Menu.Controls.Add(pnl_Dropdown);
 					añadirBotonesOpcion(opciones, pnl_Dropdown);
-				}
-				else btn_Menu.Click += btn_Opcion_Click;
+				}				
 				pnl_Menu.Controls.Add(btn_Menu);
 			}
 		}
