@@ -16,6 +16,7 @@ namespace CapaPresentacion.User_Control
 		{
 			InitializeComponent();
 			this.usuario_id = usuario_id;
+			addViewModulos();
 		}
 
 		/// <summary>
@@ -33,7 +34,12 @@ namespace CapaPresentacion.User_Control
 		private void addViewModulos()
 		{
 			UC_Sistema_Modulo uc = new UC_Sistema_Modulo(usuario_id);
+			addUserControl(uc);
 		}
 
-	}
+        private void btn_Modulos_Click(object sender, EventArgs e)
+        {
+			addViewModulos();
+        }
+    }
 }

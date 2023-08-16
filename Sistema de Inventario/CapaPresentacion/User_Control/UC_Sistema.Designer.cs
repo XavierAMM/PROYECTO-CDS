@@ -66,6 +66,7 @@
             this.btn_Modulos.Size = new System.Drawing.Size(154, 54);
             this.btn_Modulos.TabIndex = 0;
             this.btn_Modulos.Text = "Módulos";
+            this.btn_Modulos.Click += new System.EventHandler(this.btn_Modulos_Click);
             // 
             // panel1
             // 

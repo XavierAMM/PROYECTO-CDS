@@ -133,3 +133,4 @@ C:\Users\Usuario\Desktop\PROYECTO CDS\PROYECTO-CDS\Sistema de Inventario\CapaPre
 C:\Users\Usuario\Desktop\PROYECTO CDS\PROYECTO-CDS\Sistema de Inventario\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.pdb
 C:\Users\Usuario\Desktop\PROYECTO CDS\PROYECTO-CDS\Sistema de Inventario\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\PROYECTO CDS\PROYECTO-CDS\Sistema de Inventario\CapaPresentacion\obj\Debug\net6.0-windows\ref\CapaPresentacion.dll
+C:\Users\Usuario\Desktop\PROYECTO CDS\PROYECTO-CDS\Sistema de Inventario\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.User_Control.UC_Sistemas_Views.UC_Sistema_Modulo.resources
