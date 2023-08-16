@@ -7,15 +7,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CapaDatos
-{
+{	
 	/// <summary>
 	/// Esta clase realiza la conexión con la base de datos SQL Server inciando el db_server 
 	/// y el db_name
 	/// </summary>
 	internal class CD_Connection
 	{
-		//private string db_server = "DESKTOP-4D9G9QL";
-        private string db_server = "DESKTOP-OTMEVL6\\MSSQLSERVER01";
+		private string db_server = "DESKTOP-4D9G9QL";
+        //private string db_server = "DESKTOP-OTMEVL6\\MSSQLSERVER01";
         private string db_name = "PROYECTO_CDS";
 		private SqlConnection DB_Connection;
 

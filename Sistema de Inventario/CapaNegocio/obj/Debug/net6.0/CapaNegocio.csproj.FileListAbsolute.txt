@@ -58,3 +58,18 @@ C:\Users\Usuario\Desktop\PROYECTO CDS\PROYECTO-CDS\Sistema de Inventario\CapaNeg
 C:\Users\Usuario\Desktop\PROYECTO CDS\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\obj\Debug\net6.0\refint\CapaNegocio.dll
 C:\Users\Usuario\Desktop\PROYECTO CDS\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\obj\Debug\net6.0\CapaNegocio.pdb
 C:\Users\Usuario\Desktop\PROYECTO CDS\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\obj\Debug\net6.0\ref\CapaNegocio.dll
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\bin\Debug\net6.0\CapaNegocio.deps.json
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\bin\Debug\net6.0\CapaNegocio.dll
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\bin\Debug\net6.0\CapaNegocio.pdb
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\bin\Debug\net6.0\CapaDatos.dll
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\bin\Debug\net6.0\CapaDatos.pdb
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\obj\Debug\net6.0\CapaNegocio.csproj.AssemblyReference.cache
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\obj\Debug\net6.0\CapaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\obj\Debug\net6.0\CapaNegocio.AssemblyInfoInputs.cache
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\obj\Debug\net6.0\CapaNegocio.AssemblyInfo.cs
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\obj\Debug\net6.0\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\obj\Debug\net6.0\CapaNegocio.csproj.CopyComplete
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\obj\Debug\net6.0\CapaNegocio.dll
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\obj\Debug\net6.0\refint\CapaNegocio.dll
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\obj\Debug\net6.0\CapaNegocio.pdb
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaNegocio\obj\Debug\net6.0\ref\CapaNegocio.dll
