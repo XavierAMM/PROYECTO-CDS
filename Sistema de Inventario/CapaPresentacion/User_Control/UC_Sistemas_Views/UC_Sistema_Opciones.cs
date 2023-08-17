@@ -21,10 +21,12 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 	{
 		private int usuario_id;
 		private int modo;
+		private int accion;
 		private string procedureName;
 		private CD_Parametros[] p;
 		private DataTable opciones;
 		private CN_Validacion objectCN = new CN_Validacion();
+		private ToolTip cmbTooltip = new ToolTip();
 
 		/// <summary>
 		/// Constructor para la clase que es la vista para editar las opciones de módulos.
@@ -36,8 +38,37 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 			modo = 0;
 			procedureName = "PD_OBTENER_OPCIONES_MODO";
 			llenarTablaOpciones();
+			llenarComboBoxModulos();
 			pnl_Actualizar.Visible = false;
 
+		}
+
+		/// <summary>
+		/// Este método va a llenar el combobox de módulos. 
+		/// </summary>
+		private void llenarComboBoxModulos()
+		{
+			cmbTooltip.SetToolTip(cmb_Modulos, "");
+			DataTable modulos = objectCN.obtenerVistaTabla("VISTA_OBTENER_MODULOS");
+			cmb_Modulos.DataSource = modulos;
+			cmb_Modulos.DisplayMember = "nombre";
+			cmb_Modulos.ValueMember = "modulo_id";
+			cmbAgregarTextoMuestra(modulos);
+			cmb_Modulos.SelectedIndex = 0;
+		}
+
+		/// <summary>
+		/// Este método va a añadir el elemento 0 al combobox de módulos.
+		/// Este será únicamente una opción que diga "Seleccione módulo...".
+		/// </summary>
+		/// <param name="dt">Vista de la tabla de módulos.</param>
+		private void cmbAgregarTextoMuestra(DataTable dt)
+		{
+			DataRow r = dt.NewRow();
+			r["modulo_id"] = 0;
+			r["nombre"] = "Seleccione módulo...";
+			r["estado_id"] = 1;
+			dt.Rows.InsertAt(r, 0);
 		}
 
 		/// <summary>
@@ -93,14 +124,28 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 			llenarTablaOpciones();
 		}
 
-		private void lbl_Cancelar_Click(object sender, EventArgs e)
-		{
-			pnl_Actualizar.Visible = false;
-		}
-
+		/// <summary>
+		/// Este método se ejecutará cuando se haga clic en el botón "Nuevo"
+		/// </summary>	
 		private void btn_Nuevo_Click(object sender, EventArgs e)
 		{
+			vaciarFormularios();
 			mostrarPanelActualizar("Nueva opción...");
+			accion = 0;
+			txt_Orden.Text = (opciones.Rows.Count + 1).ToString();
+		}
+
+		/// <summary>
+		/// Este método va a vaciar los formularios después de haber añadido uno
+		/// nuevo o de haber editado.
+		/// </summary>
+		private void vaciarFormularios()
+		{
+			txt_Nombre.Text = string.Empty;
+			txt_Objeto.Text = string.Empty;
+			cmb_Modulos.SelectedIndex = 0;
+			txt_Descripcion.Text = string.Empty;
+			txt_Orden.Text = string.Empty;
 		}
 
 		/// <summary>
@@ -115,6 +160,28 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 			lbl_Mensaje.Text = txt;
 		}
 
+		/// <summary>
+		/// Este método se ejecutará cuando se haga clic a la "X" en el panel de
+		/// editar o añadir nuevo módulo.
+		/// </summary>
+		private void lbl_Cancelar_Click(object sender, EventArgs e)
+		{
+			pnl_Actualizar.Visible = false;
+		}
 
+		/// <summary>
+		/// Este método se activará cuando se eliga una opción en el combobox de 
+		/// módulos. Este mostrará un tooltip cuando el usuario ponga 
+		/// el mouse encima de este en caso que no se alcance a leer.
+		/// </summary>	
+		private void cmb_Modulos_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (cmb_Modulos.SelectedIndex != -1)
+			{
+				string itemText = cmb_Modulos.GetItemText(cmb_Modulos.SelectedItem);
+				cmbTooltip.SetToolTip(cmb_Modulos, itemText);
+			}
+			else cmbTooltip.SetToolTip(cmb_Modulos, "");
+		}
 	}
 }

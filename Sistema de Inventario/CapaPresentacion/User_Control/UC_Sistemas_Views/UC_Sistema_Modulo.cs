@@ -46,7 +46,7 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 		private void btn_Nuevo_Click(object sender, EventArgs e)
 		{
 			vaciarFormularios();
-			mostrarPanelActualizar("Nuevo Módulo...");
+			mostrarPanelActualizar("Nuevo Módulo");
 			accion = 0;
 			txt_Orden.Text = (modulos.Rows.Count + 1).ToString();
 		}
@@ -75,7 +75,7 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 			{
 				modulo_editar = dgv_Modulos.SelectedRows[0];
 				int modulo_id = (int)modulo_editar.Cells["modulo_id"].Value;
-				mostrarPanelActualizar("Editar Módulo " + modulo_id + "...");
+				mostrarPanelActualizar("Editar Módulo " + modulo_id);
 				accion = 1;
 				llenarDatosEdicion();
 			}

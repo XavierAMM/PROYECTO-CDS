@@ -32,6 +32,12 @@
 			panel9 = new Panel();
 			btn_Aceptar = new Button();
 			panel8 = new Panel();
+			txt_Orden = new TextBox();
+			label1 = new Label();
+			txt_Descripcion = new TextBox();
+			cmb_Modulos = new ComboBox();
+			txt_Objeto = new TextBox();
+			txt_Nombre = new TextBox();
 			panel7 = new Panel();
 			lbl_Mensaje = new Label();
 			panel6 = new Panel();
@@ -49,6 +55,7 @@
 			chb_Inactivos = new CheckBox();
 			pnl_Actualizar.SuspendLayout();
 			panel9.SuspendLayout();
+			panel8.SuspendLayout();
 			panel7.SuspendLayout();
 			panel6.SuspendLayout();
 			panel2.SuspendLayout();
@@ -75,9 +82,9 @@
 			// 
 			panel9.Controls.Add(btn_Aceptar);
 			panel9.Dock = DockStyle.Top;
-			panel9.Location = new Point(0, 236);
+			panel9.Location = new Point(0, 316);
 			panel9.Name = "panel9";
-			panel9.Size = new Size(172, 72);
+			panel9.Size = new Size(172, 48);
 			panel9.TabIndex = 3;
 			// 
 			// btn_Aceptar
@@ -93,11 +100,69 @@
 			// 
 			// panel8
 			// 
+			panel8.Controls.Add(txt_Orden);
+			panel8.Controls.Add(label1);
+			panel8.Controls.Add(txt_Descripcion);
+			panel8.Controls.Add(cmb_Modulos);
+			panel8.Controls.Add(txt_Objeto);
+			panel8.Controls.Add(txt_Nombre);
 			panel8.Dock = DockStyle.Top;
 			panel8.Location = new Point(0, 46);
 			panel8.Name = "panel8";
-			panel8.Size = new Size(172, 190);
+			panel8.Size = new Size(172, 270);
 			panel8.TabIndex = 2;
+			// 
+			// txt_Orden
+			// 
+			txt_Orden.Location = new Point(60, 232);
+			txt_Orden.Name = "txt_Orden";
+			txt_Orden.PlaceholderText = "Orden";
+			txt_Orden.Size = new Size(103, 23);
+			txt_Orden.TabIndex = 6;
+			// 
+			// label1
+			// 
+			label1.AutoSize = true;
+			label1.Location = new Point(9, 235);
+			label1.Name = "label1";
+			label1.Size = new Size(43, 15);
+			label1.TabIndex = 7;
+			label1.Text = "Orden:";
+			// 
+			// txt_Descripcion
+			// 
+			txt_Descripcion.Location = new Point(10, 124);
+			txt_Descripcion.Multiline = true;
+			txt_Descripcion.Name = "txt_Descripcion";
+			txt_Descripcion.PlaceholderText = "Descripción de la opción";
+			txt_Descripcion.Size = new Size(153, 97);
+			txt_Descripcion.TabIndex = 3;
+			// 
+			// cmb_Modulos
+			// 
+			cmb_Modulos.DropDownStyle = ComboBoxStyle.DropDownList;
+			cmb_Modulos.FormattingEnabled = true;
+			cmb_Modulos.Location = new Point(9, 90);
+			cmb_Modulos.Name = "cmb_Modulos";
+			cmb_Modulos.Size = new Size(154, 23);
+			cmb_Modulos.TabIndex = 2;
+			cmb_Modulos.SelectedIndexChanged += cmb_Modulos_SelectedIndexChanged;
+			// 
+			// txt_Objeto
+			// 
+			txt_Objeto.Location = new Point(9, 51);
+			txt_Objeto.Name = "txt_Objeto";
+			txt_Objeto.PlaceholderText = "Nombre de Objeto";
+			txt_Objeto.Size = new Size(154, 23);
+			txt_Objeto.TabIndex = 1;
+			// 
+			// txt_Nombre
+			// 
+			txt_Nombre.Location = new Point(9, 16);
+			txt_Nombre.Name = "txt_Nombre";
+			txt_Nombre.PlaceholderText = "Nombre de la Opción";
+			txt_Nombre.Size = new Size(154, 23);
+			txt_Nombre.TabIndex = 0;
 			// 
 			// panel7
 			// 
@@ -247,8 +312,8 @@
 			// 
 			txt_Filtro_Nombre.Location = new Point(165, 3);
 			txt_Filtro_Nombre.Name = "txt_Filtro_Nombre";
-			txt_Filtro_Nombre.PlaceholderText = "Buscar por nombre";
-			txt_Filtro_Nombre.Size = new Size(145, 23);
+			txt_Filtro_Nombre.PlaceholderText = "Buscar por nombre, descripción, módulo";
+			txt_Filtro_Nombre.Size = new Size(225, 23);
 			txt_Filtro_Nombre.TabIndex = 5;
 			// 
 			// chb_Inactivos
@@ -273,6 +338,8 @@
 			Size = new Size(626, 380);
 			pnl_Actualizar.ResumeLayout(false);
 			panel9.ResumeLayout(false);
+			panel8.ResumeLayout(false);
+			panel8.PerformLayout();
 			panel7.ResumeLayout(false);
 			panel7.PerformLayout();
 			panel6.ResumeLayout(false);
@@ -308,5 +375,11 @@
 		private Button btn_Nuevo;
 		private Button btn_Editar;
 		private Button btn_Inactivar_Activar;
+		private TextBox txt_Nombre;
+		private TextBox txt_Objeto;
+		private ComboBox cmb_Modulos;
+		private TextBox txt_Descripcion;
+		private TextBox txt_Orden;
+		private Label label1;
 	}
 }
