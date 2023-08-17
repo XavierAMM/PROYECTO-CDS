@@ -101,8 +101,7 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 		private void btn_Aceptar_Click(object sender, EventArgs e)
 		{
 			try
-			{
-				DataGridViewRow r = dgv_Modulos.SelectedRows[0];
+			{				
 				if (validarFormularios())
 				{
 					CD_Parametros[] p = obtenerDatosModulo();
@@ -126,9 +125,12 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 		/// </summary>		
 		private void dgv_Modulos_CellClick_1(object sender, DataGridViewCellEventArgs e)
 		{
-			DataGridViewRow r = dgv_Modulos.SelectedRows[0];
-			int estado_id = (int)r.Cells["estado_id"].Value;
-			formaBotonActivarInactivar(estado_id);
+			if(dgv_Modulos.SelectedRows.Count > 0)
+			{
+				DataGridViewRow r = dgv_Modulos.SelectedRows[0];
+				int estado_id = (int)r.Cells["estado_id"].Value;
+				formaBotonActivarInactivar(estado_id);
+			}			
 		}
 
 		/// <summary>
