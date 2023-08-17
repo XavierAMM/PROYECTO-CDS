@@ -10,6 +10,9 @@
     <Compile Update="Frm_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="User_Control\UC_Producto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="User_Control\UC_Recuperar_Contraseña.cs">
       <SubType>UserControl</SubType>
     </Compile>
