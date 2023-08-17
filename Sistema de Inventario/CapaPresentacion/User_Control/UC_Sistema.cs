@@ -8,11 +8,11 @@ namespace CapaPresentacion.User_Control
 	public partial class UC_Sistema : UserControl
 	{
 		int usuario_id;
-        /// <summary>
-        /// Constructor de la clase en la que se encontrarán los elementos a cambiar del sistema en general. Módulos, opciones, perfiles y usuarios.
-        /// </summary>
-        /// <param name="usuario_id">Id del usuario que ha ingresado al sistema.</param>
-        public UC_Sistema(int usuario_id)
+		/// <summary>
+		/// Constructor de la clase en la que se encontrarán los elementos a cambiar del sistema en general. Módulos, opciones, perfiles y usuarios.
+		/// </summary>
+		/// <param name="usuario_id">Id del usuario que ha ingresado al sistema.</param>
+		public UC_Sistema(int usuario_id)
 		{
 			InitializeComponent();
 			this.usuario_id = usuario_id;
@@ -37,9 +37,9 @@ namespace CapaPresentacion.User_Control
 			addUserControl(uc);
 		}
 
-        private void btn_Modulos_Click(object sender, EventArgs e)
-        {
+		private void btn_Modulos_Click(object sender, EventArgs e)
+		{
 			addViewModulos();
-        }
-    }
+		}
+	}
 }

@@ -52,3 +52,27 @@ as
 begin
 	delete from MODULO where modulo_id = @modulo_id
 end
+
+GO
+CREATE PROCEDURE PD_MODULO_BUSCAR_NOMBRE
+@modo int, @nombre varchar(50)
+as
+begin
+	if @modo = 0 begin
+		select m.modulo_id, m.nombre, m.nombre_objeto, m.orden, m.estado_id, e.letra as estado
+		from modulo m
+		join ESTADO e on e.estado_id = m.estado_id
+		where e.estado_id = 1 and (m.nombre like '%'+ @nombre+ '%' or m.nombre_objeto like '%'+ @nombre+'%')
+		order by orden
+	end else if @modo = 1 begin
+		select m.modulo_id, m.nombre, m.nombre_objeto, m.orden, m.estado_id, e.letra as estado
+		from modulo m
+		join ESTADO e on e.estado_id = m.estado_id
+		where m.nombre like '%'+ @nombre+ '%' or m.nombre_objeto like '%'+ @nombre+'%'
+		order by m.estado_id, orden
+	end
+end
+
+UPDATE MODULO SET ESTADO_ID = 1 WHERE MODULO_ID = 5
+
+SELECT * FROM MODULO
