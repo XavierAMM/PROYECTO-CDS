@@ -263,6 +263,21 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 			modulos = objectCN.obtenerTabla(procedureName, p);
 			dgv_Modulos.DataSource = modulos;
 			dgv_Modulos.ClearSelection();
+			cambiarColorInactivos(Color.Salmon);
+		}
+
+		/// <summary>
+		/// Este método va a ponerle un color específico a las filas cuyo
+		/// estado_id sea inactivo (2)
+		/// </summary>
+		/// <param name="c">El color de la fila.</param>
+		private void cambiarColorInactivos(Color c)
+		{
+			foreach(DataGridViewRow r in dgv_Modulos.Rows)
+			{
+				if ((int)r.Cells["estado_id"].Value == 2)
+					r.DefaultCellStyle.BackColor = c;
+			}
 		}
 
 		/// <summary>

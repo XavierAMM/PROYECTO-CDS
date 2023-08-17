@@ -6,16 +6,16 @@ CREATE PROCEDURE PD_OBTENER_MODULOS
 as
 begin
 	if(@modo = 0) begin
-		select m.modulo_id, m.nombre, m.nombre_objeto, m.orden, m.estado_id, e.letra as estado
+		select m.modulo_id, m.nombre, m.nombre_objeto, e.nombre as estado, m.orden, m.estado_id
 		from modulo m
 		join ESTADO e on e.estado_id = m.estado_id
 		where e.estado_id = 1
-		order by orden
+		order by m.orden
 	end else if @modo = 1 begin
-		select m.modulo_id, m.nombre, m.nombre_objeto, m.orden, m.estado_id, e.letra as estado
+		select m.modulo_id, m.nombre, m.nombre_objeto, e.nombre as estado, m.orden, m.estado_id
 		from modulo m
 		join ESTADO e on e.estado_id = m.estado_id	
-		order by m.estado_id, orden
+		order by m.estado_id, m.orden
 	end
 end
 
@@ -56,19 +56,66 @@ CREATE PROCEDURE PD_MODULO_BUSCAR_NOMBRE
 as
 begin
 	if @modo = 0 begin
-		select m.modulo_id, m.nombre, m.nombre_objeto, m.orden, m.estado_id, e.letra as estado
+		select m.modulo_id, m.nombre, m.nombre_objeto, e.nombre as estado, m.orden, m.estado_id
 		from modulo m
 		join ESTADO e on e.estado_id = m.estado_id
 		where e.estado_id = 1 and (m.nombre like '%'+ @nombre+ '%' or m.nombre_objeto like '%'+ @nombre+'%')
-		order by orden
+		order by m.orden
 	end else if @modo = 1 begin
-		select m.modulo_id, m.nombre, m.nombre_objeto, m.orden, m.estado_id, e.letra as estado
+		select m.modulo_id, m.nombre, m.nombre_objeto, e.nombre as estado, m.orden, m.estado_id
 		from modulo m
 		join ESTADO e on e.estado_id = m.estado_id
 		where m.nombre like '%'+ @nombre+ '%' or m.nombre_objeto like '%'+ @nombre+'%'
-		order by m.estado_id, orden
+		order by m.estado_id, m.orden
 	end
 end
+
+GO
+CREATE PROCEDURE PD_OBTENER_OPCIONES_MODO
+@modo int
+as
+begin
+	if @modo = 0 begin
+		select o.opcion_id, o.nombre, o.nombre_objeto, m.nombre as modulo, o.descripcion, e.nombre as estado, o.modulo_id, o.estado_id,  o.orden
+		from opcion o
+		join modulo m on m.modulo_id = o.modulo_id
+		join estado e on e.estado_id = o.estado_id
+		where e.estado_id = 1
+		order by o.orden
+	end else if @modo = 1 begin
+		select o.opcion_id, o.nombre, o.nombre_objeto, m.nombre as modulo, o.descripcion, e.nombre as estado, o.modulo_id, o.estado_id,  o.orden
+		from opcion o
+		join modulo m on m.modulo_id = o.modulo_id
+		join estado e on e.estado_id = o.estado_id		
+		order by o.estado_id, o.orden
+	end
+end
+
+GO
+CREATE PROCEDURE PD_OBTENER_OPCIONES_FILTRAR
+@modo int, @nombre varchar(50)
+as
+begin
+	if @modo = 0 begin
+		select o.opcion_id, o.nombre, o.nombre_objeto, m.nombre as modulo, o.descripcion, e.nombre as estado, o.modulo_id, o.estado_id,  o.orden
+		from opcion o
+		join modulo m on m.modulo_id = o.modulo_id
+		join estado e on e.estado_id = o.estado_id
+		where e.estado_id = 1 and (o.nombre like '%' + @nombre + '%' or o.nombre_objeto like '%' + @nombre + '%' or o.descripcion like '%' + @nombre + '%' or m.nombre like '%' + @nombre + '%')
+		order by o.orden
+	end else if @modo = 1 begin
+		select o.opcion_id, o.nombre, o.nombre_objeto, m.nombre as modulo, o.descripcion, e.nombre as estado, o.modulo_id, o.estado_id,  o.orden
+		from opcion o
+		join modulo m on m.modulo_id = o.modulo_id
+		join estado e on e.estado_id = o.estado_id
+		where o.nombre like '%' + @nombre + '%' or o.nombre_objeto like '%' + @nombre + '%' or o.descripcion like '%' + @nombre + '%' or m.nombre like '%' + @nombre + '%'
+		order by o.estado_id, o.orden
+	end
+end
+
+
+
+
 
 
 
