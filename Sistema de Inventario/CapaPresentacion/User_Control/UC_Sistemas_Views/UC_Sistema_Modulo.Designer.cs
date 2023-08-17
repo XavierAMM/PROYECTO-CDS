@@ -32,10 +32,11 @@
 			btn_Nuevo = new Button();
 			chb_Inactivos = new CheckBox();
 			btn_Editar = new Button();
-			btn_Eliminar = new Button();
+			btn_Inactivar_Activar = new Button();
 			panel1 = new Panel();
 			panel4 = new Panel();
 			panel5 = new Panel();
+			pictureBox1 = new PictureBox();
 			txt_Filtro_Nombre = new TextBox();
 			panel2 = new Panel();
 			pnl_Actualizar = new Panel();
@@ -43,7 +44,6 @@
 			btn_Aceptar = new Button();
 			pnl_Fondo = new Panel();
 			pnl_Nuevo = new Panel();
-			cmb_Estado = new ComboBox();
 			txt_Nombre = new TextBox();
 			txt_Orden = new TextBox();
 			txt_Objeto = new TextBox();
@@ -52,11 +52,11 @@
 			lbl_Mensaje = new Label();
 			panel3 = new Panel();
 			lbl_Cancelar = new Label();
-			pictureBox1 = new PictureBox();
 			((System.ComponentModel.ISupportInitialize)dgv_Modulos).BeginInit();
 			panel1.SuspendLayout();
 			panel4.SuspendLayout();
 			panel5.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			panel2.SuspendLayout();
 			pnl_Actualizar.SuspendLayout();
 			panel8.SuspendLayout();
@@ -64,7 +64,6 @@
 			pnl_Nuevo.SuspendLayout();
 			panel6.SuspendLayout();
 			panel3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			SuspendLayout();
 			// 
 			// dgv_Modulos
@@ -81,6 +80,7 @@
 			dgv_Modulos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dgv_Modulos.Size = new Size(442, 312);
 			dgv_Modulos.TabIndex = 0;
+			dgv_Modulos.CellClick += dgv_Modulos_CellClick_1;
 			// 
 			// btn_Nuevo
 			// 
@@ -119,17 +119,17 @@
 			btn_Editar.UseVisualStyleBackColor = false;
 			btn_Editar.Click += btn_Editar_Click;
 			// 
-			// btn_Eliminar
+			// btn_Inactivar_Activar
 			// 
-			btn_Eliminar.BackColor = Color.Red;
-			btn_Eliminar.ForeColor = Color.White;
-			btn_Eliminar.Location = new Point(212, 3);
-			btn_Eliminar.Name = "btn_Eliminar";
-			btn_Eliminar.Size = new Size(97, 33);
-			btn_Eliminar.TabIndex = 4;
-			btn_Eliminar.Text = "Eliminar";
-			btn_Eliminar.UseVisualStyleBackColor = false;
-			btn_Eliminar.Click += btn_Eliminar_Click;
+			btn_Inactivar_Activar.BackColor = Color.Red;
+			btn_Inactivar_Activar.ForeColor = Color.White;
+			btn_Inactivar_Activar.Location = new Point(212, 3);
+			btn_Inactivar_Activar.Name = "btn_Inactivar_Activar";
+			btn_Inactivar_Activar.Size = new Size(97, 33);
+			btn_Inactivar_Activar.TabIndex = 4;
+			btn_Inactivar_Activar.Text = "Inactivar";
+			btn_Inactivar_Activar.UseVisualStyleBackColor = false;
+			btn_Inactivar_Activar.Click += btn_Eliminar_Click;
 			// 
 			// panel1
 			// 
@@ -163,6 +163,16 @@
 			panel5.Size = new Size(442, 28);
 			panel5.TabIndex = 4;
 			// 
+			// pictureBox1
+			// 
+			pictureBox1.Image = Properties.Resources.ico_search;
+			pictureBox1.Location = new Point(145, 4);
+			pictureBox1.Name = "pictureBox1";
+			pictureBox1.Size = new Size(20, 20);
+			pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+			pictureBox1.TabIndex = 4;
+			pictureBox1.TabStop = false;
+			// 
 			// txt_Filtro_Nombre
 			// 
 			txt_Filtro_Nombre.Location = new Point(165, 3);
@@ -175,7 +185,7 @@
 			// panel2
 			// 
 			panel2.Controls.Add(btn_Nuevo);
-			panel2.Controls.Add(btn_Eliminar);
+			panel2.Controls.Add(btn_Inactivar_Activar);
 			panel2.Controls.Add(btn_Editar);
 			panel2.Dock = DockStyle.Bottom;
 			panel2.Location = new Point(0, 340);
@@ -228,7 +238,6 @@
 			// 
 			// pnl_Nuevo
 			// 
-			pnl_Nuevo.Controls.Add(cmb_Estado);
 			pnl_Nuevo.Controls.Add(txt_Nombre);
 			pnl_Nuevo.Controls.Add(txt_Orden);
 			pnl_Nuevo.Controls.Add(txt_Objeto);
@@ -238,16 +247,6 @@
 			pnl_Nuevo.Name = "pnl_Nuevo";
 			pnl_Nuevo.Size = new Size(172, 181);
 			pnl_Nuevo.TabIndex = 6;
-			// 
-			// cmb_Estado
-			// 
-			cmb_Estado.DropDownStyle = ComboBoxStyle.DropDownList;
-			cmb_Estado.FormattingEnabled = true;
-			cmb_Estado.Items.AddRange(new object[] { "A", "I" });
-			cmb_Estado.Location = new Point(8, 122);
-			cmb_Estado.Name = "cmb_Estado";
-			cmb_Estado.Size = new Size(152, 23);
-			cmb_Estado.TabIndex = 6;
 			// 
 			// txt_Nombre
 			// 
@@ -325,16 +324,6 @@
 			lbl_Cancelar.Text = "X";
 			lbl_Cancelar.Click += lbl_Cancelar_Click;
 			// 
-			// pictureBox1
-			// 
-			pictureBox1.Image = Properties.Resources.ico_search;
-			pictureBox1.Location = new Point(145, 4);
-			pictureBox1.Name = "pictureBox1";
-			pictureBox1.Size = new Size(20, 20);
-			pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-			pictureBox1.TabIndex = 4;
-			pictureBox1.TabStop = false;
-			// 
 			// UC_Sistema_Modulo
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -348,6 +337,7 @@
 			panel4.ResumeLayout(false);
 			panel5.ResumeLayout(false);
 			panel5.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
 			panel2.ResumeLayout(false);
 			pnl_Actualizar.ResumeLayout(false);
 			panel8.ResumeLayout(false);
@@ -358,7 +348,6 @@
 			panel6.PerformLayout();
 			panel3.ResumeLayout(false);
 			panel3.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
 			ResumeLayout(false);
 		}
 
@@ -368,7 +357,7 @@
 		private Button btn_Nuevo;
 		private CheckBox chb_Inactivos;
 		private Button btn_Editar;
-		private Button btn_Eliminar;
+		private Button btn_Inactivar_Activar;
 		private Panel panel1;
 		private Panel panel4;
 		private Panel panel5;
@@ -384,7 +373,6 @@
 		private Label label1;
 		private Panel panel8;
 		private Panel pnl_Fondo;
-		private ComboBox cmb_Estado;
 		private Panel pnl_Nuevo;
 		private Panel panel6;
 		private TextBox txt_Filtro_Nombre;

@@ -25,52 +25,49 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 		private string procedureName;
 		private CD_Parametros[] p;
 		private DataGridViewRow modulo_editar;
+		private int activar_desactivar = 0;
+
+		/// <summary>
+		/// Constructor para la clase que es la vista para editar los módulos.
+		/// </summary>
+		/// <param name="usuario_id">Id del usuario que ha ingresado al sistema.</param>
 		public UC_Sistema_Modulo(int usuario_id)
 		{
 			InitializeComponent();
 			modo = 0;
 			procedureName = "PD_OBTENER_MODULOS";
-			llenarTablaModulos();
+			llenarTablaModulos();						
 			pnl_Actualizar.Visible = false;
 		}
 
-		private void chb_Inactivos_CheckedChanged(object sender, EventArgs e)
-		{
-			if (chb_Inactivos.Checked) modo = 1;
-			else modo = 0;
-			llenarTablaModulos();
-		}
-
+		/// <summary>
+		/// Este método se ejecutará cuando se haga clic en el botón "Nuevo"
+		/// </summary>		
 		private void btn_Nuevo_Click(object sender, EventArgs e)
 		{
 			vaciarFormularios();
 			mostrarPanelActualizar("Nuevo Módulo...");
-			cmb_Estado.Visible = false;
 			accion = 0;
 			txt_Orden.Text = (modulos.Rows.Count + 1).ToString();
 		}
 
+		/// <summary>
+		/// Este método va a mostrar el panel izquierdo, ya sea para añadir un nuevo
+		/// módulo o para editar uno.
+		/// </summary>
+		/// <param name="txt">El texto que aparecerá en el lado superior del 
+		/// panel izquierdo.</param>
 		private void mostrarPanelActualizar(string txt)
 		{
 			pnl_Actualizar.Visible = true;
 			lbl_Mensaje.Text = txt;
 		}
 
-		private void lbl_Cancelar_Click(object sender, EventArgs e)
-		{
-			pnl_Actualizar.Visible = false;
-		}
-
-		private void txt_Orden_KeyPress(object sender, KeyPressEventArgs e)
-		{
-			if (!Char.IsDigit(e.KeyChar)) e.Handled = true;
-		}
-
-		private void txt_Objeto_Nuevo_KeyPress(object sender, KeyPressEventArgs e)
-		{
-			if (Char.IsWhiteSpace(e.KeyChar)) e.Handled = true;
-		}
-
+		/// <summary>
+		/// Este método se ejecutará cuando se quiera editar un módulo. Se debe hacer
+		/// clic en una fila de la tabla y se abrirá el panel izquierdo con los datos
+		/// del módulo seleccionado.
+		/// </summary>
 		private void btn_Editar_Click(object sender, EventArgs e)
 		{
 			vaciarFormularios();
@@ -79,30 +76,28 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 				modulo_editar = dgv_Modulos.SelectedRows[0];
 				int modulo_id = (int)modulo_editar.Cells["modulo_id"].Value;
 				mostrarPanelActualizar("Editar Módulo " + modulo_id + "...");
-				cmb_Estado.Visible = true;
 				accion = 1;
 				llenarDatosEdicion();
 			}
 			else MessageBox.Show("Selecciona un módulo de la lista.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
 
+		/// <summary>
+		/// Este método va a llenar los textbox con la información del módulo que se
+		/// quiera editar.
+		/// </summary>
 		private void llenarDatosEdicion()
 		{
 			txt_Nombre.Text = modulo_editar.Cells["nombre"].Value.ToString();
 			txt_Objeto.Text = modulo_editar.Cells["nombre_objeto"].Value.ToString();
 			txt_Orden.Text = modulo_editar.Cells["orden"].Value.ToString();
-			llenarComboBoxEstado(modulo_editar);
 		}
 
-		private void llenarComboBoxEstado(DataGridViewRow r)
-		{
-			DataTable dt = objectCN.obtenerVistaTabla("VISTA_ESTADO_A_I");
-			cmb_Estado.DataSource = dt;
-			cmb_Estado.DisplayMember = "nombre";
-			cmb_Estado.ValueMember = "estado_id";
-			cmb_Estado.SelectedValue = r.Cells["estado_id"].Value;
-		}
-
+		/// <summary>
+		/// Este método se ejecutará al dar clic al botón aceptar al querer añadir
+		/// un nuevo módulo o al editar uno. Recogerá los datos de los textbox y
+		/// ejecutará el comando respectivo (nuevo o editar).
+		/// </summary>		
 		private void btn_Aceptar_Click(object sender, EventArgs e)
 		{
 			try
@@ -112,39 +107,45 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 				{
 					CD_Parametros[] p = obtenerDatosModulo();
 					if (accion == 0) objectCN.actualizarTabla("PD_AGREGAR_MODULO", p);
-					else if (accion == 1)
-					{
-						validarEdicionOpciones(r);
-						objectCN.actualizarTabla("PD_ACTUALIZAR_MODULO", p);
-					}
+					else if (accion == 1) objectCN.actualizarTabla("PD_ACTUALIZAR_MODULO", p);
 					MessageBox.Show("Cambios realizados con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					llenarTablaModulos();
-					pnl_Actualizar.Visible = false;
+					pnl_Actualizar.Visible = false;					
 				}
 				else throw new Exception("Rellene todos los formularios.");
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 		}
 
-		private void validarEdicionOpciones(DataGridViewRow r)
+		/// <summary>
+		/// Este método va a cambiar el botón de Activar/Inactivar dependiendo del
+		/// estado_id del módulo seleccionado.
+		/// </summary>		
+		private void dgv_Modulos_CellClick_1(object sender, DataGridViewCellEventArgs e)
 		{
-			int modulo = (int)r.Cells["modulo_id"].Value;
-			int estado = (int)cmb_Estado.SelectedValue;
-			if (modulo == 5 && estado == 2)
-			{
-				throw new Exception("No se puede alterar el estado de esa opción.");
-			}
+			DataGridViewRow r = dgv_Modulos.SelectedRows[0];
+			int estado_id = (int)r.Cells["estado_id"].Value;
+			formaBotonActivarInactivar(estado_id);
 		}
 
+		/// <summary>
+		/// Este método va a evaluar si los formularios del panel izquierdo están
+		/// vacíos o no.
+		/// </summary>
+		/// <returns>True si no están vacíos, False si uno está vacío.</returns>
 		private bool validarFormularios()
 		{
-			if (txt_Nombre.Text != "" && txt_Objeto.Text != "" && txt_Orden.Text != "") return true;
-			return false;
+			return txt_Nombre.Text != "" && txt_Objeto.Text != "" && txt_Orden.Text != "";
 		}
 
+		/// <summary>
+		/// Este método va a obtener los datos de los formularios para ser enviados
+		/// como parámetros al SQL Server.
+		/// </summary>
+		/// <returns>Un arreglo CD_Parametro de los datos del módulo.</returns>
 		private CD_Parametros[] obtenerDatosModulo()
 		{
 			CD_Parametros[] p = null;
@@ -164,44 +165,83 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 					new CD_Parametros("@modulo_id", (int)modulo_editar.Cells["modulo_id"].Value),
 					new CD_Parametros("@nombre", txt_Nombre.Text.Trim()),
 					new CD_Parametros("@nombre_objeto", txt_Objeto.Text.Trim()),
-					new CD_Parametros("@estado_id", (int)cmb_Estado.SelectedValue),
 					new CD_Parametros("@orden", txt_Orden.Text.Trim())
 				 };
 			}
 			return p;
 		}
 
+		/// <summary>
+		/// Este método va a vaciar los formularios después de haber añadido uno
+		/// nuevo o de haber editado.
+		/// </summary>
 		private void vaciarFormularios()
 		{
 			txt_Nombre.Text = string.Empty;
 			txt_Objeto.Text = string.Empty;
 			txt_Orden.Text = string.Empty;
-			cmb_Estado.SelectedIndex = 0;
 		}
 
+		/// <summary>
+		/// Este método se activará al darle click al botón Inactivar/Activar. Este
+		/// va a activar el módulo si ya estaba inactivo o hará lo contrario. Va a 
+		/// cancelar la operación si se intenta inactivar el módulo con id 5 ya que
+		/// ese es el módulo que permite editar otros módulos (en el que nos encontramos 
+		/// actualmente).
+		/// </summary>		
 		private void btn_Eliminar_Click(object sender, EventArgs e)
 		{
-			if (dgv_Modulos.SelectedRows.Count > 0)
+			try
 			{
-				int modulo_id = (int)dgv_Modulos.SelectedRows[0].Cells["modulo_id"].Value;
-				DialogResult result = MessageBox.Show("¿Estás seguro que deseas eliminar el módulo " + modulo_id + "?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-				if (result == DialogResult.Yes)
+				if (dgv_Modulos.SelectedRows.Count > 0)
 				{
-					CD_Parametros[] p = { new CD_Parametros("@modulo_id", modulo_id) };
-					objectCN.actualizarTabla("PD_ELIMINAR_MODULO", p);
-					llenarTablaModulos();
-					MessageBox.Show("Módulo eliminado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					string msj = "";
+					int modulo_id = (int)dgv_Modulos.SelectedRows[0].Cells["modulo_id"].Value;
+					if (modulo_id == 5) throw new Exception("No se puede inactivar ese módulo.");
+					if (activar_desactivar == 1) msj = "inactivar";
+					else msj = "activar";
+					DialogResult result = MessageBox.Show("¿Estás seguro que deseas " + msj + " el módulo " + modulo_id + "?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+					if (result == DialogResult.Yes) eliminarModulo(modulo_id);
 				}
-
+				else throw new Exception("Selecciona un módulo de la lista.");
 			}
-			else MessageBox.Show("Selecciona un módulo de la lista.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			}
 		}
 
+		/// <summary>
+		/// Este método va a realizar la operación de inactivar/activar el módulo desde el SQL server.
+		/// </summary>
+		/// <param name="modulo_id">El id del módulo a inactivar/activar</param>
+		private void eliminarModulo(int modulo_id)
+		{
+			CD_Parametros[] para =
+			{
+				new CD_Parametros("@accion", activar_desactivar),
+				new CD_Parametros("@modulo_id", modulo_id)
+			};
+			objectCN.actualizarTabla("PD_INACTIVAR_ACTIVAR_MODULO", para);
+			llenarTablaModulos();
+			MessageBox.Show("Módulo actualizado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+		}
+
+		/// <summary>
+		/// Este método va a llenar la tabla de módulos filtrando el texto del textbox.
+		/// </summary>		
 		private void txt_Filtro_Nombre_TextChanged(object sender, EventArgs e)
 		{
 			llenarTablaModulos();
 		}
 
+		/// <summary>
+		/// Este método va a llenar los datos de la tabla de módulos considerando si el
+		/// textbox del filtro tiene contenido o no. Si lo tiene, entonces lo priorizará y 
+		/// mostrará módulos cuyos nombres o nombres de objeto contengan la cadena de texto.
+		/// Caso contrario, mostrará todos los datos. Para ambos casos, se considerará el checkbox
+		/// de mostrar inactivos.
+		/// </summary>
 		private void llenarTablaModulos()
 		{
 			if (txt_Filtro_Nombre.Text.Length > 0)
@@ -220,6 +260,75 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 			}
 			modulos = objectCN.obtenerTabla(procedureName, p);
 			dgv_Modulos.DataSource = modulos;
+			dgv_Modulos.ClearSelection();
+		}
+
+		/// <summary>
+		/// Este módulo va a cambiar el estilo del botón de activar o inactivar al hacer
+		/// dependiendo del estado_id cada vez que hagamos click en un módulo de la tabla.
+		/// </summary>		
+		private void dgv_Modulos_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			DataGridViewRow r = dgv_Modulos.SelectedRows[0];
+			int estado_id = (int)r.Cells["estado_id"].Value;
+			formaBotonActivarInactivar(estado_id);
+		}
+
+		/// <summary>
+		/// Este método va a cambiar el color y el texto del botón de activar o 
+		/// inactivar dependiendo del módulo que se esté seleccionando.
+		/// </summary>
+		/// <param name="estado_id"></param>
+		private void formaBotonActivarInactivar(int estado_id)
+		{
+			if (estado_id == 1)
+			{
+				btn_Inactivar_Activar.BackColor = Color.Red;
+				btn_Inactivar_Activar.Text = "Inactivar";
+			}
+			else if (estado_id == 2)
+			{
+				btn_Inactivar_Activar.BackColor = Color.Blue;
+				btn_Inactivar_Activar.Text = "Activar";
+			}
+			activar_desactivar = estado_id;
+		}
+
+		/// <summary>
+		/// Este método se ejecutará cuando un el checkbox se active o desactive.
+		/// </summary>		
+		private void chb_Inactivos_CheckedChanged(object sender, EventArgs e)
+		{
+			if (chb_Inactivos.Checked) modo = 1;
+			else modo = 0;
+			llenarTablaModulos();
+		}
+
+		/// <summary>
+		/// Este método se ejecutará cuando se haga clic a la "X" en el panel de
+		/// editar o añadir nuevo módulo.
+		/// </summary>		
+		private void lbl_Cancelar_Click(object sender, EventArgs e)
+		{
+			pnl_Actualizar.Visible = false;
+		}
+
+		/// <summary>
+		/// Este método va a controlar que en el textbox de orden solo se ingresen
+		/// números.
+		/// </summary>
+		private void txt_Orden_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!Char.IsDigit(e.KeyChar)) e.Handled = true;
+		}
+
+		/// <summary>
+		/// Este método va a controlar que en el textbox del nombre de objeto no
+		/// se puedan ingresar espacios en blanco.
+		/// </summary>		
+		private void txt_Objeto_Nuevo_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (Char.IsWhiteSpace(e.KeyChar)) e.Handled = true;
 		}
 	}
 }

@@ -19,13 +19,6 @@ begin
 	end
 end
 
-GO
-CREATE PROCEDURE VISTA_ESTADO_A_I
-as
-begin
-	select * from ESTADO where estado_id = 1 or estado_id = 2
-end
-
 
 GO
 CREATE PROCEDURE PD_AGREGAR_MODULO
@@ -38,19 +31,23 @@ END
 
 GO
 CREATE PROCEDURE PD_ACTUALIZAR_MODULO
-@modulo_id int, @nombre varchar(50), @nombre_objeto varchar(50), @estado_id int, @orden int
+@modulo_id int, @nombre varchar(50), @nombre_objeto varchar(50), @orden int
 as
 begin
-	update MODULO set nombre = @nombre, nombre_objeto = @nombre_objeto, estado_id = @estado_id, orden = @orden
+	update MODULO set nombre = @nombre, nombre_objeto = @nombre_objeto, orden = @orden
 	where modulo_id = @modulo_id
 end
 
 GO
-CREATE PROCEDURE PD_ELIMINAR_MODULO
-@modulo_id int
+CREATE PROCEDURE PD_INACTIVAR_ACTIVAR_MODULO
+@accion int, @modulo_id int
 as
 begin
-	delete from MODULO where modulo_id = @modulo_id
+	if @accion = 1 begin -- inactivar
+		update MODULO set estado_id = 2 where modulo_id = @modulo_id
+	end else if @accion = 2 begin -- activar
+		update MODULO set estado_id = 1 where modulo_id = @modulo_id
+	end
 end
 
 GO
@@ -73,6 +70,5 @@ begin
 	end
 end
 
-UPDATE MODULO SET ESTADO_ID = 1 WHERE MODULO_ID = 5
 
-SELECT * FROM MODULO
+
