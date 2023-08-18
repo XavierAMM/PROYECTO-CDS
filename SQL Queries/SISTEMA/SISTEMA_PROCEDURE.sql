@@ -406,3 +406,5 @@ begin
 		update USUARIO set estado_id = 1 where usuario_id = @usuario_id
 	end
 end
+
+

@@ -83,6 +83,26 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ico_direccion {
+            get {
+                object obj = ResourceManager.GetObject("ico_direccion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ico_editar {
+            get {
+                object obj = ResourceManager.GetObject("ico_editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ico_fecha_nacimiento {
             get {
                 object obj = ResourceManager.GetObject("ico_fecha_nacimiento", resourceCulture);
@@ -96,6 +116,26 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap ico_nombre_apellido {
             get {
                 object obj = ResourceManager.GetObject("ico_nombre_apellido", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ico_perfil {
+            get {
+                object obj = ResourceManager.GetObject("ico_perfil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ico_perfil1 {
+            get {
+                object obj = ResourceManager.GetObject("ico_perfil1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
