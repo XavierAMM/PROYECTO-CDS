@@ -113,6 +113,43 @@ begin
 	end
 end
 
+GO
+CREATE PROCEDURE PD_AGREGAR_OPCION
+@nombre varchar(50), @nombre_objeto varchar(50), @descripcion varchar(250), @modulo_id int, @orden int
+as
+begin
+	declare @opcion_id int
+	INSERT INTO opcion (nombre, nombre_objeto, descripcion, modulo_id, orden) values
+	(@nombre, @nombre_objeto, @descripcion, @modulo_id, @orden)
+	set @opcion_id = SCOPE_IDENTITY()
+	INSERT INTO PERFIL_X_OPCION (perfil_id, opcion_id, estado_id) values
+	(7, @opcion_id, 1)
+end
+
+SELECT * FROM OPCION
+
+GO
+CREATE PROCEDURE PD_EDITAR_OPCION
+@opcion_id int, @nombre varchar(50), @nombre_objeto varchar(50), @descripcion varchar(250), @modulo_id int, @orden int
+as
+begin
+	update opcion set nombre = @nombre, nombre_objeto = @nombre_objeto, descripcion = @descripcion, modulo_id = @modulo_id, @orden = orden 
+	where opcion_id = @opcion_id
+end
+
+GO
+CREATE PROCEDURE PD_INACTIVAR_ACTIVAR_OPCION
+@accion int, @opcion_id int
+as
+begin
+	if @accion = 1 begin -- inactivar
+		update OPCION set estado_id = 2 where opcion_id= @opcion_id
+	end else if @accion = 2 begin -- activar
+		update OPCION set estado_id = 1 where opcion_id= @opcion_id
+	end
+end
+
+
 
 
 

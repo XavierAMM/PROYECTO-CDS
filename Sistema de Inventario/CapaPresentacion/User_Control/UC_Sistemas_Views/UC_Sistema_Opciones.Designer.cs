@@ -97,6 +97,7 @@
 			btn_Aceptar.TabIndex = 7;
 			btn_Aceptar.Text = "Aceptar";
 			btn_Aceptar.UseVisualStyleBackColor = false;
+			btn_Aceptar.Click += btn_Aceptar_Click;
 			// 
 			// panel8
 			// 
@@ -119,6 +120,7 @@
 			txt_Orden.PlaceholderText = "Orden";
 			txt_Orden.Size = new Size(103, 23);
 			txt_Orden.TabIndex = 6;
+			txt_Orden.KeyPress += txt_Orden_KeyPress;
 			// 
 			// label1
 			// 
@@ -155,6 +157,7 @@
 			txt_Objeto.PlaceholderText = "Nombre de Objeto";
 			txt_Objeto.Size = new Size(154, 23);
 			txt_Objeto.TabIndex = 1;
+			txt_Objeto.KeyPress += txt_Objeto_KeyPress;
 			// 
 			// txt_Nombre
 			// 
@@ -239,6 +242,7 @@
 			dgv_Opciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dgv_Opciones.Size = new Size(442, 308);
 			dgv_Opciones.TabIndex = 1;
+			dgv_Opciones.CellClick += dgv_Opciones_CellClick;
 			// 
 			// panel4
 			// 
@@ -261,6 +265,7 @@
 			btn_Inactivar_Activar.TabIndex = 5;
 			btn_Inactivar_Activar.Text = "Inactivar";
 			btn_Inactivar_Activar.UseVisualStyleBackColor = false;
+			btn_Inactivar_Activar.Click += btn_Inactivar_Activar_Click;
 			// 
 			// btn_Editar
 			// 
@@ -274,6 +279,7 @@
 			btn_Editar.TabIndex = 4;
 			btn_Editar.Text = "Editar";
 			btn_Editar.UseVisualStyleBackColor = false;
+			btn_Editar.Click += btn_Editar_Click;
 			// 
 			// btn_Nuevo
 			// 
@@ -315,6 +321,7 @@
 			txt_Filtro_Nombre.PlaceholderText = "Buscar por nombre, descripción, módulo";
 			txt_Filtro_Nombre.Size = new Size(225, 23);
 			txt_Filtro_Nombre.TabIndex = 5;
+			txt_Filtro_Nombre.TextChanged += txt_Filtro_Nombre_TextChanged;
 			// 
 			// chb_Inactivos
 			// 

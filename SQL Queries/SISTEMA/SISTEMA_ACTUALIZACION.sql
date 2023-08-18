@@ -1,0 +1,3 @@
+USE PROYECTO_CDS;
+
+DELETE FROM PERFIL_X_OPCION WHERE perfil_id = 6 AND opcion_id = 11

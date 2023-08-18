@@ -295,7 +295,7 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 		/// Este método va a cambiar el color y el texto del botón de activar o 
 		/// inactivar dependiendo del módulo que se esté seleccionando.
 		/// </summary>
-		/// <param name="estado_id"></param>
+		/// <param name="estado_id">Estado actual del módulo seleccionado</param>
 		private void formaBotonActivarInactivar(int estado_id)
 		{
 			if (estado_id == 1)
