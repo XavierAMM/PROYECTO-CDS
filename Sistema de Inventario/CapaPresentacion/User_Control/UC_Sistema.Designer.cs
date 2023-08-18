@@ -104,6 +104,7 @@
 			btn_Usuarios.Size = new Size(124, 54);
 			btn_Usuarios.TabIndex = 4;
 			btn_Usuarios.Text = "Usuarios";
+			btn_Usuarios.Click += btn_Usuarios_Click;
 			// 
 			// btn_Menú
 			// 

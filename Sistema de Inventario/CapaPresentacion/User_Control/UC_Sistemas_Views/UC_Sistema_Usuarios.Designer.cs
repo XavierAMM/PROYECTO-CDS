@@ -69,6 +69,7 @@
 			txt_Filtro_Nombre.PlaceholderText = "Buscar por perfil, módulo, opción";
 			txt_Filtro_Nombre.Size = new Size(232, 23);
 			txt_Filtro_Nombre.TabIndex = 3;
+			txt_Filtro_Nombre.TextChanged += txt_Filtro_Nombre_TextChanged;
 			// 
 			// chb_Inactivos
 			// 
@@ -79,6 +80,7 @@
 			chb_Inactivos.TabIndex = 2;
 			chb_Inactivos.Text = "Mostrar Inactivos";
 			chb_Inactivos.UseVisualStyleBackColor = true;
+			chb_Inactivos.CheckedChanged += chb_Inactivos_CheckedChanged;
 			// 
 			// panel4
 			// 
@@ -99,6 +101,7 @@
 			btn_Inactivar_Activar.TabIndex = 4;
 			btn_Inactivar_Activar.Text = "Inactivar";
 			btn_Inactivar_Activar.UseVisualStyleBackColor = false;
+			btn_Inactivar_Activar.Click += btn_Inactivar_Activar_Click;
 			// 
 			// dgv_Usuarios
 			// 
@@ -113,6 +116,7 @@
 			dgv_Usuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dgv_Usuarios.Size = new Size(604, 286);
 			dgv_Usuarios.TabIndex = 9;
+			dgv_Usuarios.CellClick += dgv_Usuarios_CellClick;
 			// 
 			// UC_Sistema_Usuarios
 			// 

@@ -230,11 +230,44 @@ namespace CapaPresentacion.User_Control
 
 		/// <summary>
 		/// Este método valida si el botón presionado dentro del textbox
-		/// sea un número y que no pase de 10 dígitos, caso contrario, no lo pone.
+		/// sea un número, que no pase de 10 dígitos y que no hayan espacios 
+		/// en blanco, caso contrario, no lo pone.
 		/// </summary>		
 		private void txt_Telefono_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			if (!Char.IsDigit(e.KeyChar) || txt_Telefono.TextLength >= 10) { e.Handled = true; }
+			if (!Char.IsDigit(e.KeyChar) || txt_Telefono.TextLength >= 10 || Char.IsWhiteSpace(e.KeyChar)) { e.Handled = true; }
+		}
+
+		/// <summary>
+		/// Va a evaluar que en nombre no se ingresen números.
+		/// </summary>		
+		private void txt_Nombre_KeyPress_1(object sender, KeyPressEventArgs e)
+		{
+			if (Char.IsDigit(e.KeyChar)) { e.Handled = true; }
+		}
+
+		/// <summary>
+		/// Va a evaluar que en apellido no se ingresen números.
+		/// </summary>		
+		private void txt_Apellido_KeyPress_1(object sender, KeyPressEventArgs e)
+		{
+			if (Char.IsDigit(e.KeyChar)) { e.Handled = true; }
+		}
+
+		/// <summary>
+		/// Va a evaluar que en correo no se ingresen espacios en blanco.
+		/// </summary>
+		private void txt_Correo_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (Char.IsWhiteSpace(e.KeyChar)) e.Handled = true;
+		}
+
+		/// <summary>
+		/// Va a evaluar que en correo no se ingresen espacios en blanco.
+		/// </summary>
+		private void txt_Usuario_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (Char.IsWhiteSpace(e.KeyChar)) e.Handled = true;
 		}
 	}
 }

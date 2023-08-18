@@ -94,6 +94,7 @@
 			txt_Nombre.PlaceholderText = "Ingrese su Nombre *";
 			txt_Nombre.Size = new Size(217, 23);
 			txt_Nombre.TabIndex = 1;
+			txt_Nombre.KeyPress += txt_Nombre_KeyPress_1;
 			// 
 			// txt_Apellido
 			// 
@@ -102,6 +103,7 @@
 			txt_Apellido.PlaceholderText = "Ingrese su Apellido *";
 			txt_Apellido.Size = new Size(217, 23);
 			txt_Apellido.TabIndex = 2;
+			txt_Apellido.KeyPress += txt_Apellido_KeyPress_1;
 			// 
 			// panel1
 			// 
@@ -195,6 +197,7 @@
 			txt_Telefono.PlaceholderText = "Ingrese su Número de Teléfono";
 			txt_Telefono.Size = new Size(217, 23);
 			txt_Telefono.TabIndex = 5;
+			txt_Telefono.KeyPress += txt_Telefono_KeyPress;
 			// 
 			// pictureBox1
 			// 
@@ -213,6 +216,7 @@
 			txt_Correo.PlaceholderText = "Ingrese su Correo Electrónico *";
 			txt_Correo.Size = new Size(217, 23);
 			txt_Correo.TabIndex = 4;
+			txt_Correo.KeyPress += txt_Correo_KeyPress;
 			// 
 			// label2
 			// 
@@ -317,6 +321,7 @@
 			txt_Usuario.PlaceholderText = "Ingrese su Nombre de Usuario *";
 			txt_Usuario.Size = new Size(251, 23);
 			txt_Usuario.TabIndex = 1;
+			txt_Usuario.KeyPress += txt_Usuario_KeyPress;
 			// 
 			// txt_Respuesta_Pregunta
 			// 
