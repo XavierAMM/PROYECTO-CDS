@@ -225,6 +225,117 @@ begin
 	end
 end
 
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+GO
+CREATE PROCEDURE PD_OBTENER_PERFIL_X_OPCION_MODO
+@modo int
+as
+begin
+	if @modo = 0 begin
+		SELECT pxo.perfil_x_opcion_id, p.nombre as perfil, m.nombre as modulo, o.nombre as opcion, e.nombre as estado,
+		pxo.perfil_id, m.modulo_id, pxo.opcion_id, pxo.estado_id
+		FROM PERFIL_X_OPCION pxo
+		JOIN perfil p on p.perfil_id = pxo.perfil_id
+		JOIN opcion o on o.opcion_id = pxo.opcion_id
+		JOIN modulo m on m.modulo_id = o.modulo_id
+		JOIN estado e on e.estado_id = pxo.estado_id
+		where pxo.estado_id = 1		
+		order by pxo.perfil_id
+	end else if @modo = 1 begin
+		SELECT pxo.perfil_x_opcion_id, p.nombre as perfil, m.nombre as modulo, o.nombre as opcion, e.nombre as estado,
+		pxo.perfil_id, m.modulo_id, pxo.opcion_id, pxo.estado_id
+		FROM PERFIL_X_OPCION pxo
+		JOIN perfil p on p.perfil_id = pxo.perfil_id
+		JOIN opcion o on o.opcion_id = pxo.opcion_id
+		JOIN modulo m on m.modulo_id = o.modulo_id
+		JOIN estado e on e.estado_id = pxo.estado_id		
+		order by pxo.estado_id, pxo.perfil_id
+	end
+end
 
 
+GO
+CREATE PROCEDURE PD_OBTENER_PERFILES_X_OPCION_FILTRAR
+@modo int, @nombre varchar(50)
+as
+begin
+	if @modo = 0 begin
+		SELECT pxo.perfil_x_opcion_id, p.nombre as perfil, m.nombre as modulo, o.nombre as opcion, e.nombre as estado,
+		pxo.perfil_id, m.modulo_id, pxo.opcion_id, pxo.estado_id
+		FROM PERFIL_X_OPCION pxo
+		JOIN perfil p on p.perfil_id = pxo.perfil_id
+		JOIN opcion o on o.opcion_id = pxo.opcion_id
+		JOIN modulo m on m.modulo_id = o.modulo_id
+		JOIN estado e on e.estado_id = pxo.estado_id
+		where pxo.estado_id = 1 and (p.nombre like '%'+@nombre+'%' or m.nombre like '%'+@nombre+'%' or o.nombre like '%'+@nombre+'%')
+		order by pxo.perfil_id
+	end else if @modo = 1 begin
+		SELECT pxo.perfil_x_opcion_id, p.nombre as perfil, m.nombre as modulo, o.nombre as opcion, e.nombre as estado,
+		pxo.perfil_id, m.modulo_id, pxo.opcion_id, pxo.estado_id
+		FROM PERFIL_X_OPCION pxo
+		JOIN perfil p on p.perfil_id = pxo.perfil_id
+		JOIN opcion o on o.opcion_id = pxo.opcion_id
+		JOIN modulo m on m.modulo_id = o.modulo_id
+		JOIN estado e on e.estado_id = pxo.estado_id
+		where p.nombre like '%'+@nombre+'%' or m.nombre like '%'+@nombre+'%' or o.nombre like '%'+@nombre+'%'
+		order by pxo.estado_id, pxo.perfil_id
+	end
+end
 
+GO
+CREATE PROCEDURE PD_AGREGAR_PERFIL_X_OPCION
+@perfil_id varchar(50), @opcion_id varchar(250)
+as
+begin	
+	insert into PERFIL_X_OPCION (perfil_id, opcion_id, estado_id) values
+	(@perfil_id, @opcion_id, 1)
+end
+
+GO
+CREATE PROCEDURE PD_EDITAR_PERFIL_X_OPCION
+@perfil_x_opcion_id int, @perfil_id varchar(50), @opcion_id varchar(250)
+as
+begin
+	update PERFIL_X_OPCION set perfil_id = @perfil_id, opcion_id = @opcion_id
+	where perfil_x_opcion_id = @perfil_x_opcion_id
+end
+
+GO
+CREATE PROCEDURE PD_INACTIVAR_ACTIVAR_PERFIL_X_OPCION
+@accion int, @perfil_x_opcion_id int
+as
+begin
+	if @accion = 1 begin -- inactivar
+		update PERFIL_X_OPCION set estado_id = 2 where perfil_x_opcion_id= @perfil_x_opcion_id
+	end else if @accion = 2 begin -- activar
+		update PERFIL_X_OPCION set estado_id = 1 where perfil_x_opcion_id = @perfil_x_opcion_id
+	end
+end
+
+GO
+CREATE PROCEDURE PD_PERFIL_NO_ADMIN
+@modo int
+as
+begin
+	SELECT * FROM PERFIL WHERE estado_id = 1 and perfil_id <> 7
+end
+
+GO
+CREATE PROCEDURE PD_EVALUAR_NUEVO_PERFIL_X_OPCION
+@perfil_id int, @opcion_id int, @result int output
+as
+begin
+	set @result = 0
+	declare @estado_id int
+	-- RESULT 0 (Es único) , 1 (No es único), -1 (Se encuentra inactivo)
+	SELECT @estado_id = estado_id FROM PERFIL_X_OPCION WHERE perfil_id = @perfil_id and opcion_id = @opcion_id
+	if @@ROWCOUNT > 0 begin
+		if @estado_id = 2 begin
+			set @result = -1
+		end else begin
+			set @result = 1
+		end
+	end
+end

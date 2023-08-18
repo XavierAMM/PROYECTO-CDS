@@ -325,7 +325,7 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 		/// <summary>
 		/// Este método va a realizar la operación de inactivar/activar la opción desde el SQL server.
 		/// </summary>
-		/// <param name="modulo_id">El id de la opción a inactivar/activar</param>
+		/// <param name="opcion_id">El id de la opción a inactivar/activar</param>
 		private void eliminarOpcion(int opcion_id)
 		{
 			CD_Parametros[] para =

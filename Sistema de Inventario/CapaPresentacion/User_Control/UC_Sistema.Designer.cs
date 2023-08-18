@@ -101,7 +101,7 @@
 			btn_Usuarios.Location = new Point(492, 0);
 			btn_Usuarios.Name = "btn_Usuarios";
 			btn_Usuarios.ShadowDecoration.CustomizableEdges = customizableEdges4;
-			btn_Usuarios.Size = new Size(123, 54);
+			btn_Usuarios.Size = new Size(124, 54);
 			btn_Usuarios.TabIndex = 4;
 			btn_Usuarios.Text = "Usuarios";
 			// 
@@ -124,7 +124,8 @@
 			btn_Menú.ShadowDecoration.CustomizableEdges = customizableEdges6;
 			btn_Menú.Size = new Size(123, 54);
 			btn_Menú.TabIndex = 3;
-			btn_Menú.Text = "Menú";
+			btn_Menú.Text = "Opciones a Perfil";
+			btn_Menú.Click += btn_Menú_Click;
 			// 
 			// btn_Perfiles
 			// 
