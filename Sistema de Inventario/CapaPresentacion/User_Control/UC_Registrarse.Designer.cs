@@ -376,6 +376,7 @@
 			btn_Registrarse.TabIndex = 6;
 			btn_Registrarse.Text = "Registrarse";
 			btn_Registrarse.UseVisualStyleBackColor = false;
+			btn_Registrarse.Click += btn_Registrarse_Click;
 			// 
 			// panel3
 			// 

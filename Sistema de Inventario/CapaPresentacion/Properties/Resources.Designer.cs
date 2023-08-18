@@ -63,6 +63,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ico_check {
+            get {
+                object obj = ResourceManager.GetObject("ico_check", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ico_contraseña {
             get {
                 object obj = ResourceManager.GetObject("ico_contraseña", resourceCulture);
@@ -126,16 +136,6 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap ico_perfil {
             get {
                 object obj = ResourceManager.GetObject("ico_perfil", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ico_perfil1 {
-            get {
-                object obj = ResourceManager.GetObject("ico_perfil1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

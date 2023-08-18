@@ -407,4 +407,44 @@ begin
 	end
 end
 
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+GO
+CREATE PROCEDURE PD_EDITAR_USUARIO
+@usuario_id int, @usuario varchar(50), @contraseña varchar(50),
+@nombre1 varchar(50), @apellido1 varchar(50), @telefono varchar(10), @correo_electronico varchar(100), @fecha_nacimiento date,
+@direccion_hogar varchar(200)
+as
+begin
+	declare @persona_id int
+	select @persona_id = persona_id from usuario where usuario_id = @usuario_id
+	UPDATE USUARIO set
+		usuario = @usuario,
+		contraseña = @contraseña
+	WHERE usuario_id = @usuario_id
+
+	UPDATE PERSONA set
+		nombre1 = @nombre1,
+		apellido1 = @apellido1,
+		telefono = @telefono,
+		correo_electronico = @correo_electronico,
+		fecha_nacimiento = @fecha_nacimiento
+	where persona_id = @persona_id
+
+	update personal set direccion_hogar = @direccion_hogar where usuario_id = @usuario_id
+end
+
+
+GO
+CREATE PROCEDURE PD_EVALUAR_EDITAR_NOMBRE_USUARIO_UNICO
+@usuario varchar(50), @usuario_id int, @result int output
+as
+begin
+	declare @temp_usuario_id int
+	select usuario_id from usuario where usuario = @usuario
+	end
+end
+
+
 

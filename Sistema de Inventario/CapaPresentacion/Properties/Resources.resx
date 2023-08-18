@@ -121,14 +121,14 @@
   <data name="ico_contraseña" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ico_contraseña.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ico_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ico_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ico_fecha_nacimiento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ico_fecha_nacimiento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ico_telefono" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ico_telefono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_sistema_inventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_sistema_inventario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ico_nombre_apellido" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ico_nombre_apellido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,11 +136,11 @@
   <data name="ico_perfil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ico_perfil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ico_editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ico_editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ico_usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ico_usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ico_editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ico_direccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ico_direccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,13 +148,13 @@
   <data name="ico_pregunta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ico_pregunta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo_sistema_inventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo_sistema_inventario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ico_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ico_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ico_correo_electronico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ico_correo_electronico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ico_perfil1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ico_perfil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ico_check" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ico_check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
