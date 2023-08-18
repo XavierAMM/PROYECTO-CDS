@@ -39,7 +39,7 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 			procedureName = "PD_OBTENER_PERFIL_X_OPCION_MODO";
 			llenarTablaPerfilOpciones();
 			llenarComboBox(cmb_Perfil, "PD_PERFIL_NO_ADMIN", "perfil_id", "Seleccionar perfil...");
-			llenarComboBox(cmb_Modulo, "PD_OBTENER_MODULOS", "modulo_id", "Seleccionar módulo...");
+			llenarComboBox(cmb_Modulo, "PD_OBTENER_MODULOS_MODO", "modulo_id", "Seleccionar módulo...");
 			cmb_Opcion.Enabled = false;
 			pnl_Actualizar.Visible = false;
 		}
@@ -265,11 +265,11 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 				}
 				else throw new Exception("Selecciona una opción de perfil de la lista.");
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
-			
+
 		}
 
 		/// <summary>
@@ -432,6 +432,14 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 				btn_Inactivar_Activar.Text = "Activar";
 			}
 			activar_desactivar = estado_id;
+		}
+
+		/// <summary>
+		/// Este método va a llenar la tabla de opciones de perfil filtrando el texto del textbox.
+		/// </summary>	
+		private void txt_Filtro_Nombre_TextChanged(object sender, EventArgs e)
+		{
+			llenarTablaPerfilOpciones();
 		}
 	}
 }

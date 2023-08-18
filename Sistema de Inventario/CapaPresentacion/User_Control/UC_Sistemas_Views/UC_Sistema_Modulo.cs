@@ -35,7 +35,7 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 		{
 			InitializeComponent();
 			modo = 0;
-			procedureName = "PD_OBTENER_MODULOS";
+			procedureName = "PD_OBTENER_MODULOS_MODO";
 			llenarTablaModulos();						
 			pnl_Actualizar.Visible = false;
 		}
@@ -258,7 +258,7 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 			else
 			{
 				p = new CD_Parametros[] { new CD_Parametros("@modo", modo) };
-				procedureName = "PD_OBTENER_MODULOS";
+				procedureName = "PD_OBTENER_MODULOS_MODO";
 			}
 			modulos = objectCN.obtenerTabla(procedureName, p);
 			dgv_Modulos.DataSource = modulos;

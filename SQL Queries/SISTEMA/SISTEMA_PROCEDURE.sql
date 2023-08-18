@@ -1,7 +1,7 @@
 use PROYECTO_CDS;
 
 GO
-CREATE PROCEDURE PD_OBTENER_MODULOS
+CREATE PROCEDURE PD_OBTENER_MODULOS_MODO
 @modo int
 as
 begin
@@ -18,7 +18,6 @@ begin
 		order by m.estado_id, m.orden
 	end
 end
-
 
 GO
 CREATE PROCEDURE PD_AGREGAR_MODULO
@@ -337,5 +336,73 @@ begin
 		end else begin
 			set @result = 1
 		end
+	end
+end
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+GO
+CREATE PROCEDURE PD_OBTENER_USUARIO_MODO
+@modo int
+as
+begin
+	if @modo = 0 begin
+		select u.usuario_id, u.usuario, p.nombre1 as nombre, p.apellido1 as apellido, p.telefono, p.correo_electronico, p.fecha_nacimiento, pe.direccion_hogar, pf.nombre as perfil, e.nombre as estado,
+		u.persona_id, pe.personal_id, pf.perfil_id, e.estado_id
+		from USUARIO u
+		join persona p on p.persona_id = u.persona_id
+		join personal pe on pe.usuario_id = u.usuario_id 
+		join perfil pf on pf.perfil_id = pe.perfil_id
+		join estado e on e.estado_id = u.estado_id
+		where u.estado_id = 1		
+	end else if @modo = 1 begin
+		select u.usuario_id, u.usuario, p.nombre1 as nombre, p.apellido1 as apellido, p.telefono, p.correo_electronico, p.fecha_nacimiento, pe.direccion_hogar, pf.nombre as perfil, e.nombre as estado,
+		u.persona_id, pe.personal_id, pf.perfil_id, e.estado_id
+		from USUARIO u
+		join persona p on p.persona_id = u.persona_id
+		join personal pe on pe.usuario_id = u.usuario_id 
+		join perfil pf on pf.perfil_id = pe.perfil_id
+		join estado e on e.estado_id = u.estado_id
+		order by u.estado_id
+	end
+end
+
+
+GO
+CREATE PROCEDURE PD_OBTENER_USUARIOS_FILTRAR
+@modo int, @nombre varchar(50)
+as
+begin
+	if @modo = 0 begin
+		select u.usuario_id, u.usuario, p.nombre1 as nombre, p.apellido1 as apellido, p.telefono, p.correo_electronico, p.fecha_nacimiento, pe.direccion_hogar, pf.nombre as perfil, e.nombre as estado,
+		u.persona_id, pe.personal_id, pf.perfil_id, e.estado_id
+		from USUARIO u
+		join persona p on p.persona_id = u.persona_id
+		join personal pe on pe.usuario_id = u.usuario_id 
+		join perfil pf on pf.perfil_id = pe.perfil_id
+		join estado e on e.estado_id = u.estado_id
+		where u.estado_id = 1 and (u.usuario like '%'+@nombre+'%' or p.nombre1 like '%'+@nombre+'%' or p.apellido1 like '%'+@nombre+'%' or pf.nombre like '%'+@nombre+'%')
+	end else if @modo = 1 begin
+		select u.usuario_id, u.usuario, p.nombre1 as nombre, p.apellido1 as apellido, p.telefono, p.correo_electronico, p.fecha_nacimiento, pe.direccion_hogar, pf.nombre as perfil, e.nombre as estado,
+		u.persona_id, pe.personal_id, pf.perfil_id, e.estado_id
+		from USUARIO u
+		join persona p on p.persona_id = u.persona_id
+		join personal pe on pe.usuario_id = u.usuario_id 
+		join perfil pf on pf.perfil_id = pe.perfil_id		
+		join estado e on e.estado_id = u.estado_id
+		where u.usuario like '%'+@nombre+'%' or p.nombre1 like '%'+@nombre+'%' or p.apellido1 like '%'+@nombre+'%' or pf.nombre like '%'+@nombre+'%'
+		order by u.estado_id
+	end
+end
+
+GO
+CREATE PROCEDURE PD_INACTIVAR_ACTIVAR_USUARIO
+@accion int, @usuario_id int
+as
+begin
+	if @accion = 1 begin -- inactivar
+		update USUARIO set estado_id = 2 where usuario_id = @usuario_id
+	end else if @accion = 2 begin -- activar
+		update USUARIO set estado_id = 1 where usuario_id = @usuario_id
 	end
 end

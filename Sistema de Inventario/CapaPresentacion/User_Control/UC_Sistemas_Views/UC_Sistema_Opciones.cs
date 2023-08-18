@@ -373,7 +373,7 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 		}
 
 		/// <summary>
-		/// Este método va a llenar la tabla de módulos filtrando el texto del textbox.
+		/// Este método va a llenar la tabla de opciones filtrando el texto del textbox.
 		/// </summary>	
 		private void txt_Filtro_Nombre_TextChanged(object sender, EventArgs e)
 		{

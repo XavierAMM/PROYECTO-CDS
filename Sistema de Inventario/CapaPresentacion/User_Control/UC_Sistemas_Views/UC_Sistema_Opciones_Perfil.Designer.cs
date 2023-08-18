@@ -195,6 +195,7 @@
 			txt_Filtro_Nombre.PlaceholderText = "Buscar por perfil, módulo, opción";
 			txt_Filtro_Nombre.Size = new Size(191, 23);
 			txt_Filtro_Nombre.TabIndex = 3;
+			txt_Filtro_Nombre.TextChanged += txt_Filtro_Nombre_TextChanged;
 			// 
 			// chb_Inactivos
 			// 
