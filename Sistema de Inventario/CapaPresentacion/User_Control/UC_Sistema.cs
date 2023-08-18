@@ -58,5 +58,11 @@ namespace CapaPresentacion.User_Control
 			UC_Sistema_Opciones uc = new UC_Sistema_Opciones(usuario_id);
 			addUserControl(uc);
 		}
+
+		private void btn_Perfiles_Click(object sender, EventArgs e)
+		{
+			UC_Sistema_Perfil uc = new UC_Sistema_Perfil();
+			addUserControl(uc);
+		}
 	}
 }

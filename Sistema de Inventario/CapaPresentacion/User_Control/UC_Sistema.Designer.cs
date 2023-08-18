@@ -146,6 +146,7 @@
 			btn_Perfiles.Size = new Size(123, 54);
 			btn_Perfiles.TabIndex = 2;
 			btn_Perfiles.Text = "Perfiles";
+			btn_Perfiles.Click += btn_Perfiles_Click;
 			// 
 			// btn_Opciones
 			// 

@@ -19,7 +19,6 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 	/// </summary>
 	public partial class UC_Sistema_Opciones : UserControl
 	{
-		private int usuario_id;
 		private int modo;
 		private int accion;
 		private string procedureName;
@@ -76,7 +75,7 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 		/// <summary>
 		/// Este método va a llenar los datos de la tabla de opciones de módulos considerando si el
 		/// textbox del filtro tiene contenido o no. Si lo tiene, entonces lo priorizará y 
-		/// mostrará módulos cuyo filtro contengan la cadena de texto.
+		/// mostrará opciones cuyo filtro contengan la cadena de texto.
 		/// Caso contrario, mostrará todos los datos. Para ambos casos, se considerará el checkbox
 		/// de mostrar inactivos.
 		/// </summary>
@@ -151,8 +150,8 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 		}
 
 		/// <summary>
-		/// Este método va a mostrar el panel izquierdo, ya sea para añadir un nuevo
-		/// módulo o para editar uno.
+		/// Este método va a mostrar el panel izquierdo, ya sea para añadir una nueva
+		/// opción o para editar uno.
 		/// </summary>
 		/// <param name="txt">El texto que aparecerá en el lado superior del 
 		/// panel izquierdo.</param>
