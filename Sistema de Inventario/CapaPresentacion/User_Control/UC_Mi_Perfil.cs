@@ -148,7 +148,7 @@ namespace CapaPresentacion.User_Control
 			txt_Apellido.Text.Trim() != "" &&
 			txt_Telefono.Text.Trim() != "" &&
 			txt_Correo.Text.Trim() != "" &&
-			date_Fecha_Nacimiento.Text != "";			
+			date_Fecha_Nacimiento.Text != "";
 		}
 
 		private void mostrarMensajeError(string txt)

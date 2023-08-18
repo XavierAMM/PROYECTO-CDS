@@ -169,7 +169,7 @@
 			btn_Guardar.Location = new Point(248, 3);
 			btn_Guardar.Name = "btn_Guardar";
 			btn_Guardar.Size = new Size(110, 39);
-			btn_Guardar.TabIndex = 6;
+			btn_Guardar.TabIndex = 11;
 			btn_Guardar.Text = "Guardar";
 			btn_Guardar.UseVisualStyleBackColor = false;
 			btn_Guardar.Click += btn_Guardar_Click;
@@ -279,7 +279,7 @@
 			date_Fecha_Nacimiento.Location = new Point(112, 127);
 			date_Fecha_Nacimiento.Name = "date_Fecha_Nacimiento";
 			date_Fecha_Nacimiento.Size = new Size(191, 23);
-			date_Fecha_Nacimiento.TabIndex = 36;
+			date_Fecha_Nacimiento.TabIndex = 8;
 			date_Fecha_Nacimiento.Tag = "pictureBox16";
 			date_Fecha_Nacimiento.Value = new DateTime(2023, 7, 26, 15, 10, 12, 0);
 			date_Fecha_Nacimiento.Leave += pictureBox16_Click;
@@ -338,7 +338,7 @@
 			txt_Correo.Name = "txt_Correo";
 			txt_Correo.ReadOnly = true;
 			txt_Correo.Size = new Size(191, 23);
-			txt_Correo.TabIndex = 11;
+			txt_Correo.TabIndex = 7;
 			txt_Correo.Tag = "pictureBox15";
 			txt_Correo.KeyPress += txt_Usuario_KeyPress;
 			txt_Correo.Leave += pictureBox_Click;
@@ -349,7 +349,7 @@
 			txt_Telefono.Name = "txt_Telefono";
 			txt_Telefono.ReadOnly = true;
 			txt_Telefono.Size = new Size(191, 23);
-			txt_Telefono.TabIndex = 12;
+			txt_Telefono.TabIndex = 6;
 			txt_Telefono.Tag = "pictureBox14";
 			txt_Telefono.KeyPress += txt_Telefono_KeyPress;
 			txt_Telefono.Leave += pictureBox_Click;
@@ -370,7 +370,7 @@
 			txt_Nombre.Name = "txt_Nombre";
 			txt_Nombre.ReadOnly = true;
 			txt_Nombre.Size = new Size(191, 23);
-			txt_Nombre.TabIndex = 10;
+			txt_Nombre.TabIndex = 4;
 			txt_Nombre.Tag = "pictureBox18";
 			txt_Nombre.KeyPress += txt_Nombre_KeyPress;
 			txt_Nombre.Leave += pictureBox_Click;
@@ -471,7 +471,7 @@
 			txt_Direccion.Name = "txt_Direccion";
 			txt_Direccion.ReadOnly = true;
 			txt_Direccion.Size = new Size(191, 23);
-			txt_Direccion.TabIndex = 28;
+			txt_Direccion.TabIndex = 9;
 			txt_Direccion.Tag = "pictureBox17";
 			txt_Direccion.Leave += pictureBox_Click;
 			// 
@@ -481,7 +481,7 @@
 			txt_Perfil.Name = "txt_Perfil";
 			txt_Perfil.ReadOnly = true;
 			txt_Perfil.Size = new Size(191, 23);
-			txt_Perfil.TabIndex = 29;
+			txt_Perfil.TabIndex = 10;
 			// 
 			// txt_Apellido
 			// 
@@ -489,7 +489,7 @@
 			txt_Apellido.Name = "txt_Apellido";
 			txt_Apellido.ReadOnly = true;
 			txt_Apellido.Size = new Size(191, 23);
-			txt_Apellido.TabIndex = 26;
+			txt_Apellido.TabIndex = 5;
 			txt_Apellido.Tag = "pictureBox8";
 			txt_Apellido.KeyPress += txt_Nombre_KeyPress;
 			txt_Apellido.Leave += pictureBox_Click;
@@ -581,7 +581,7 @@
 			txt_Contrasena2.PasswordChar = '*';
 			txt_Contrasena2.PlaceholderText = "Vuelve a escribir la contraseña";
 			txt_Contrasena2.Size = new Size(191, 23);
-			txt_Contrasena2.TabIndex = 10;
+			txt_Contrasena2.TabIndex = 3;
 			txt_Contrasena2.UseSystemPasswordChar = true;
 			// 
 			// panel4
@@ -655,7 +655,7 @@
 			txt_Contrasena.PasswordChar = '*';
 			txt_Contrasena.ReadOnly = true;
 			txt_Contrasena.Size = new Size(191, 23);
-			txt_Contrasena.TabIndex = 10;
+			txt_Contrasena.TabIndex = 2;
 			txt_Contrasena.Tag = "pictureBox2";
 			txt_Contrasena.UseSystemPasswordChar = true;
 			// 
@@ -697,7 +697,7 @@
 			txt_Usuario.Name = "txt_Usuario";
 			txt_Usuario.ReadOnly = true;
 			txt_Usuario.Size = new Size(191, 23);
-			txt_Usuario.TabIndex = 10;
+			txt_Usuario.TabIndex = 1;
 			txt_Usuario.Tag = "pictureBox1";
 			txt_Usuario.KeyPress += txt_Usuario_KeyPress;
 			txt_Usuario.Leave += pictureBox_Click;
