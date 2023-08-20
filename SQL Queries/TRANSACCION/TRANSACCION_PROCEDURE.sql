@@ -39,8 +39,26 @@ begin
 	end
 end
 
-select * from usuario
+GO
+CREATE PROCEDURE PD_OBTENER_INVENTARIO_SEGUN_BODEGA_ID
+@bodega_id int
+as
+begin
+	SELECT inventario_id, nombre, bodega_id, fecha_creacion, saldo_final, estado_id, categoria_id FROM INVENTARIO WHERE bodega_id = @bodega_id AND estado_id = 1
+end
 
-select * from personal
 
-update PERSONAL_X_BODEGA set estado_id = 2 where personal_id = 2
+GO
+CREATE PROCEDURE PD_OBTENER_TEMP_TRANSACCION
+@personal_x_bodega_id int, @inventario_id int
+as
+begin
+	select tt.nombre as tipo_transaccion, p.nombre as producto, concat(temp.cantidad,' ',tu.descripcion) as cantidad, temp.fecha_transaccion, temp.motivo, temp.temp_transaccion_id
+	from temp_transaccion temp
+	join TIPO_TRANSACCION tt on tt.tipo_transaccion_id = temp.tipo_transaccion_id
+	join producto p on p.nombre = temp.producto_id
+	join TIPO_UNIDAD tu on tu.tipo_unidad_id = temp.tipo_unidad_id
+	where temp.personal_x_bodega_id = @personal_x_bodega_id and temp.inventario_id = @inventario_id
+end
+
+

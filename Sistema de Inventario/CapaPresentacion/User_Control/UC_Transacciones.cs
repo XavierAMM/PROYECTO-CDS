@@ -31,13 +31,13 @@ namespace CapaPresentacion.User_Control
 		{
 			this.usuario_id = usuario_id;
 			InitializeComponent();
-			CD_Parametros[] p = { new CD_Parametros("@usuario_id", usuario_id) };			
+			CD_Parametros[] p = { new CD_Parametros("@usuario_id", usuario_id) };
 			llenarComboBox(cmb_Bodega, "PD_OBTENER_BODEGA_USUARIO_ID", p, "bodega_id", "Seleccione bodega...");
 		}
 
 		private void evaluarUsuarioTieneBodega(CD_Parametros[] p)
 		{
-			
+
 		}
 
 		/// <summary>
@@ -84,6 +84,45 @@ namespace CapaPresentacion.User_Control
 			CD_Parametros[] p = { new CD_Parametros("@usuario_id", usuario_id) };
 			int result = objectCN.obtenerDatoEntero("PD_EVALUAR_PERSONAL_TIENE_BODEGA", p);
 			if (result == 0) MessageBox.Show("Usted no cuenta con ninguna bodega asignada. Por favor, póngase en contacto con algún encargado de bodegas.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+		}
+
+		private void cmb_Bodega_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (cmb_Bodega.SelectedIndex == 0)
+			{
+				cmb_Inventario.Enabled = false;
+				cmb_Inventario.DataSource = null;
+			}
+			else
+			{
+				cmb_Inventario.Enabled = true;
+				int bodega_id = (int)cmb_Bodega.SelectedValue;
+				CD_Parametros[] p = { new CD_Parametros("@bodega_id", bodega_id) };
+				llenarComboBox(cmb_Inventario, "PD_OBTENER_INVENTARIO_SEGUN_BODEGA_ID", p, "inventario_id", "Seleccionar inventario...");
+			}
+		}
+
+		private void cmb_Inventario_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (cmb_Bodega.SelectedIndex != 0)
+			{
+				if (cmb_Inventario.SelectedIndex != 0)
+				{
+					activarPanelTablaProductos((int)cmb_Inventario.SelectedValue);
+					return;
+				}
+			}
+			pnl_Tabla_Productos.Enabled = false;
+		}
+
+		private void activarPanelTablaProductos(int inventario_id)
+		{
+			pnl_Tabla_Productos.Enabled = true;
+			pnl_Temp_Transaccion.Enabled = true;
+			CD_Parametros[] p = { new CD_Parametros("@inventario_id", inventario_id) };
+			DataTable dt = objectCN.obtenerTabla("PD_OBTENER_PRODUCTOS_TRANSACCIONES", p);
+			dgv_Productos.DataSource = dt;
+			// llenar aqui la tabla de temp transaccion
 		}
 	}
 }

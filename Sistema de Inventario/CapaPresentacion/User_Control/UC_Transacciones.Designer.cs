@@ -38,6 +38,8 @@
 			pictureBox4 = new PictureBox();
 			pnl_Tabla_Productos = new Panel();
 			pnl_Producto = new Panel();
+			label4 = new Label();
+			btn_Guardar = new Button();
 			btn_Limpiar = new Button();
 			btn_Eliminar = new Button();
 			panel2 = new Panel();
@@ -58,6 +60,7 @@
 			txt_Cantidad = new TextBox();
 			txt_Cant_Max = new TextBox();
 			txt_Cant_Min = new TextBox();
+			pnl_Temp_Transaccion = new Panel();
 			panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -70,6 +73,7 @@
 			((System.ComponentModel.ISupportInitialize)btn_Agregar).BeginInit();
 			((System.ComponentModel.ISupportInitialize)dgv_Temp_Transacciones).BeginInit();
 			tableLayoutPanel1.SuspendLayout();
+			pnl_Temp_Transaccion.SuspendLayout();
 			SuspendLayout();
 			// 
 			// panel1
@@ -108,11 +112,13 @@
 			// cmb_Inventario
 			// 
 			cmb_Inventario.DropDownStyle = ComboBoxStyle.DropDownList;
+			cmb_Inventario.Enabled = false;
 			cmb_Inventario.FormattingEnabled = true;
 			cmb_Inventario.Location = new Point(347, 7);
 			cmb_Inventario.Name = "cmb_Inventario";
 			cmb_Inventario.Size = new Size(154, 23);
 			cmb_Inventario.TabIndex = 1;
+			cmb_Inventario.SelectedIndexChanged += cmb_Inventario_SelectedIndexChanged;
 			// 
 			// cmb_Bodega
 			// 
@@ -122,6 +128,7 @@
 			cmb_Bodega.Name = "cmb_Bodega";
 			cmb_Bodega.Size = new Size(154, 23);
 			cmb_Bodega.TabIndex = 0;
+			cmb_Bodega.SelectedIndexChanged += cmb_Bodega_SelectedIndexChanged;
 			cmb_Bodega.Click += cmb_Bodega_Click;
 			// 
 			// dgv_Productos
@@ -135,13 +142,14 @@
 			dgv_Productos.ReadOnly = true;
 			dgv_Productos.RowTemplate.Height = 25;
 			dgv_Productos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dgv_Productos.Size = new Size(587, 159);
+			dgv_Productos.Size = new Size(587, 140);
 			dgv_Productos.TabIndex = 2;
 			// 
 			// txt_Buscar
 			// 
 			txt_Buscar.Location = new Point(180, 7);
 			txt_Buscar.Name = "txt_Buscar";
+			txt_Buscar.PlaceholderText = "Buscar por nombre, categoria, proveedor";
 			txt_Buscar.Size = new Size(250, 23);
 			txt_Buscar.TabIndex = 3;
 			// 
@@ -164,28 +172,46 @@
 			pnl_Tabla_Productos.Enabled = false;
 			pnl_Tabla_Productos.Location = new Point(0, 37);
 			pnl_Tabla_Productos.Name = "pnl_Tabla_Productos";
-			pnl_Tabla_Productos.Size = new Size(617, 201);
+			pnl_Tabla_Productos.Size = new Size(617, 187);
 			pnl_Tabla_Productos.TabIndex = 6;
 			// 
 			// pnl_Producto
 			// 
-			pnl_Producto.Controls.Add(btn_Limpiar);
-			pnl_Producto.Controls.Add(btn_Eliminar);
 			pnl_Producto.Controls.Add(panel2);
-			pnl_Producto.Controls.Add(dgv_Temp_Transacciones);
 			pnl_Producto.Controls.Add(tableLayoutPanel1);
 			pnl_Producto.Dock = DockStyle.Fill;
 			pnl_Producto.Enabled = false;
-			pnl_Producto.Location = new Point(0, 238);
+			pnl_Producto.Location = new Point(0, 224);
 			pnl_Producto.Name = "pnl_Producto";
-			pnl_Producto.Size = new Size(617, 196);
+			pnl_Producto.Size = new Size(617, 210);
 			pnl_Producto.TabIndex = 7;
+			// 
+			// label4
+			// 
+			label4.AutoSize = true;
+			label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			label4.Location = new Point(22, 3);
+			label4.Name = "label4";
+			label4.Size = new Size(157, 15);
+			label4.TabIndex = 8;
+			label4.Text = "Agregados recientemente...";
+			// 
+			// btn_Guardar
+			// 
+			btn_Guardar.BackColor = Color.LawnGreen;
+			btn_Guardar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+			btn_Guardar.Location = new Point(508, 24);
+			btn_Guardar.Name = "btn_Guardar";
+			btn_Guardar.Size = new Size(87, 25);
+			btn_Guardar.TabIndex = 7;
+			btn_Guardar.Text = "Guardar";
+			btn_Guardar.UseVisualStyleBackColor = false;
 			// 
 			// btn_Limpiar
 			// 
 			btn_Limpiar.BackColor = Color.Tomato;
 			btn_Limpiar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-			btn_Limpiar.Location = new Point(514, 160);
+			btn_Limpiar.Location = new Point(508, 83);
 			btn_Limpiar.Name = "btn_Limpiar";
 			btn_Limpiar.Size = new Size(87, 25);
 			btn_Limpiar.TabIndex = 6;
@@ -196,7 +222,7 @@
 			// 
 			btn_Eliminar.BackColor = Color.IndianRed;
 			btn_Eliminar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-			btn_Eliminar.Location = new Point(399, 159);
+			btn_Eliminar.Location = new Point(508, 54);
 			btn_Eliminar.Name = "btn_Eliminar";
 			btn_Eliminar.Size = new Size(87, 25);
 			btn_Eliminar.TabIndex = 5;
@@ -209,9 +235,9 @@
 			panel2.Controls.Add(btn_Quitar);
 			panel2.Controls.Add(btn_Agregar);
 			panel2.Controls.Add(txt_Ingresar_Cant);
-			panel2.Location = new Point(107, 104);
+			panel2.Location = new Point(400, 7);
 			panel2.Name = "panel2";
-			panel2.Size = new Size(201, 80);
+			panel2.Size = new Size(201, 90);
 			panel2.TabIndex = 4;
 			// 
 			// btn_Quitar
@@ -248,13 +274,13 @@
 			dgv_Temp_Transacciones.AllowUserToAddRows = false;
 			dgv_Temp_Transacciones.AllowUserToDeleteRows = false;
 			dgv_Temp_Transacciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgv_Temp_Transacciones.Location = new Point(397, 7);
+			dgv_Temp_Transacciones.Location = new Point(18, 22);
 			dgv_Temp_Transacciones.MultiSelect = false;
 			dgv_Temp_Transacciones.Name = "dgv_Temp_Transacciones";
 			dgv_Temp_Transacciones.ReadOnly = true;
 			dgv_Temp_Transacciones.RowTemplate.Height = 25;
 			dgv_Temp_Transacciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dgv_Temp_Transacciones.Size = new Size(204, 147);
+			dgv_Temp_Transacciones.Size = new Size(471, 86);
 			dgv_Temp_Transacciones.TabIndex = 3;
 			// 
 			// tableLayoutPanel1
@@ -393,11 +419,26 @@
 			txt_Cant_Min.Size = new Size(103, 23);
 			txt_Cant_Min.TabIndex = 16;
 			// 
+			// pnl_Temp_Transaccion
+			// 
+			pnl_Temp_Transaccion.Controls.Add(label4);
+			pnl_Temp_Transaccion.Controls.Add(btn_Guardar);
+			pnl_Temp_Transaccion.Controls.Add(dgv_Temp_Transacciones);
+			pnl_Temp_Transaccion.Controls.Add(btn_Limpiar);
+			pnl_Temp_Transaccion.Controls.Add(btn_Eliminar);
+			pnl_Temp_Transaccion.Dock = DockStyle.Bottom;
+			pnl_Temp_Transaccion.Enabled = false;
+			pnl_Temp_Transaccion.Location = new Point(0, 320);
+			pnl_Temp_Transaccion.Name = "pnl_Temp_Transaccion";
+			pnl_Temp_Transaccion.Size = new Size(617, 114);
+			pnl_Temp_Transaccion.TabIndex = 9;
+			// 
 			// UC_Transacciones
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.White;
+			Controls.Add(pnl_Temp_Transaccion);
 			Controls.Add(pnl_Producto);
 			Controls.Add(pnl_Tabla_Productos);
 			Controls.Add(panel1);
@@ -418,6 +459,8 @@
 			((System.ComponentModel.ISupportInitialize)dgv_Temp_Transacciones).EndInit();
 			tableLayoutPanel1.ResumeLayout(false);
 			tableLayoutPanel1.PerformLayout();
+			pnl_Temp_Transaccion.ResumeLayout(false);
+			pnl_Temp_Transaccion.PerformLayout();
 			ResumeLayout(false);
 		}
 
@@ -453,5 +496,8 @@
 		private Button btn_Limpiar;
 		private Button btn_Eliminar;
 		private PictureBox btn_Quitar;
+		private Button btn_Guardar;
+		private Label label4;
+		private Panel pnl_Temp_Transaccion;
 	}
 }
