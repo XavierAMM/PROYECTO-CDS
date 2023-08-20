@@ -443,8 +443,8 @@ as
 begin
 	declare @temp_usuario_id int
 	select usuario_id from usuario where usuario = @usuario
-	end
 end
+
 
 
 
