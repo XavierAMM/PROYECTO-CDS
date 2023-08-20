@@ -297,6 +297,7 @@
             this.btn_Quitar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btn_Quitar.TabIndex = 5;
             this.btn_Quitar.TabStop = false;
+            this.btn_Quitar.Click += new System.EventHandler(this.btn_Agregar_Quitar);
             // 
             // btn_Agregar
             // 
@@ -307,7 +308,7 @@
             this.btn_Agregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btn_Agregar.TabIndex = 4;
             this.btn_Agregar.TabStop = false;
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Quitar);
             // 
             // txt_Ingresar_Cant
             // 

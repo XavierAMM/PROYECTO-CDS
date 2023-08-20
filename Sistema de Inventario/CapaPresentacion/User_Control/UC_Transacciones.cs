@@ -1,6 +1,7 @@
 ﻿using CapaDatos;
 using CapaNegocio;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,7 @@ namespace CapaPresentacion.User_Control
 		private int usuario_id;
 		private ToolTip cmbTooltip = new ToolTip();
 		private CN_Validacion objectCN = new CN_Validacion();
+		private int selected_product_id;
 
 		/// <summary>
 		/// Constructor de la clase que va a realizar las transacciones en el sistema de inventarios.
@@ -106,11 +108,10 @@ namespace CapaPresentacion.User_Control
 			{
 				if (cmb_Inventario.SelectedIndex != 0)
 				{
-					activarPanelTablaProductos((int)cmb_Inventario.SelectedValue);
-					cambiarColorExcesosFaltantes();
+					actualizarTablas();
                     dgv_Productos.ClearSelection();
                     dgv_Temp_Transacciones.ClearSelection();
-					agregarTooltipCombobox(cmb_Inventario);
+                    agregarTooltipCombobox(cmb_Inventario);
                     return;
 				}
 			}
@@ -156,11 +157,12 @@ namespace CapaPresentacion.User_Control
 
         private void dgv_Productos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-			if (dgv_Productos.Rows.Count > 0)
+			if (dgv_Productos.SelectedRows.Count > 0)
 			{
 				pnl_Producto.Enabled = true;
-				DataGridViewRow r = dgv_Productos.Rows[0];
-				llenarDatosProducto(r);
+				selected_product_id = (int)dgv_Productos.SelectedRows[0].Cells["producto_id"].Value;
+				CD_Parametros[] p = { new CD_Parametros("@producto_id",selected_product_id) };
+				llenarDatosProducto(objectCN.obtenerTabla("PD_OBTENER_PRODUCTOS_TRANSACCIONES_SEGUN_Id",p));
 			}
         }
 
@@ -180,31 +182,37 @@ namespace CapaPresentacion.User_Control
             txt_Cantidad.BackColor = SystemColors.Control;
         }
 
-		private void llenarDatosProducto(DataGridViewRow r)
+		private void llenarDatosProducto(DataTable dt)
 		{
-            if (dgv_Productos.Rows.Count > 0)
-            {
-				txt_Nombre.Text = r.Cells["nombre"].Value.ToString();
-                txt_Categoria.Text = r.Cells["categoria"].Value.ToString();
-                txt_Proveedor.Text = r.Cells["proveedor"].Value.ToString();
-				txt_Cantidad.Text = r.Cells["cantidad"].Value.ToString();
-                txt_Cant_Min.Text = r.Cells["cantidad_minima"].Value.ToString();
-                txt_Cant_Max.Text = r.Cells["cantidad_maxima"].Value.ToString();
-                lbl_Tipo_Unidad.Text = r.Cells["tipo_unidad"].Value.ToString();
-				if (existenExcesosFaltantes(r))
-				{
-					pic_Warning_Cantidad.Visible = true;
-					string warning = "La cantidad establecida supera o es inferior a los límites esttablecidos.";
-					cmbTooltip.SetToolTip(pic_Warning_Cantidad, warning);
-					txt_Cantidad.BackColor = Color.Salmon;
-				}
-				else 
-				{ 
-					pic_Warning_Cantidad.Visible = false;
+			DataRow r = dt.Rows[0];
+			try
+			{
+                txt_Nombre.Text = r["nombre"].ToString();
+                txt_Categoria.Text = r["categoria"].ToString();
+                txt_Proveedor.Text = r["proveedor"].ToString();
+                txt_Cantidad.Text = r["cantidad"].ToString();
+                txt_Cant_Min.Text = r["cantidad_minima"].ToString();
+                txt_Cant_Max.Text = r["cantidad_maxima"].ToString();
+                lbl_Tipo_Unidad.Text = r["tipo_unidad"].ToString();
+                if (existenExcesosFaltantes(r))
+                {
+                    pic_Warning_Cantidad.Visible = true;
+                    string warning = "La cantidad establecida supera o es inferior a los límites establecidos.";
+                    cmbTooltip.SetToolTip(pic_Warning_Cantidad, warning);
+                    txt_Cantidad.BackColor = Color.Salmon;
+                }
+                else
+                {
+                    pic_Warning_Cantidad.Visible = false;
                     cmbTooltip.SetToolTip(pic_Warning_Cantidad, "");
                     txt_Cantidad.BackColor = SystemColors.Control;
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         /// <summary>
@@ -218,37 +226,44 @@ namespace CapaPresentacion.User_Control
 
         private void txt_Buscar_TextChanged(object sender, EventArgs e)
         {
-			if(txt_Buscar.Text.Length > 0)
-			{
-                CD_Parametros[] p =
+			if (txt_Buscar.Text.Length > 0) buscarPorFiltro();
+			else activarPanelTablaProductos((int)cmb_Inventario.SelectedValue);
+        }
+
+		private void buscarPorFiltro()
+		{
+            CD_Parametros[] p =
                 {
                 new CD_Parametros("@inventario_id", (int)cmb_Inventario.SelectedValue),
                 new CD_Parametros("@filtro", txt_Buscar.Text)
-				};
-                DataTable dt = objectCN.obtenerTabla("PD_OBTENER_PRODUCTOS_TRANSACCIONES_FILTRO", p);
-                dgv_Productos.DataSource = dt;
-            }else activarPanelTablaProductos((int)cmb_Inventario.SelectedValue);
-			
+                };
+            DataTable dt = objectCN.obtenerTabla("PD_OBTENER_PRODUCTOS_TRANSACCIONES_FILTRO", p);
+            dgv_Productos.DataSource = dt;
+        }
+
+        private bool existenExcesosFaltantes(DataRow r)
+        {
+            String cantidad = (string)r["cantidad"].ToString(), 
+				cant_max = (string)r["cantidad_maxima"].ToString(), 
+				cant_min = (string)r["cantidad_minima"].ToString();
+
+            if (stringADecimal(cantidad) > stringADecimal(cant_max) || stringADecimal(cantidad) < stringADecimal(cant_min)) 
+				return true;
+            return false;
         }
 
         private bool existenExcesosFaltantes(DataGridViewRow r)
         {
-            Decimal cantidad, cant_max, cant_min;
-            if (Decimal.TryParse((string)r.Cells["cantidad"].Value.ToString(), NumberStyles.Number, new CultureInfo("en-US"), out cantidad))
-            {
-                if (Decimal.TryParse((string)r.Cells["cantidad_maxima"].Value.ToString(), NumberStyles.Number, new CultureInfo("en-US"), out cant_max))
-                {
-                    if (Decimal.TryParse((string)r.Cells["cantidad_minima"].Value.ToString(), NumberStyles.Number, new CultureInfo("en-US"), out cant_min))
-                    {
-						if (cantidad > cant_max || cantidad < cant_min) return true;
-                    }
-                }
-            }
+            String cantidad = (string)r.Cells["cantidad"].Value.ToString(),
+                cant_max = (string)r.Cells["cantidad_maxima"].Value.ToString(),
+                cant_min = (string)r.Cells["cantidad_minima"].Value.ToString();
+
+            if (stringADecimal(cantidad) > stringADecimal(cant_max) || stringADecimal(cantidad) < stringADecimal(cant_min))
+                return true;
             return false;
         }
 
-        
-		private void cambiarColorExcesosFaltantes()
+        private void cambiarColorExcesosFaltantes()
 		{
 			bool encontrado = false;
 			foreach (DataGridViewRow r in dgv_Productos.Rows)
@@ -262,9 +277,75 @@ namespace CapaPresentacion.User_Control
             else pnl_Warning.Visible = false;
         }
 
-        private void btn_Agregar_Click(object sender, EventArgs e)
+        private void btn_Agregar_Quitar(object sender, EventArgs e)
         {
-
+            CD_Parametros[] p = { new CD_Parametros("@producto_id", selected_product_id) };
+            DataTable producto_selected = objectCN.obtenerTabla("PD_OBTENER_PRODUCTOS_TRANSACCIONES_SEGUN_Id", p);
+            if (dgv_Productos.SelectedRows.Count > 0)
+			{
+                try
+                {
+                    if (txt_Ingresar_Cant.Text.Trim() == "") throw new Exception("Rellene todos los formularios.");
+                    int tipo_transaccion_id;
+                    PictureBox pic = sender as PictureBox;
+                    if (pic.Name == "btn_Agregar") tipo_transaccion_id = 1;
+                    else
+                    {
+                        tipo_transaccion_id = 2;
+                          if (esValorARestarMayorACantidad())
+                          {
+                              DialogResult result = MessageBox.Show("El valor a restar es mayor a la cantidad actual del producto. Esto podría provocar un valor negativo en la cantidad. ¿Desea continuar de todas formas?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                              if (result == DialogResult.No) return;
+                          }
+                    }
+                    p = obtenerDatosTempTransaccion(tipo_transaccion_id, producto_selected);
+                    objectCN.actualizarTabla("PD_ACTUALIZAR_TEMP_TRANSACCION", p);
+                    MessageBox.Show("¡Transacción exitosa!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    actualizarTablas();                    
+                    llenarDatosProducto(producto_selected);
+					dgv_Productos.ClearSelection();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
+
+		private CD_Parametros[] obtenerDatosTempTransaccion(int tipo_transaccion_id, DataTable producto_selected)
+		{
+			return new CD_Parametros[]
+                    {
+                        new CD_Parametros("@tipo_transaccion_id", tipo_transaccion_id),
+                        new CD_Parametros("@usuario_id", usuario_id),
+                        new CD_Parametros("@inventario_id", (int)cmb_Inventario.SelectedValue),
+                        new CD_Parametros("@producto_id", int.Parse(producto_selected.Rows[0]["producto_id"].ToString())),
+                        new CD_Parametros("@tipo_unidad_id", int.Parse(producto_selected.Rows[0]["tipo_unidad_id"].ToString())),
+                        new CD_Parametros("@cantidad", txt_Ingresar_Cant.Text)
+                    };
+        }
+
+		private void actualizarTablas()
+		{
+			if (txt_Buscar.Text.Length > 0) buscarPorFiltro();
+            else activarPanelTablaProductos((int)cmb_Inventario.SelectedValue);            
+            cambiarColorExcesosFaltantes();
+        }
+
+		private bool esValorARestarMayorACantidad()
+		{
+            String restar = txt_Ingresar_Cant.Text,
+               cantidad = txt_Cantidad.Text;
+            if (stringADecimal(restar) > stringADecimal(cantidad)) return true;
+            return false;
+        }
+
+		private Decimal stringADecimal(String st)
+		{
+			Decimal result;
+			if (Decimal.TryParse(st, NumberStyles.Number, new CultureInfo("en-US"), out result))
+				return result;
+			else throw new Exception("Ha ocurrido un error al convertir "+st+" a 'Decimal'");
+		}
     }
 }

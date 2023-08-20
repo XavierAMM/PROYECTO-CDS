@@ -49,7 +49,7 @@ end
 
 
 GO
-CREATE PROCEDURE PD_OBTENER_TEMP_TRANSACCION
+ALTER PROCEDURE PD_OBTENER_TEMP_TRANSACCION
 @inventario_id int, @usuario_id int
 as
 begin
@@ -60,7 +60,7 @@ begin
 	select tt.nombre as tipo_transaccion, p.nombre as producto, concat(temp.cantidad,' ',tu.abreviacion) as cantidad, temp.fecha_transaccion, temp.temp_transaccion_id
 	from temp_transaccion temp
 	join TIPO_TRANSACCION tt on tt.tipo_transaccion_id = temp.tipo_transaccion_id
-	join producto p on p.nombre = temp.producto_id
+	join producto p on p.producto_id = temp.producto_id
 	join TIPO_UNIDAD tu on tu.tipo_unidad_id = temp.tipo_unidad_id
 	where temp.personal_x_bodega_id = @personal_x_bodega_id and temp.inventario_id = @inventario_id
 end
@@ -84,16 +84,38 @@ end
 
 GO
 CREATE PROCEDURE PD_ACTUALIZAR_TEMP_TRANSACCION
--- modo 0 = agregar, modo 1 = quitar
-@modo int, @tipo_transaccion_id int, @personal_x_bodega_id int, @inventario_id int, @fecha_transaccion datetime, 
-@producto_id int, @tipo_unidad_id int, @cantidad int
---tt.nombre as tipo_transaccion,
---p.nombre as producto, concat(temp.cantidad,' ',tu.abreviacion) as cantidad, temp.fecha_transaccion, temp.motivo, temp.temp_transaccion_id
+@tipo_transaccion_id int, @usuario_id int, @inventario_id int, @producto_id int, @tipo_unidad_id int, @cantidad int
+as
+begin	
+	declare @personal_x_bodega_id int 
+	declare @personal_id int 
+	select @personal_id = personal_id from PERSONAL where usuario_id = @usuario_id and estado_id = 1
+	select @personal_x_bodega_id = personal_x_bodega_id from PERSONAL_X_BODEGA where personal_id = @personal_id
+	
+	insert into TEMP_TRANSACCION (tipo_transaccion_id, personal_x_bodega_id, inventario_id, fecha_transaccion, producto_id, tipo_unidad_id, cantidad) values
+	(@tipo_transaccion_id, @personal_x_bodega_id, @inventario_id, CURRENT_TIMESTAMP, @producto_id, @tipo_unidad_id, @cantidad)
+
+	if @tipo_transaccion_id = 1 begin --agregar
+		update producto set cantidad = cantidad + @cantidad where producto_id = @producto_id
+	end else begin --restar
+		update producto set cantidad = cantidad - @cantidad where producto_id = @producto_id
+	end
+end
 
 
-select * from TEMP_TRANSACCION
+DELETE FROM TEMP_TRANSACCION
+DELETE FROM PRODUCTO
 
---personal_x_bodega, inventario
+INSERT INTO PRODUCTO values
+('Prod1',100,110,1,10,100,1,1,1,1,50),
+('Prod2',100,110,1,10,100,1,1,1,1,60),
+('Prod3',100,110,1,10,100,1,1,1,1,70),
+('Prod1',100,110,1,10,100,1,2,1,1,80),
+('Prod2',100,110,1,10,100,1,2,1,1,90),
+('Prod3',100,110,1,10,100,1,2,1,1,100),
+('Prod1',100,110,1,10,100,1,3,1,1,110),
+('Prod2',100,110,1,10,100,1,3,1,1,120),
+('Prod3',100,110,1,10,100,1,3,1,1,130)
 
-
+select * from PRODUCTO
 
