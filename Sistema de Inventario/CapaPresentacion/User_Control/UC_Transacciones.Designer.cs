@@ -34,30 +34,30 @@
 			cmb_Inventario = new ComboBox();
 			cmb_Bodega = new ComboBox();
 			dgv_Productos = new DataGridView();
-			textBox1 = new TextBox();
+			txt_Buscar = new TextBox();
 			pictureBox4 = new PictureBox();
 			pnl_Tabla_Productos = new Panel();
 			pnl_Producto = new Panel();
-			button2 = new Button();
-			button1 = new Button();
+			btn_Limpiar = new Button();
+			btn_Eliminar = new Button();
 			panel2 = new Panel();
-			pictureBox5 = new PictureBox();
-			pictureBox3 = new PictureBox();
-			textBox5 = new TextBox();
-			dataGridView1 = new DataGridView();
+			btn_Quitar = new PictureBox();
+			btn_Agregar = new PictureBox();
+			txt_Ingresar_Cant = new TextBox();
+			dgv_Temp_Transacciones = new DataGridView();
 			tableLayoutPanel1 = new TableLayoutPanel();
 			label1 = new Label();
-			textBox2 = new TextBox();
+			txt_Nombre = new TextBox();
 			label2 = new Label();
 			label3 = new Label();
 			label6 = new Label();
 			label7 = new Label();
 			label8 = new Label();
-			textBox3 = new TextBox();
-			textBox4 = new TextBox();
-			textBox7 = new TextBox();
-			textBox8 = new TextBox();
-			textBox9 = new TextBox();
+			txt_Categoria = new TextBox();
+			txt_Proveedor = new TextBox();
+			txt_Cantidad = new TextBox();
+			txt_Cant_Max = new TextBox();
+			txt_Cant_Min = new TextBox();
 			panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -66,9 +66,9 @@
 			pnl_Tabla_Productos.SuspendLayout();
 			pnl_Producto.SuspendLayout();
 			panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-			((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+			((System.ComponentModel.ISupportInitialize)btn_Quitar).BeginInit();
+			((System.ComponentModel.ISupportInitialize)btn_Agregar).BeginInit();
+			((System.ComponentModel.ISupportInitialize)dgv_Temp_Transacciones).BeginInit();
 			tableLayoutPanel1.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -107,6 +107,7 @@
 			// 
 			// cmb_Inventario
 			// 
+			cmb_Inventario.DropDownStyle = ComboBoxStyle.DropDownList;
 			cmb_Inventario.FormattingEnabled = true;
 			cmb_Inventario.Location = new Point(347, 7);
 			cmb_Inventario.Name = "cmb_Inventario";
@@ -115,11 +116,13 @@
 			// 
 			// cmb_Bodega
 			// 
+			cmb_Bodega.DropDownStyle = ComboBoxStyle.DropDownList;
 			cmb_Bodega.FormattingEnabled = true;
 			cmb_Bodega.Location = new Point(136, 7);
 			cmb_Bodega.Name = "cmb_Bodega";
 			cmb_Bodega.Size = new Size(154, 23);
 			cmb_Bodega.TabIndex = 0;
+			cmb_Bodega.Click += cmb_Bodega_Click;
 			// 
 			// dgv_Productos
 			// 
@@ -135,12 +138,12 @@
 			dgv_Productos.Size = new Size(587, 159);
 			dgv_Productos.TabIndex = 2;
 			// 
-			// textBox1
+			// txt_Buscar
 			// 
-			textBox1.Location = new Point(180, 7);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(250, 23);
-			textBox1.TabIndex = 3;
+			txt_Buscar.Location = new Point(180, 7);
+			txt_Buscar.Name = "txt_Buscar";
+			txt_Buscar.Size = new Size(250, 23);
+			txt_Buscar.TabIndex = 3;
 			// 
 			// pictureBox4
 			// 
@@ -156,8 +159,9 @@
 			// 
 			pnl_Tabla_Productos.Controls.Add(pictureBox4);
 			pnl_Tabla_Productos.Controls.Add(dgv_Productos);
-			pnl_Tabla_Productos.Controls.Add(textBox1);
+			pnl_Tabla_Productos.Controls.Add(txt_Buscar);
 			pnl_Tabla_Productos.Dock = DockStyle.Top;
+			pnl_Tabla_Productos.Enabled = false;
 			pnl_Tabla_Productos.Location = new Point(0, 37);
 			pnl_Tabla_Productos.Name = "pnl_Tabla_Productos";
 			pnl_Tabla_Productos.Size = new Size(617, 201);
@@ -165,10 +169,10 @@
 			// 
 			// pnl_Producto
 			// 
-			pnl_Producto.Controls.Add(button2);
-			pnl_Producto.Controls.Add(button1);
+			pnl_Producto.Controls.Add(btn_Limpiar);
+			pnl_Producto.Controls.Add(btn_Eliminar);
 			pnl_Producto.Controls.Add(panel2);
-			pnl_Producto.Controls.Add(dataGridView1);
+			pnl_Producto.Controls.Add(dgv_Temp_Transacciones);
 			pnl_Producto.Controls.Add(tableLayoutPanel1);
 			pnl_Producto.Dock = DockStyle.Fill;
 			pnl_Producto.Enabled = false;
@@ -177,79 +181,81 @@
 			pnl_Producto.Size = new Size(617, 196);
 			pnl_Producto.TabIndex = 7;
 			// 
-			// button2
+			// btn_Limpiar
 			// 
-			button2.BackColor = Color.Tomato;
-			button2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-			button2.Location = new Point(514, 160);
-			button2.Name = "button2";
-			button2.Size = new Size(87, 25);
-			button2.TabIndex = 6;
-			button2.Text = "Limpiar";
-			button2.UseVisualStyleBackColor = false;
+			btn_Limpiar.BackColor = Color.Tomato;
+			btn_Limpiar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+			btn_Limpiar.Location = new Point(514, 160);
+			btn_Limpiar.Name = "btn_Limpiar";
+			btn_Limpiar.Size = new Size(87, 25);
+			btn_Limpiar.TabIndex = 6;
+			btn_Limpiar.Text = "Limpiar";
+			btn_Limpiar.UseVisualStyleBackColor = false;
 			// 
-			// button1
+			// btn_Eliminar
 			// 
-			button1.BackColor = Color.IndianRed;
-			button1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-			button1.Location = new Point(399, 159);
-			button1.Name = "button1";
-			button1.Size = new Size(87, 25);
-			button1.TabIndex = 5;
-			button1.Text = "Eliminar";
-			button1.UseVisualStyleBackColor = false;
+			btn_Eliminar.BackColor = Color.IndianRed;
+			btn_Eliminar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+			btn_Eliminar.Location = new Point(399, 159);
+			btn_Eliminar.Name = "btn_Eliminar";
+			btn_Eliminar.Size = new Size(87, 25);
+			btn_Eliminar.TabIndex = 5;
+			btn_Eliminar.Text = "Eliminar";
+			btn_Eliminar.UseVisualStyleBackColor = false;
 			// 
 			// panel2
 			// 
 			panel2.BackColor = Color.LightGray;
-			panel2.Controls.Add(pictureBox5);
-			panel2.Controls.Add(pictureBox3);
-			panel2.Controls.Add(textBox5);
+			panel2.Controls.Add(btn_Quitar);
+			panel2.Controls.Add(btn_Agregar);
+			panel2.Controls.Add(txt_Ingresar_Cant);
 			panel2.Location = new Point(107, 104);
 			panel2.Name = "panel2";
 			panel2.Size = new Size(201, 80);
 			panel2.TabIndex = 4;
 			// 
-			// pictureBox5
+			// btn_Quitar
 			// 
-			pictureBox5.Image = Properties.Resources.img_minus;
-			pictureBox5.Location = new Point(133, 36);
-			pictureBox5.Name = "pictureBox5";
-			pictureBox5.Size = new Size(40, 40);
-			pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-			pictureBox5.TabIndex = 5;
-			pictureBox5.TabStop = false;
+			btn_Quitar.Image = Properties.Resources.img_minus;
+			btn_Quitar.Location = new Point(133, 36);
+			btn_Quitar.Name = "btn_Quitar";
+			btn_Quitar.Size = new Size(40, 40);
+			btn_Quitar.SizeMode = PictureBoxSizeMode.StretchImage;
+			btn_Quitar.TabIndex = 5;
+			btn_Quitar.TabStop = false;
 			// 
-			// pictureBox3
+			// btn_Agregar
 			// 
-			pictureBox3.Image = Properties.Resources.img_add;
-			pictureBox3.Location = new Point(27, 36);
-			pictureBox3.Name = "pictureBox3";
-			pictureBox3.Size = new Size(40, 40);
-			pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-			pictureBox3.TabIndex = 4;
-			pictureBox3.TabStop = false;
+			btn_Agregar.Image = Properties.Resources.img_add;
+			btn_Agregar.Location = new Point(27, 36);
+			btn_Agregar.Name = "btn_Agregar";
+			btn_Agregar.Size = new Size(40, 40);
+			btn_Agregar.SizeMode = PictureBoxSizeMode.StretchImage;
+			btn_Agregar.TabIndex = 4;
+			btn_Agregar.TabStop = false;
 			// 
-			// textBox5
+			// txt_Ingresar_Cant
 			// 
-			textBox5.Location = new Point(49, 7);
-			textBox5.Name = "textBox5";
-			textBox5.Size = new Size(100, 23);
-			textBox5.TabIndex = 0;
+			txt_Ingresar_Cant.Location = new Point(51, 7);
+			txt_Ingresar_Cant.Name = "txt_Ingresar_Cant";
+			txt_Ingresar_Cant.PlaceholderText = "Ingresar cantidad";
+			txt_Ingresar_Cant.Size = new Size(100, 23);
+			txt_Ingresar_Cant.TabIndex = 0;
+			txt_Ingresar_Cant.TextAlign = HorizontalAlignment.Center;
 			// 
-			// dataGridView1
+			// dgv_Temp_Transacciones
 			// 
-			dataGridView1.AllowUserToAddRows = false;
-			dataGridView1.AllowUserToDeleteRows = false;
-			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridView1.Location = new Point(397, 7);
-			dataGridView1.MultiSelect = false;
-			dataGridView1.Name = "dataGridView1";
-			dataGridView1.ReadOnly = true;
-			dataGridView1.RowTemplate.Height = 25;
-			dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dataGridView1.Size = new Size(204, 147);
-			dataGridView1.TabIndex = 3;
+			dgv_Temp_Transacciones.AllowUserToAddRows = false;
+			dgv_Temp_Transacciones.AllowUserToDeleteRows = false;
+			dgv_Temp_Transacciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dgv_Temp_Transacciones.Location = new Point(397, 7);
+			dgv_Temp_Transacciones.MultiSelect = false;
+			dgv_Temp_Transacciones.Name = "dgv_Temp_Transacciones";
+			dgv_Temp_Transacciones.ReadOnly = true;
+			dgv_Temp_Transacciones.RowTemplate.Height = 25;
+			dgv_Temp_Transacciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dgv_Temp_Transacciones.Size = new Size(204, 147);
+			dgv_Temp_Transacciones.TabIndex = 3;
 			// 
 			// tableLayoutPanel1
 			// 
@@ -259,17 +265,17 @@
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
 			tableLayoutPanel1.Controls.Add(label1, 0, 0);
-			tableLayoutPanel1.Controls.Add(textBox2, 1, 0);
+			tableLayoutPanel1.Controls.Add(txt_Nombre, 1, 0);
 			tableLayoutPanel1.Controls.Add(label2, 0, 1);
 			tableLayoutPanel1.Controls.Add(label3, 0, 2);
 			tableLayoutPanel1.Controls.Add(label6, 2, 0);
 			tableLayoutPanel1.Controls.Add(label7, 2, 1);
 			tableLayoutPanel1.Controls.Add(label8, 2, 2);
-			tableLayoutPanel1.Controls.Add(textBox3, 1, 1);
-			tableLayoutPanel1.Controls.Add(textBox4, 1, 2);
-			tableLayoutPanel1.Controls.Add(textBox7, 3, 0);
-			tableLayoutPanel1.Controls.Add(textBox8, 3, 1);
-			tableLayoutPanel1.Controls.Add(textBox9, 3, 2);
+			tableLayoutPanel1.Controls.Add(txt_Categoria, 1, 1);
+			tableLayoutPanel1.Controls.Add(txt_Proveedor, 1, 2);
+			tableLayoutPanel1.Controls.Add(txt_Cantidad, 3, 0);
+			tableLayoutPanel1.Controls.Add(txt_Cant_Max, 3, 1);
+			tableLayoutPanel1.Controls.Add(txt_Cant_Min, 3, 2);
 			tableLayoutPanel1.Location = new Point(16, 7);
 			tableLayoutPanel1.Name = "tableLayoutPanel1";
 			tableLayoutPanel1.RowCount = 3;
@@ -289,13 +295,13 @@
 			label1.TabIndex = 0;
 			label1.Text = "Nombre:";
 			// 
-			// textBox2
+			// txt_Nombre
 			// 
-			textBox2.Location = new Point(73, 3);
-			textBox2.Name = "textBox2";
-			textBox2.ReadOnly = true;
-			textBox2.Size = new Size(103, 23);
-			textBox2.TabIndex = 1;
+			txt_Nombre.Location = new Point(73, 3);
+			txt_Nombre.Name = "txt_Nombre";
+			txt_Nombre.ReadOnly = true;
+			txt_Nombre.Size = new Size(103, 23);
+			txt_Nombre.TabIndex = 1;
 			// 
 			// label2
 			// 
@@ -347,45 +353,45 @@
 			label8.TabIndex = 7;
 			label8.Text = "Cantidad Min:";
 			// 
-			// textBox3
+			// txt_Categoria
 			// 
-			textBox3.Location = new Point(73, 32);
-			textBox3.Name = "textBox3";
-			textBox3.ReadOnly = true;
-			textBox3.Size = new Size(103, 23);
-			textBox3.TabIndex = 10;
+			txt_Categoria.Location = new Point(73, 32);
+			txt_Categoria.Name = "txt_Categoria";
+			txt_Categoria.ReadOnly = true;
+			txt_Categoria.Size = new Size(103, 23);
+			txt_Categoria.TabIndex = 10;
 			// 
-			// textBox4
+			// txt_Proveedor
 			// 
-			textBox4.Location = new Point(73, 61);
-			textBox4.Name = "textBox4";
-			textBox4.ReadOnly = true;
-			textBox4.Size = new Size(103, 23);
-			textBox4.TabIndex = 11;
+			txt_Proveedor.Location = new Point(73, 61);
+			txt_Proveedor.Name = "txt_Proveedor";
+			txt_Proveedor.ReadOnly = true;
+			txt_Proveedor.Size = new Size(103, 23);
+			txt_Proveedor.TabIndex = 11;
 			// 
-			// textBox7
+			// txt_Cantidad
 			// 
-			textBox7.Location = new Point(272, 3);
-			textBox7.Name = "textBox7";
-			textBox7.ReadOnly = true;
-			textBox7.Size = new Size(103, 23);
-			textBox7.TabIndex = 14;
+			txt_Cantidad.Location = new Point(272, 3);
+			txt_Cantidad.Name = "txt_Cantidad";
+			txt_Cantidad.ReadOnly = true;
+			txt_Cantidad.Size = new Size(103, 23);
+			txt_Cantidad.TabIndex = 14;
 			// 
-			// textBox8
+			// txt_Cant_Max
 			// 
-			textBox8.Location = new Point(272, 32);
-			textBox8.Name = "textBox8";
-			textBox8.ReadOnly = true;
-			textBox8.Size = new Size(103, 23);
-			textBox8.TabIndex = 15;
+			txt_Cant_Max.Location = new Point(272, 32);
+			txt_Cant_Max.Name = "txt_Cant_Max";
+			txt_Cant_Max.ReadOnly = true;
+			txt_Cant_Max.Size = new Size(103, 23);
+			txt_Cant_Max.TabIndex = 15;
 			// 
-			// textBox9
+			// txt_Cant_Min
 			// 
-			textBox9.Location = new Point(272, 61);
-			textBox9.Name = "textBox9";
-			textBox9.ReadOnly = true;
-			textBox9.Size = new Size(103, 23);
-			textBox9.TabIndex = 16;
+			txt_Cant_Min.Location = new Point(272, 61);
+			txt_Cant_Min.Name = "txt_Cant_Min";
+			txt_Cant_Min.ReadOnly = true;
+			txt_Cant_Min.Size = new Size(103, 23);
+			txt_Cant_Min.TabIndex = 16;
 			// 
 			// UC_Transacciones
 			// 
@@ -407,9 +413,9 @@
 			pnl_Producto.ResumeLayout(false);
 			panel2.ResumeLayout(false);
 			panel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-			((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+			((System.ComponentModel.ISupportInitialize)btn_Quitar).EndInit();
+			((System.ComponentModel.ISupportInitialize)btn_Agregar).EndInit();
+			((System.ComponentModel.ISupportInitialize)dgv_Temp_Transacciones).EndInit();
 			tableLayoutPanel1.ResumeLayout(false);
 			tableLayoutPanel1.PerformLayout();
 			ResumeLayout(false);
@@ -423,29 +429,29 @@
 		private PictureBox pictureBox2;
 		private PictureBox pictureBox1;
 		private DataGridView dgv_Productos;
-		private TextBox textBox1;
+		private TextBox txt_Buscar;
 		private PictureBox pictureBox4;
 		private Panel pnl_Tabla_Productos;
 		private Panel pnl_Producto;
-		private TextBox textBox2;
+		private TextBox txt_Nombre;
 		private Label label1;
 		private TableLayoutPanel tableLayoutPanel1;
-		private DataGridView dataGridView1;
+		private DataGridView dgv_Temp_Transacciones;
 		private Label label2;
 		private Label label3;
 		private Label label6;
 		private Label label7;
 		private Label label8;
-		private TextBox textBox3;
-		private TextBox textBox4;
-		private TextBox textBox7;
-		private TextBox textBox8;
-		private TextBox textBox9;
+		private TextBox txt_Categoria;
+		private TextBox txt_Proveedor;
+		private TextBox txt_Cantidad;
+		private TextBox txt_Cant_Max;
+		private TextBox txt_Cant_Min;
 		private Panel panel2;
-		private PictureBox pictureBox3;
-		private TextBox textBox5;
-		private Button button2;
-		private Button button1;
-		private PictureBox pictureBox5;
+		private PictureBox btn_Agregar;
+		private TextBox txt_Ingresar_Cant;
+		private Button btn_Limpiar;
+		private Button btn_Eliminar;
+		private PictureBox btn_Quitar;
 	}
 }

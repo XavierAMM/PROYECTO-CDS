@@ -12,3 +12,35 @@ begin
 	join proveedor pr on pr.proveedor_id = p.proveedor_id
 	where p.inventario_id = @inventario_id and p.estado_id = 1
 end
+
+GO
+CREATE PROCEDURE PD_OBTENER_BODEGA_USUARIO_ID
+@usuario_id int
+AS
+BEGIN
+	DECLARE @personal_id int
+	SELECT @personal_id = personal_id from personal where usuario_id = @usuario_id
+	SELECT B.* FROM BODEGA B
+	JOIN PERSONAL_X_BODEGA pxb on pxb.bodega_id = b.bodega_id
+	WHERE B.ESTADO_ID = 1 and pxb.personal_id = @personal_id and pxb.estado_id = 1
+END
+
+GO
+CREATE PROCEDURE PD_EVALUAR_PERSONAL_TIENE_BODEGA
+@usuario_id int, @result int output
+AS
+begin
+	DECLARE @personal_id int
+	SELECT @personal_id = personal_id from personal where usuario_id = @usuario_id
+	IF EXISTS (SELECT 1 FROM PERSONAL_X_BODEGA WHERE personal_id = @personal_id and estado_id = 1) begin
+		set @result = 1 -- existe
+	end else begin
+		set @result = 0 -- no existe
+	end
+end
+
+select * from usuario
+
+select * from personal
+
+update PERSONAL_X_BODEGA set estado_id = 2 where personal_id = 2
