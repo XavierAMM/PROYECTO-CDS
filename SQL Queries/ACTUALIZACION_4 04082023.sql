@@ -63,6 +63,6 @@ end
 go
 ALTER TABLE PRODUCTO DROP COLUMN codigo
 go
-ALTER TABLE PRODUCTO ADD cantidad int null
+ALTER TABLE PRODUCTO ADD cantidad numeric(10,2) null
 go
 ALTER TABLE PRODUCTO DROP COLUMN descripcion

@@ -1,5 +1,6 @@
 USE PROYECTO_CDS;
 
+go
 CREATE TABLE TEMP_TRANSACCION(
 	temp_transaccion_id INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	tipo_transaccion_id int not null,
@@ -27,3 +28,11 @@ ALTER TABLE TEMP_TRANSACCION ADD CONSTRAINT FK_TEMP_TRANSACCION_INVENTARIO
 FOREIGN KEY (inventario_id) REFERENCES INVENTARIO(inventario_id)
 
 
+go
+INSERT INTO TIPO_TRANSACCION VALUES ('Agregar',1), ('Restar',1)
+go
+alter table transaccion drop column motivo
+go
+alter table temp_transaccion drop column motivo
+GO 
+ALTER TABLE TIPO_UNIDAD ADD abreviacion varchar(10)

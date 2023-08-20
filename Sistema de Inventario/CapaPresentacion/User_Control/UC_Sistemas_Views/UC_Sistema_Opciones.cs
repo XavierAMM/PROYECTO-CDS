@@ -397,5 +397,5 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 		{
 			if (!Char.IsDigit(e.KeyChar)) e.Handled = true;
 		}
-	}
+    }
 }

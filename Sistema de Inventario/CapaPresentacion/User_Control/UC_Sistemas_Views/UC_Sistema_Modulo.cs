@@ -347,5 +347,5 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 		{
 			if (Char.IsWhiteSpace(e.KeyChar)) e.Handled = true;
 		}
-	}
+    }
 }

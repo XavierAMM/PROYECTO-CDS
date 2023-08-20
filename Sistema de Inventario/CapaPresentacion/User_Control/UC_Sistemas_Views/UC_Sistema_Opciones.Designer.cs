@@ -28,337 +28,328 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			pnl_Actualizar = new Panel();
-			panel9 = new Panel();
-			btn_Aceptar = new Button();
-			panel8 = new Panel();
-			txt_Orden = new TextBox();
-			label1 = new Label();
-			txt_Descripcion = new TextBox();
-			cmb_Modulos = new ComboBox();
-			txt_Objeto = new TextBox();
-			txt_Nombre = new TextBox();
-			panel7 = new Panel();
-			lbl_Mensaje = new Label();
-			panel6 = new Panel();
-			lbl_Cancelar = new Label();
-			panel2 = new Panel();
-			panel5 = new Panel();
-			dgv_Opciones = new DataGridView();
-			panel4 = new Panel();
-			btn_Inactivar_Activar = new Button();
-			btn_Editar = new Button();
-			btn_Nuevo = new Button();
-			panel3 = new Panel();
-			pictureBox1 = new PictureBox();
-			txt_Filtro_Nombre = new TextBox();
-			chb_Inactivos = new CheckBox();
-			pnl_Actualizar.SuspendLayout();
-			panel9.SuspendLayout();
-			panel8.SuspendLayout();
-			panel7.SuspendLayout();
-			panel6.SuspendLayout();
-			panel2.SuspendLayout();
-			panel5.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)dgv_Opciones).BeginInit();
-			panel4.SuspendLayout();
-			panel3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-			SuspendLayout();
-			// 
-			// pnl_Actualizar
-			// 
-			pnl_Actualizar.Controls.Add(panel9);
-			pnl_Actualizar.Controls.Add(panel8);
-			pnl_Actualizar.Controls.Add(panel7);
-			pnl_Actualizar.Controls.Add(panel6);
-			pnl_Actualizar.Dock = DockStyle.Left;
-			pnl_Actualizar.Location = new Point(0, 0);
-			pnl_Actualizar.Name = "pnl_Actualizar";
-			pnl_Actualizar.Size = new Size(184, 380);
-			pnl_Actualizar.TabIndex = 0;
-			// 
-			// panel9
-			// 
-			panel9.Controls.Add(btn_Aceptar);
-			panel9.Dock = DockStyle.Top;
-			panel9.Location = new Point(0, 316);
-			panel9.Name = "panel9";
-			panel9.Size = new Size(172, 48);
-			panel9.TabIndex = 3;
-			// 
-			// btn_Aceptar
-			// 
-			btn_Aceptar.BackColor = SystemColors.Control;
-			btn_Aceptar.ForeColor = Color.Black;
-			btn_Aceptar.Location = new Point(34, 8);
-			btn_Aceptar.Name = "btn_Aceptar";
-			btn_Aceptar.Size = new Size(97, 33);
-			btn_Aceptar.TabIndex = 7;
-			btn_Aceptar.Text = "Aceptar";
-			btn_Aceptar.UseVisualStyleBackColor = false;
-			btn_Aceptar.Click += btn_Aceptar_Click;
-			// 
-			// panel8
-			// 
-			panel8.Controls.Add(txt_Orden);
-			panel8.Controls.Add(label1);
-			panel8.Controls.Add(txt_Descripcion);
-			panel8.Controls.Add(cmb_Modulos);
-			panel8.Controls.Add(txt_Objeto);
-			panel8.Controls.Add(txt_Nombre);
-			panel8.Dock = DockStyle.Top;
-			panel8.Location = new Point(0, 46);
-			panel8.Name = "panel8";
-			panel8.Size = new Size(172, 270);
-			panel8.TabIndex = 2;
-			// 
-			// txt_Orden
-			// 
-			txt_Orden.Location = new Point(60, 232);
-			txt_Orden.Name = "txt_Orden";
-			txt_Orden.PlaceholderText = "Orden";
-			txt_Orden.Size = new Size(103, 23);
-			txt_Orden.TabIndex = 6;
-			txt_Orden.KeyPress += txt_Orden_KeyPress;
-			// 
-			// label1
-			// 
-			label1.AutoSize = true;
-			label1.Location = new Point(9, 235);
-			label1.Name = "label1";
-			label1.Size = new Size(43, 15);
-			label1.TabIndex = 7;
-			label1.Text = "Orden:";
-			// 
-			// txt_Descripcion
-			// 
-			txt_Descripcion.Location = new Point(10, 124);
-			txt_Descripcion.Multiline = true;
-			txt_Descripcion.Name = "txt_Descripcion";
-			txt_Descripcion.PlaceholderText = "Descripción de la opción";
-			txt_Descripcion.Size = new Size(153, 97);
-			txt_Descripcion.TabIndex = 3;
-			// 
-			// cmb_Modulos
-			// 
-			cmb_Modulos.DropDownStyle = ComboBoxStyle.DropDownList;
-			cmb_Modulos.FormattingEnabled = true;
-			cmb_Modulos.Location = new Point(9, 90);
-			cmb_Modulos.Name = "cmb_Modulos";
-			cmb_Modulos.Size = new Size(154, 23);
-			cmb_Modulos.TabIndex = 2;
-			cmb_Modulos.SelectedIndexChanged += cmb_Modulos_SelectedIndexChanged;
-			// 
-			// txt_Objeto
-			// 
-			txt_Objeto.Location = new Point(9, 51);
-			txt_Objeto.Name = "txt_Objeto";
-			txt_Objeto.PlaceholderText = "Nombre de Objeto";
-			txt_Objeto.Size = new Size(154, 23);
-			txt_Objeto.TabIndex = 1;
-			txt_Objeto.KeyPress += txt_Objeto_KeyPress;
-			// 
-			// txt_Nombre
-			// 
-			txt_Nombre.Location = new Point(9, 16);
-			txt_Nombre.Name = "txt_Nombre";
-			txt_Nombre.PlaceholderText = "Nombre de la Opción";
-			txt_Nombre.Size = new Size(154, 23);
-			txt_Nombre.TabIndex = 0;
-			// 
-			// panel7
-			// 
-			panel7.Controls.Add(lbl_Mensaje);
-			panel7.Dock = DockStyle.Top;
-			panel7.Location = new Point(0, 0);
-			panel7.Name = "panel7";
-			panel7.Size = new Size(172, 46);
-			panel7.TabIndex = 1;
-			// 
-			// lbl_Mensaje
-			// 
-			lbl_Mensaje.AutoSize = true;
-			lbl_Mensaje.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lbl_Mensaje.Location = new Point(12, 8);
-			lbl_Mensaje.Name = "lbl_Mensaje";
-			lbl_Mensaje.Size = new Size(50, 20);
-			lbl_Mensaje.TabIndex = 2;
-			lbl_Mensaje.Text = "label1";
-			// 
-			// panel6
-			// 
-			panel6.BackColor = Color.Brown;
-			panel6.Controls.Add(lbl_Cancelar);
-			panel6.Dock = DockStyle.Right;
-			panel6.Location = new Point(172, 0);
-			panel6.Name = "panel6";
-			panel6.Size = new Size(12, 380);
-			panel6.TabIndex = 0;
-			// 
-			// lbl_Cancelar
-			// 
-			lbl_Cancelar.AutoSize = true;
-			lbl_Cancelar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-			lbl_Cancelar.ForeColor = Color.White;
-			lbl_Cancelar.Location = new Point(-1, 6);
-			lbl_Cancelar.Name = "lbl_Cancelar";
-			lbl_Cancelar.Size = new Size(15, 15);
-			lbl_Cancelar.TabIndex = 4;
-			lbl_Cancelar.Text = "X";
-			lbl_Cancelar.Click += lbl_Cancelar_Click;
-			// 
-			// panel2
-			// 
-			panel2.Controls.Add(panel5);
-			panel2.Controls.Add(panel4);
-			panel2.Controls.Add(panel3);
-			panel2.Dock = DockStyle.Fill;
-			panel2.Location = new Point(184, 0);
-			panel2.Name = "panel2";
-			panel2.Size = new Size(442, 380);
-			panel2.TabIndex = 1;
-			// 
-			// panel5
-			// 
-			panel5.Controls.Add(dgv_Opciones);
-			panel5.Dock = DockStyle.Fill;
-			panel5.Location = new Point(0, 28);
-			panel5.Name = "panel5";
-			panel5.Size = new Size(442, 308);
-			panel5.TabIndex = 2;
-			// 
-			// dgv_Opciones
-			// 
-			dgv_Opciones.AllowUserToAddRows = false;
-			dgv_Opciones.AllowUserToDeleteRows = false;
-			dgv_Opciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgv_Opciones.Dock = DockStyle.Fill;
-			dgv_Opciones.Location = new Point(0, 0);
-			dgv_Opciones.MultiSelect = false;
-			dgv_Opciones.Name = "dgv_Opciones";
-			dgv_Opciones.ReadOnly = true;
-			dgv_Opciones.RowTemplate.Height = 25;
-			dgv_Opciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dgv_Opciones.Size = new Size(442, 308);
-			dgv_Opciones.TabIndex = 1;
-			dgv_Opciones.CellClick += dgv_Opciones_CellClick;
-			// 
-			// panel4
-			// 
-			panel4.Controls.Add(btn_Inactivar_Activar);
-			panel4.Controls.Add(btn_Editar);
-			panel4.Controls.Add(btn_Nuevo);
-			panel4.Dock = DockStyle.Bottom;
-			panel4.Location = new Point(0, 336);
-			panel4.Name = "panel4";
-			panel4.Size = new Size(442, 44);
-			panel4.TabIndex = 1;
-			// 
-			// btn_Inactivar_Activar
-			// 
-			btn_Inactivar_Activar.BackColor = Color.Red;
-			btn_Inactivar_Activar.ForeColor = Color.White;
-			btn_Inactivar_Activar.Location = new Point(212, 3);
-			btn_Inactivar_Activar.Name = "btn_Inactivar_Activar";
-			btn_Inactivar_Activar.Size = new Size(97, 33);
-			btn_Inactivar_Activar.TabIndex = 5;
-			btn_Inactivar_Activar.Text = "Inactivar";
-			btn_Inactivar_Activar.UseVisualStyleBackColor = false;
-			btn_Inactivar_Activar.Click += btn_Inactivar_Activar_Click;
-			// 
-			// btn_Editar
-			// 
-			btn_Editar.BackColor = Color.Orange;
-			btn_Editar.ForeColor = Color.White;
-			btn_Editar.Location = new Point(109, 3);
-			btn_Editar.MaximumSize = new Size(97, 33);
-			btn_Editar.MinimumSize = new Size(97, 33);
-			btn_Editar.Name = "btn_Editar";
-			btn_Editar.Size = new Size(97, 33);
-			btn_Editar.TabIndex = 4;
-			btn_Editar.Text = "Editar";
-			btn_Editar.UseVisualStyleBackColor = false;
-			btn_Editar.Click += btn_Editar_Click;
-			// 
-			// btn_Nuevo
-			// 
-			btn_Nuevo.BackColor = Color.Green;
-			btn_Nuevo.ForeColor = Color.White;
-			btn_Nuevo.Location = new Point(6, 3);
-			btn_Nuevo.Name = "btn_Nuevo";
-			btn_Nuevo.Size = new Size(97, 33);
-			btn_Nuevo.TabIndex = 2;
-			btn_Nuevo.Text = "Nuevo";
-			btn_Nuevo.UseVisualStyleBackColor = false;
-			btn_Nuevo.Click += btn_Nuevo_Click;
-			// 
-			// panel3
-			// 
-			panel3.Controls.Add(pictureBox1);
-			panel3.Controls.Add(txt_Filtro_Nombre);
-			panel3.Controls.Add(chb_Inactivos);
-			panel3.Dock = DockStyle.Top;
-			panel3.Location = new Point(0, 0);
-			panel3.Name = "panel3";
-			panel3.Size = new Size(442, 28);
-			panel3.TabIndex = 0;
-			// 
-			// pictureBox1
-			// 
-			pictureBox1.Image = Properties.Resources.ico_search;
-			pictureBox1.Location = new Point(145, 4);
-			pictureBox1.Name = "pictureBox1";
-			pictureBox1.Size = new Size(20, 20);
-			pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-			pictureBox1.TabIndex = 6;
-			pictureBox1.TabStop = false;
-			// 
-			// txt_Filtro_Nombre
-			// 
-			txt_Filtro_Nombre.Location = new Point(165, 3);
-			txt_Filtro_Nombre.Name = "txt_Filtro_Nombre";
-			txt_Filtro_Nombre.PlaceholderText = "Buscar por nombre, descripción, módulo";
-			txt_Filtro_Nombre.Size = new Size(225, 23);
-			txt_Filtro_Nombre.TabIndex = 5;
-			txt_Filtro_Nombre.TextChanged += txt_Filtro_Nombre_TextChanged;
-			// 
-			// chb_Inactivos
-			// 
-			chb_Inactivos.AutoSize = true;
-			chb_Inactivos.Location = new Point(6, 6);
-			chb_Inactivos.Name = "chb_Inactivos";
-			chb_Inactivos.Size = new Size(117, 19);
-			chb_Inactivos.TabIndex = 3;
-			chb_Inactivos.Text = "Mostrar Inactivos";
-			chb_Inactivos.UseVisualStyleBackColor = true;
-			chb_Inactivos.CheckedChanged += chb_Inactivos_CheckedChanged;
-			// 
-			// UC_Sistema_Opciones
-			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
-			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = Color.White;
-			Controls.Add(panel2);
-			Controls.Add(pnl_Actualizar);
-			Name = "UC_Sistema_Opciones";
-			Size = new Size(626, 380);
-			pnl_Actualizar.ResumeLayout(false);
-			panel9.ResumeLayout(false);
-			panel8.ResumeLayout(false);
-			panel8.PerformLayout();
-			panel7.ResumeLayout(false);
-			panel7.PerformLayout();
-			panel6.ResumeLayout(false);
-			panel6.PerformLayout();
-			panel2.ResumeLayout(false);
-			panel5.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)dgv_Opciones).EndInit();
-			panel4.ResumeLayout(false);
-			panel3.ResumeLayout(false);
-			panel3.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-			ResumeLayout(false);
+            this.pnl_Actualizar = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.btn_Aceptar = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.txt_Orden = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_Descripcion = new System.Windows.Forms.TextBox();
+            this.cmb_Modulos = new System.Windows.Forms.ComboBox();
+            this.txt_Objeto = new System.Windows.Forms.TextBox();
+            this.txt_Nombre = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lbl_Mensaje = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lbl_Cancelar = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.dgv_Opciones = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_Inactivar_Activar = new System.Windows.Forms.Button();
+            this.btn_Editar = new System.Windows.Forms.Button();
+            this.btn_Nuevo = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_Filtro_Nombre = new System.Windows.Forms.TextBox();
+            this.chb_Inactivos = new System.Windows.Forms.CheckBox();
+            this.pnl_Actualizar.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Opciones)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pnl_Actualizar
+            // 
+            this.pnl_Actualizar.Controls.Add(this.panel9);
+            this.pnl_Actualizar.Controls.Add(this.panel8);
+            this.pnl_Actualizar.Controls.Add(this.panel7);
+            this.pnl_Actualizar.Controls.Add(this.panel6);
+            this.pnl_Actualizar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnl_Actualizar.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Actualizar.Name = "pnl_Actualizar";
+            this.pnl_Actualizar.Size = new System.Drawing.Size(184, 380);
+            this.pnl_Actualizar.TabIndex = 0;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.btn_Aceptar);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 316);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(172, 48);
+            this.panel9.TabIndex = 3;
+            // 
+            // btn_Aceptar
+            // 
+            this.btn_Aceptar.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_Aceptar.ForeColor = System.Drawing.Color.Black;
+            this.btn_Aceptar.Location = new System.Drawing.Point(34, 8);
+            this.btn_Aceptar.Name = "btn_Aceptar";
+            this.btn_Aceptar.Size = new System.Drawing.Size(97, 33);
+            this.btn_Aceptar.TabIndex = 7;
+            this.btn_Aceptar.Text = "Aceptar";
+            this.btn_Aceptar.UseVisualStyleBackColor = false;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.txt_Orden);
+            this.panel8.Controls.Add(this.label1);
+            this.panel8.Controls.Add(this.txt_Descripcion);
+            this.panel8.Controls.Add(this.cmb_Modulos);
+            this.panel8.Controls.Add(this.txt_Objeto);
+            this.panel8.Controls.Add(this.txt_Nombre);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 46);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(172, 270);
+            this.panel8.TabIndex = 2;
+            // 
+            // txt_Orden
+            // 
+            this.txt_Orden.Location = new System.Drawing.Point(60, 232);
+            this.txt_Orden.Name = "txt_Orden";
+            this.txt_Orden.PlaceholderText = "Orden";
+            this.txt_Orden.Size = new System.Drawing.Size(103, 23);
+            this.txt_Orden.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 235);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Orden:";
+            // 
+            // txt_Descripcion
+            // 
+            this.txt_Descripcion.Location = new System.Drawing.Point(10, 124);
+            this.txt_Descripcion.Multiline = true;
+            this.txt_Descripcion.Name = "txt_Descripcion";
+            this.txt_Descripcion.PlaceholderText = "Descripción de la opción";
+            this.txt_Descripcion.Size = new System.Drawing.Size(153, 97);
+            this.txt_Descripcion.TabIndex = 3;
+            // 
+            // cmb_Modulos
+            // 
+            this.cmb_Modulos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Modulos.FormattingEnabled = true;
+            this.cmb_Modulos.Location = new System.Drawing.Point(9, 90);
+            this.cmb_Modulos.Name = "cmb_Modulos";
+            this.cmb_Modulos.Size = new System.Drawing.Size(154, 23);
+            this.cmb_Modulos.TabIndex = 2;
+            // 
+            // txt_Objeto
+            // 
+            this.txt_Objeto.Location = new System.Drawing.Point(9, 51);
+            this.txt_Objeto.Name = "txt_Objeto";
+            this.txt_Objeto.PlaceholderText = "Nombre de Objeto";
+            this.txt_Objeto.Size = new System.Drawing.Size(154, 23);
+            this.txt_Objeto.TabIndex = 1;
+            // 
+            // txt_Nombre
+            // 
+            this.txt_Nombre.Location = new System.Drawing.Point(9, 16);
+            this.txt_Nombre.Name = "txt_Nombre";
+            this.txt_Nombre.PlaceholderText = "Nombre de la Opción";
+            this.txt_Nombre.Size = new System.Drawing.Size(154, 23);
+            this.txt_Nombre.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.lbl_Mensaje);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(172, 46);
+            this.panel7.TabIndex = 1;
+            // 
+            // lbl_Mensaje
+            // 
+            this.lbl_Mensaje.AutoSize = true;
+            this.lbl_Mensaje.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Mensaje.Location = new System.Drawing.Point(12, 8);
+            this.lbl_Mensaje.Name = "lbl_Mensaje";
+            this.lbl_Mensaje.Size = new System.Drawing.Size(50, 20);
+            this.lbl_Mensaje.TabIndex = 2;
+            this.lbl_Mensaje.Text = "label1";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Brown;
+            this.panel6.Controls.Add(this.lbl_Cancelar);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(172, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(12, 380);
+            this.panel6.TabIndex = 0;
+            // 
+            // lbl_Cancelar
+            // 
+            this.lbl_Cancelar.AutoSize = true;
+            this.lbl_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Cancelar.ForeColor = System.Drawing.Color.White;
+            this.lbl_Cancelar.Location = new System.Drawing.Point(-1, 6);
+            this.lbl_Cancelar.Name = "lbl_Cancelar";
+            this.lbl_Cancelar.Size = new System.Drawing.Size(15, 15);
+            this.lbl_Cancelar.TabIndex = 4;
+            this.lbl_Cancelar.Text = "X";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(184, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(442, 380);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.dgv_Opciones);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 28);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(442, 308);
+            this.panel5.TabIndex = 2;
+            // 
+            // dgv_Opciones
+            // 
+            this.dgv_Opciones.AllowUserToAddRows = false;
+            this.dgv_Opciones.AllowUserToDeleteRows = false;
+            this.dgv_Opciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Opciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Opciones.Location = new System.Drawing.Point(0, 0);
+            this.dgv_Opciones.MultiSelect = false;
+            this.dgv_Opciones.Name = "dgv_Opciones";
+            this.dgv_Opciones.ReadOnly = true;
+            this.dgv_Opciones.RowTemplate.Height = 25;
+            this.dgv_Opciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Opciones.Size = new System.Drawing.Size(442, 308);
+            this.dgv_Opciones.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btn_Inactivar_Activar);
+            this.panel4.Controls.Add(this.btn_Editar);
+            this.panel4.Controls.Add(this.btn_Nuevo);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 336);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(442, 44);
+            this.panel4.TabIndex = 1;
+            // 
+            // btn_Inactivar_Activar
+            // 
+            this.btn_Inactivar_Activar.BackColor = System.Drawing.Color.Red;
+            this.btn_Inactivar_Activar.ForeColor = System.Drawing.Color.White;
+            this.btn_Inactivar_Activar.Location = new System.Drawing.Point(212, 3);
+            this.btn_Inactivar_Activar.Name = "btn_Inactivar_Activar";
+            this.btn_Inactivar_Activar.Size = new System.Drawing.Size(97, 33);
+            this.btn_Inactivar_Activar.TabIndex = 5;
+            this.btn_Inactivar_Activar.Text = "Inactivar";
+            this.btn_Inactivar_Activar.UseVisualStyleBackColor = false;
+            // 
+            // btn_Editar
+            // 
+            this.btn_Editar.BackColor = System.Drawing.Color.Orange;
+            this.btn_Editar.ForeColor = System.Drawing.Color.White;
+            this.btn_Editar.Location = new System.Drawing.Point(109, 3);
+            this.btn_Editar.MaximumSize = new System.Drawing.Size(97, 33);
+            this.btn_Editar.MinimumSize = new System.Drawing.Size(97, 33);
+            this.btn_Editar.Name = "btn_Editar";
+            this.btn_Editar.Size = new System.Drawing.Size(97, 33);
+            this.btn_Editar.TabIndex = 4;
+            this.btn_Editar.Text = "Editar";
+            this.btn_Editar.UseVisualStyleBackColor = false;
+            // 
+            // btn_Nuevo
+            // 
+            this.btn_Nuevo.BackColor = System.Drawing.Color.Green;
+            this.btn_Nuevo.ForeColor = System.Drawing.Color.White;
+            this.btn_Nuevo.Location = new System.Drawing.Point(6, 3);
+            this.btn_Nuevo.Name = "btn_Nuevo";
+            this.btn_Nuevo.Size = new System.Drawing.Size(97, 33);
+            this.btn_Nuevo.TabIndex = 2;
+            this.btn_Nuevo.Text = "Nuevo";
+            this.btn_Nuevo.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.txt_Filtro_Nombre);
+            this.panel3.Controls.Add(this.chb_Inactivos);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(442, 28);
+            this.panel3.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.ico_search;
+            this.pictureBox1.Location = new System.Drawing.Point(145, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txt_Filtro_Nombre
+            // 
+            this.txt_Filtro_Nombre.Location = new System.Drawing.Point(165, 3);
+            this.txt_Filtro_Nombre.Name = "txt_Filtro_Nombre";
+            this.txt_Filtro_Nombre.PlaceholderText = "Buscar por nombre, descripción, módulo";
+            this.txt_Filtro_Nombre.Size = new System.Drawing.Size(225, 23);
+            this.txt_Filtro_Nombre.TabIndex = 5;
+            this.txt_Filtro_Nombre.TextChanged += new System.EventHandler(this.txt_Filtro_Nombre_TextChanged);
+            // 
+            // chb_Inactivos
+            // 
+            this.chb_Inactivos.AutoSize = true;
+            this.chb_Inactivos.Location = new System.Drawing.Point(6, 6);
+            this.chb_Inactivos.Name = "chb_Inactivos";
+            this.chb_Inactivos.Size = new System.Drawing.Size(117, 19);
+            this.chb_Inactivos.TabIndex = 3;
+            this.chb_Inactivos.Text = "Mostrar Inactivos";
+            this.chb_Inactivos.UseVisualStyleBackColor = true;
+            // 
+            // UC_Sistema_Opciones
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnl_Actualizar);
+            this.Name = "UC_Sistema_Opciones";
+            this.Size = new System.Drawing.Size(626, 380);
+            this.pnl_Actualizar.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Opciones)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+
 		}
 
 		#endregion

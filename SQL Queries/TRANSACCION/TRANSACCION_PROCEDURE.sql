@@ -4,8 +4,8 @@ CREATE PROCEDURE PD_OBTENER_PRODUCTOS_TRANSACCIONES
 @inventario_id int
 as
 begin
-	SELECT p.nombre, p.cantidad, tu.descripcion as tipo_unidad, p.cantidad_maxima, p.cantidad_minima, p.precio_compra, p.precio_venta,
-	c.nombre as categoria, pr.nombre_empresa as proveedor, p.producto_id, p.tipo_unidad_id, p.categoria_id, p.proveedor_id
+	SELECT p.nombre, concat(p.cantidad,' ',tu.abreviacion) as cantidad, concat(p.cantidad_maxima,' ',tu.abreviacion) AS cantidad_maxima, concat(p.cantidad_minima,' ',tu.abreviacion) as cantidad_minima, p.precio_compra, p.precio_venta,
+	c.nombre as categoria, pr.nombre_empresa as proveedor, p.producto_id, p.tipo_unidad_id, p.categoria_id, tu.descripcion as tipo_unidad, p.proveedor_id
 	FROM producto p
 	JOIN TIPO_UNIDAD tu on tu.tipo_unidad_id = p.tipo_unidad_id
 	join categoria c on c.categoria_id = p.categoria_id
@@ -50,15 +50,50 @@ end
 
 GO
 CREATE PROCEDURE PD_OBTENER_TEMP_TRANSACCION
-@personal_x_bodega_id int, @inventario_id int
+@inventario_id int, @usuario_id int
 as
 begin
-	select tt.nombre as tipo_transaccion, p.nombre as producto, concat(temp.cantidad,' ',tu.descripcion) as cantidad, temp.fecha_transaccion, temp.motivo, temp.temp_transaccion_id
+	declare @personal_x_bodega_id int
+	declare @personal_id int
+	select @personal_id = personal_id from PERSONAL where usuario_id = @usuario_id and estado_id = 1
+	select @personal_x_bodega_id = personal_x_bodega_id from PERSONAL_X_BODEGA where personal_id = @personal_id
+	select tt.nombre as tipo_transaccion, p.nombre as producto, concat(temp.cantidad,' ',tu.abreviacion) as cantidad, temp.fecha_transaccion, temp.temp_transaccion_id
 	from temp_transaccion temp
 	join TIPO_TRANSACCION tt on tt.tipo_transaccion_id = temp.tipo_transaccion_id
 	join producto p on p.nombre = temp.producto_id
 	join TIPO_UNIDAD tu on tu.tipo_unidad_id = temp.tipo_unidad_id
 	where temp.personal_x_bodega_id = @personal_x_bodega_id and temp.inventario_id = @inventario_id
 end
+
+
+GO
+CREATE PROCEDURE PD_OBTENER_PRODUCTOS_TRANSACCIONES_FILTRO
+@inventario_id int, @filtro varchar(200)
+as
+begin
+	SELECT p.nombre, concat(p.cantidad,' ',tu.abreviacion) as cantidad, concat(p.cantidad_maxima,' ',tu.abreviacion) AS cantidad_maxima, concat(p.cantidad_minima,' ',tu.abreviacion) as cantidad_minima, p.precio_compra, p.precio_venta,
+	c.nombre as categoria, pr.nombre_empresa as proveedor, p.producto_id, p.tipo_unidad_id, p.categoria_id, tu.descripcion as tipo_unidad, p.proveedor_id
+	FROM producto p
+	JOIN TIPO_UNIDAD tu on tu.tipo_unidad_id = p.tipo_unidad_id
+	join categoria c on c.categoria_id = p.categoria_id
+	join proveedor pr on pr.proveedor_id = p.proveedor_id
+	where p.inventario_id = @inventario_id and p.estado_id = 1 and
+	(p.nombre like '%'+@filtro+'%' or c.nombre like '%'+@filtro+'%' or pr.nombre_empresa like '%'+@filtro+'%')
+end
+
+
+GO
+CREATE PROCEDURE PD_ACTUALIZAR_TEMP_TRANSACCION
+-- modo 0 = agregar, modo 1 = quitar
+@modo int, @tipo_transaccion_id int, @personal_x_bodega_id int, @inventario_id int, @fecha_transaccion datetime, 
+@producto_id int, @tipo_unidad_id int, @cantidad int
+--tt.nombre as tipo_transaccion,
+--p.nombre as producto, concat(temp.cantidad,' ',tu.abreviacion) as cantidad, temp.fecha_transaccion, temp.motivo, temp.temp_transaccion_id
+
+
+select * from TEMP_TRANSACCION
+
+--personal_x_bodega, inventario
+
 
 
