@@ -63,6 +63,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ico_bodega {
+            get {
+                object obj = ResourceManager.GetObject("ico_bodega", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ico_check {
             get {
                 object obj = ResourceManager.GetObject("ico_check", resourceCulture);
@@ -123,6 +133,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ico_inventario {
+            get {
+                object obj = ResourceManager.GetObject("ico_inventario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ico_nombre_apellido {
             get {
                 object obj = ResourceManager.GetObject("ico_nombre_apellido", resourceCulture);
@@ -176,6 +196,26 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap ico_usuario {
             get {
                 object obj = ResourceManager.GetObject("ico_usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_add {
+            get {
+                object obj = ResourceManager.GetObject("img_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_minus {
+            get {
+                object obj = ResourceManager.GetObject("img_minus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

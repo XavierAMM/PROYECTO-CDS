@@ -60,4 +60,9 @@ begin
 	update usuario set persona_id = @persona_id where usuario_id = @usuario_id
 end
 
-
+go
+ALTER TABLE PRODUCTO DROP COLUMN codigo
+go
+ALTER TABLE PRODUCTO ADD cantidad int null
+go
+ALTER TABLE PRODUCTO DROP COLUMN descripcion
