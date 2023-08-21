@@ -71,16 +71,10 @@ namespace CapaPresentacion.User_Control
 		{
 			try
 			{
-				CD_Parametros[] persona = obtenerDatosPersona();
-				CD_Parametros[] usuario = obtenerDatosUsuario();
+				CD_Parametros[] persona = obtenerDatosPersona();				
 				int persona_id = objectCN.obtenerDatoEntero("PD_AÑADIR_NUEVA_PERSONA", persona);
-				int usuario_id = objectCN.obtenerDatoEntero("PD_AÑADIR_NUEVO_USUARIO", usuario);
-				CD_Parametros[] p =
-				{
-					new CD_Parametros("@usuario_id", usuario_id),
-					new CD_Parametros("@persona_id", persona_id)
-				};
-				objectCN.actualizarTabla("PD_ASIGNAR_PERSONA_A_USUARIO", p);
+                CD_Parametros[] usuario = obtenerDatosUsuario(persona_id);
+                objectCN.actualizarTabla("PD_AÑADIR_NUEVO_USUARIO", usuario);
 				esconderMensajeError();
 				vaciarFormularios();
 				MessageBox.Show("Usuario creado con éxito!", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -120,7 +114,7 @@ namespace CapaPresentacion.User_Control
 		/// un nuevo usuario.</returns>
 		/// <exception cref="Exception">Error cuando el usuario ya existe, cuando no se ha elegido 
 		/// una pregunta de seguridad o cuando las contraseñas son diferentes.</exception>
-		private CD_Parametros[] obtenerDatosUsuario()
+		private CD_Parametros[] obtenerDatosUsuario(int persona_id)
 		{
 			string usuario = txt_Usuario.Text.Trim();
 			string contraseña = txt_Contraseña.Text;
@@ -136,7 +130,8 @@ namespace CapaPresentacion.User_Control
 					{
 						return new CD_Parametros[]
 						{
-							new CD_Parametros("@usuario", usuario),
+                            new CD_Parametros("@persona_id", persona_id),
+                            new CD_Parametros("@usuario", usuario),
 							new CD_Parametros("@contraseña", contraseña),
 							new CD_Parametros("@tipo_pregunta_id", tipo_pregunta_id),
 							new CD_Parametros("@respuesta_pregunta", respuesta_pregunta),

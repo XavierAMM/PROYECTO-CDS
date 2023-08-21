@@ -177,11 +177,7 @@ namespace CapaPresentacion.User_Control
 		{
 			try
 			{
-				CD_Parametros[] p =
-				{
-					new CD_Parametros("@usuario", txt_Usuario.Text.Trim()),
-					new CD_Parametros("@usuario_id", usuario_id)
-				};
+				CD_Parametros[] p ={ new CD_Parametros("@usuario", txt_Usuario.Text.Trim()), new CD_Parametros("@usuario_id", usuario_id) };
 				if (objectCN.obtenerDatoEntero("PD_EVALUAR_EDITAR_NOMBRE_USUARIO_UNICO", p) == 0) throw new Exception("Ya existe un usuario con ese nombre.");
 				p = obtenerDatosUsuario();
 				if (txt_Contrasena.Text != txt_Contrasena2.Text) throw new Exception("Las contraseñas deben ser iguales.");

@@ -145,7 +145,7 @@
             this.lbl_Mensaje.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_Mensaje.ForeColor = System.Drawing.Color.Red;
             this.lbl_Mensaje.Location = new System.Drawing.Point(0, 0);
-            this.lbl_Mensaje.MaximumSize = new System.Drawing.Size(231, 0);
+            this.lbl_Mensaje.MaximumSize = new System.Drawing.Size(600, 0);
             this.lbl_Mensaje.Name = "lbl_Mensaje";
             this.lbl_Mensaje.Size = new System.Drawing.Size(95, 15);
             this.lbl_Mensaje.TabIndex = 1;
@@ -172,6 +172,7 @@
             this.btn_Guardar.TabIndex = 11;
             this.btn_Guardar.Text = "Guardar";
             this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // pnl_Fondo
             // 
@@ -339,6 +340,7 @@
             this.txt_Correo.Size = new System.Drawing.Size(191, 23);
             this.txt_Correo.TabIndex = 7;
             this.txt_Correo.Tag = "pictureBox15";
+            this.txt_Correo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Usuario_KeyPress);
             this.txt_Correo.Leave += new System.EventHandler(this.pictureBox_Click);
             // 
             // txt_Telefono
@@ -349,6 +351,7 @@
             this.txt_Telefono.Size = new System.Drawing.Size(191, 23);
             this.txt_Telefono.TabIndex = 6;
             this.txt_Telefono.Tag = "pictureBox14";
+            this.txt_Telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Telefono_KeyPress);
             this.txt_Telefono.Leave += new System.EventHandler(this.pictureBox_Click);
             // 
             // label5
@@ -369,6 +372,7 @@
             this.txt_Nombre.Size = new System.Drawing.Size(191, 23);
             this.txt_Nombre.TabIndex = 4;
             this.txt_Nombre.Tag = "pictureBox18";
+            this.txt_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_KeyPress);
             this.txt_Nombre.Leave += new System.EventHandler(this.pictureBox_Click);
             // 
             // pic_nombre
@@ -487,6 +491,7 @@
             this.txt_Apellido.Size = new System.Drawing.Size(191, 23);
             this.txt_Apellido.TabIndex = 5;
             this.txt_Apellido.Tag = "pictureBox8";
+            this.txt_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_KeyPress);
             this.txt_Apellido.Leave += new System.EventHandler(this.pictureBox_Click);
             // 
             // pictureBox8
@@ -694,6 +699,7 @@
             this.txt_Usuario.Size = new System.Drawing.Size(191, 23);
             this.txt_Usuario.TabIndex = 1;
             this.txt_Usuario.Tag = "pictureBox1";
+            this.txt_Usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Usuario_KeyPress);
             this.txt_Usuario.Leave += new System.EventHandler(this.pictureBox_Click);
             // 
             // panel1

@@ -381,6 +381,7 @@
             this.btn_Registrarse.TabIndex = 6;
             this.btn_Registrarse.Text = "Registrarse";
             this.btn_Registrarse.UseVisualStyleBackColor = false;
+            this.btn_Registrarse.Click += new System.EventHandler(this.btn_Registrarse_Click);
             // 
             // panel3
             // 
@@ -406,7 +407,7 @@
             this.lbl_Mensaje.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_Mensaje.ForeColor = System.Drawing.Color.Red;
             this.lbl_Mensaje.Location = new System.Drawing.Point(0, 0);
-            this.lbl_Mensaje.MaximumSize = new System.Drawing.Size(231, 0);
+            this.lbl_Mensaje.MaximumSize = new System.Drawing.Size(600, 0);
             this.lbl_Mensaje.Name = "lbl_Mensaje";
             this.lbl_Mensaje.Size = new System.Drawing.Size(95, 15);
             this.lbl_Mensaje.TabIndex = 1;
