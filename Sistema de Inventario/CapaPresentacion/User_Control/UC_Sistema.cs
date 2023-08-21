@@ -76,5 +76,5 @@ namespace CapaPresentacion.User_Control
 			UC_Sistema_Usuarios uc = new UC_Sistema_Usuarios();
 			addUserControl(uc);
 		}
-	}
+    }
 }

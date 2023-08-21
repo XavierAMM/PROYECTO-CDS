@@ -14,8 +14,8 @@ namespace CapaDatos
 	/// </summary>
 	internal class CD_Connection
 	{
-		private string db_server = "DESKTOP-4D9G9QL";
-        //private string db_server = "DESKTOP-OTMEVL6\\MSSQLSERVER01";
+		//private string db_server = "DESKTOP-4D9G9QL";
+        private string db_server = "DESKTOP-OTMEVL6\\MSSQLSERVER01";
         private string db_name = "PROYECTO_CDS";
 		private SqlConnection DB_Connection;
 
