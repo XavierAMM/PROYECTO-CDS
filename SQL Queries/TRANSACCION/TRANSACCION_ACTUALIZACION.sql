@@ -6,7 +6,7 @@ CREATE TABLE TEMP_TRANSACCION(
 	tipo_transaccion_id int not null,
 	personal_x_bodega_id int not null,
 	inventario_id int not null,
-	fecha_transaccion datetime,
+	fecha_transaccion date,
 	motivo varchar(200),
 	producto_id int not null,
 	tipo_unidad_id int not null,
@@ -36,3 +36,6 @@ go
 alter table temp_transaccion drop column motivo
 GO 
 ALTER TABLE TIPO_UNIDAD ADD abreviacion varchar(10)
+GO
+ALTER TABLE TRANSACCION ALTER COLUMN fecha_transaccion date
+

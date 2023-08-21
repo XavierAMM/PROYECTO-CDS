@@ -149,4 +149,53 @@ begin
 	(@tipo_transaccion_id, @personal_x_bodega_id, @inventario_id, CURRENT_TIMESTAMP, @producto_id, @tipo_unidad_id, @cantidad, 1)
 end
 
+GO
+CREATE PROCEDURE VISTA_BODEGAS
+as
+begin
+	SELECT * FROM BODEGA WHERE estado_id = 1
+end
+
+GO
+CREATE PROCEDURE PD_OBTENER_TRANSACCION_SEGUN_INVENTARIO
+@inventario_id int, @fecha_min datetime, @fecha_max datetime
+as
+begin
+	SELECT tt.nombre as tipo_transaccion, concat(pers.nombre1,' ',pers.apellido1) as persona, i.nombre as inventario, p.nombre PRODUCTO, CONCAT(p.cantidad,' ',tu.abreviacion) as cantidad, CONCAT(tr.cantidad,' ',tu.abreviacion) as cantidad_actual, CONCAT(p.cantidad_maxima,' ',tu.abreviacion) as cantidad_maxima, CONCAT(P.cantidad_minima,' ',tu.abreviacion) as cantidad_minima,
+	tr.fecha_transaccion
+	FROM TRANSACCION tr
+	JOIN TIPO_TRANSACCION tt on tt.tipo_transaccion_id = tr.tipo_transaccion_id
+	JOIN PERSONAL_X_BODEGA pxb on pxb.personal_x_bodega_id = tr.personal_x_bodega_id
+	JOIN PERSONAL per on per.personal_id = pxb.personal_id
+	JOIN USUARIO u on u.usuario_id = per.usuario_id
+	JOIN PERSONA pers on pers.persona_id = u.persona_id
+	JOIN INVENTARIO i on i.inventario_id = tr.inventario_id
+	JOIN PRODUCTO p on p.producto_id = tr.producto_id
+	JOIN TIPO_UNIDAD tu on tu.tipo_unidad_id = tr.tipo_unidad_id
+	WHERE tr.estado_id = 1 and tr.inventario_id = @inventario_id and (tr.fecha_transaccion >= @fecha_min and tr.fecha_transaccion <= @fecha_max)
+	order by tr.transaccion_id desc
+end
+
+GO
+CREATE PROCEDURE PD_OBTENER_TRANSACCION_SEGUN_INVENTARIO_FILTRO
+@inventario_id int, @fecha_min datetime, @fecha_max datetime, @filtro varchar(50)
+as
+begin
+	SELECT tt.nombre as tipo_transaccion, concat(pers.nombre1,' ',pers.apellido1) as persona, i.nombre as inventario, p.nombre PRODUCTO, CONCAT(p.cantidad,' ',tu.abreviacion) as cantidad, CONCAT(tr.cantidad,' ',tu.abreviacion) as cantidad_actual, CONCAT(p.cantidad_maxima,' ',tu.abreviacion) as cantidad_maxima, CONCAT(P.cantidad_minima,' ',tu.abreviacion) as cantidad_minima,
+	tr.fecha_transaccion
+	FROM TRANSACCION tr
+	JOIN TIPO_TRANSACCION tt on tt.tipo_transaccion_id = tr.tipo_transaccion_id
+	JOIN PERSONAL_X_BODEGA pxb on pxb.personal_x_bodega_id = tr.personal_x_bodega_id
+	JOIN PERSONAL per on per.personal_id = pxb.personal_id
+	JOIN USUARIO u on u.usuario_id = per.usuario_id
+	JOIN PERSONA pers on pers.persona_id = u.persona_id
+	JOIN INVENTARIO i on i.inventario_id = tr.inventario_id
+	JOIN PRODUCTO p on p.producto_id = tr.producto_id
+	JOIN TIPO_UNIDAD tu on tu.tipo_unidad_id = tr.tipo_unidad_id
+	WHERE tr.estado_id = 1 and tr.inventario_id = @inventario_id and (tr.fecha_transaccion between @fecha_min and @fecha_max) and
+	(tt.nombre like '%'+@filtro+'%' or pers.nombre1 like '%'+@filtro+'%' or pers.apellido1 like '%'+@filtro+'%' or i.nombre like '%'+@filtro+'%' or p.nombre like '%'+@filtro+'%')
+	order by tr.transaccion_id desc
+end
+
+
 

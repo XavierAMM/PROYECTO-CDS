@@ -79,6 +79,9 @@ namespace CapaPresentacion.User_Control
 			((DataTable)cmb.DataSource).Rows.InsertAt(newRow, 0);
 		}
 
+        /// <summary>
+        /// Se ejecutará cuando se intente abrir el combobox
+        /// </summary>
 		private void cmb_Bodega_Click(object sender, EventArgs e)
 		{
 			CD_Parametros[] p = { new CD_Parametros("@usuario_id", usuario_id) };
@@ -86,6 +89,9 @@ namespace CapaPresentacion.User_Control
 			if (result == 0) MessageBox.Show("Usted no cuenta con ninguna bodega asignada. Por favor, póngase en contacto con algún encargado de bodegas.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
 
+        /// <summary>
+        /// Se ejecutará cuando se elija un elemento del combobox
+        /// </summary>
 		private void cmb_Bodega_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (cmb_Bodega.SelectedIndex == 0)
@@ -103,6 +109,9 @@ namespace CapaPresentacion.User_Control
 			}
 		}
 
+        /// <summary>
+        /// Se ejecutará cuando se elija un elemento del combobox
+        /// </summary>        
 		private void cmb_Inventario_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (cmb_Bodega.SelectedIndex != 0)
@@ -141,6 +150,9 @@ namespace CapaPresentacion.User_Control
             else cmbTooltip.SetToolTip(cmb, "");
         }
 
+        /// <summary>
+        /// Activa el panel de la tabla de los productos
+        /// </summary>
         private void activarPanelTablaProductos()
 		{
 			pnl_Tabla_Productos.Enabled = true;
@@ -150,6 +162,9 @@ namespace CapaPresentacion.User_Control
 			dgv_Productos.DataSource = dt;
 		}
 
+        /// <summary>
+        /// Activa el panel de la tabla de los transacciones recientes / temporales
+        /// </summary>
         private void activarTablaTempTransaccion()
         {
             CD_Parametros[] p = new CD_Parametros[]
@@ -161,6 +176,9 @@ namespace CapaPresentacion.User_Control
             dgv_Temp_Transacciones.DataSource = dt;
         }
 
+        /// <summary>
+        /// Se ejecutará cuando se elija una celda de tabla.
+        /// </summary>
         private void dgv_Productos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 			if (dgv_Productos.SelectedRows.Count > 0)
@@ -172,6 +190,10 @@ namespace CapaPresentacion.User_Control
 			}
         }
 
+        /// <summary>
+        /// Limpia el formulario de los datos del producto
+        /// </summary>
+        /// <param name="filtro">Eliminar el texto del cuadro de texto del filtro o no</param>
 		private void limpiarFormulario(bool filtro)
 		{
 			txt_Nombre.Text = string.Empty;
@@ -188,6 +210,10 @@ namespace CapaPresentacion.User_Control
             txt_Cantidad.BackColor = SystemColors.Control;
         }
 
+        /// <summary>
+        /// Llena los datos del producto al formulario
+        /// </summary>
+        /// <param name="dt">La tabla a considerar</param>
 		private void llenarDatosProducto(DataTable dt)
 		{
 			DataRow r = dt.Rows[0];
@@ -230,6 +256,9 @@ namespace CapaPresentacion.User_Control
 			if (!Char.IsDigit(e.KeyChar) && e.KeyChar!='.') e.Handled = true;
         }
 
+        /// <summary>
+        /// Cuando se escriba un texto en el textbox
+        /// </summary>
         private void txt_Buscar_TextChanged(object sender, EventArgs e)
         {
             if (txt_Buscar.Text.Length > 0)
@@ -240,6 +269,9 @@ namespace CapaPresentacion.User_Control
             else actualizarTablas();
         }
 
+        /// <summary>
+        /// Obtiene la tabla según el filtro
+        /// </summary>
 		private void buscarPorFiltro()
 		{
             CD_Parametros[] p =
@@ -251,6 +283,11 @@ namespace CapaPresentacion.User_Control
             dgv_Productos.DataSource = dt;
         }
 
+        /// <summary>
+        /// Valida si existen cantidades que sean mayores o menores a sus limites
+        /// </summary>
+        /// <param name="r">La fila a evaluar de un DataTable</param>
+        /// <returns>Verdadero o falso según existan valores excedentes o faltantes</returns>
         private bool existenExcesosFaltantes(DataRow r)
         {
             String cantidad = (string)r["cantidad"].ToString(), 
@@ -262,6 +299,11 @@ namespace CapaPresentacion.User_Control
             return false;
         }
 
+        /// <summary>
+        /// Valida si existen cantidades que sean mayores o menores a sus limites
+        /// </summary>
+        /// <param name="r">La fila a evaluar de un DataGridView</param>
+        /// <returns>Verdadero o falso según existan valores excedentes o faltantes</returns>
         private bool existenExcesosFaltantes(DataGridViewRow r)
         {
             String cantidad = (string)r.Cells["cantidad"].Value.ToString(),
@@ -273,6 +315,9 @@ namespace CapaPresentacion.User_Control
             return false;
         }
 
+        /// <summary>
+        /// Cambia el color de la fila si se cumple que  existen cantidades que sean mayores o menores a sus limites
+        /// </summary>
         private void cambiarColorExcesosFaltantes()
 		{
 			bool encontrado = false;
@@ -287,6 +332,9 @@ namespace CapaPresentacion.User_Control
             else pnl_Warning.Visible = false;
         }
 
+        /// <summary>
+        /// Se activa si se presiona en el + o -
+        /// </summary>
         private void btn_Agregar_Quitar(object sender, EventArgs e)
         {
             CD_Parametros[] p = { new CD_Parametros("@producto_id", selected_product_id) };
@@ -323,6 +371,12 @@ namespace CapaPresentacion.User_Control
             }
         }
 
+        /// <summary>
+        /// Obtiene los datos para la tabla de transacciones recientes / temporales
+        /// </summary>
+        /// <param name="tipo_transaccion_id">El tipo de transaccion (agregar o quitar)</param>
+        /// <param name="producto_selected">El id del producto seleccionado</param>
+        /// <returns></returns>
 		private CD_Parametros[] obtenerDatosTempTransaccion(int tipo_transaccion_id, DataTable producto_selected)
 		{
             return new CD_Parametros[]
@@ -336,6 +390,9 @@ namespace CapaPresentacion.User_Control
                     };
         }
 
+        /// <summary>
+        /// Actualiza las tablas del formulario
+        /// </summary>
 		private void actualizarTablas()
 		{
 			if (txt_Buscar.Text.Length > 0) buscarPorFiltro();
@@ -344,6 +401,10 @@ namespace CapaPresentacion.User_Control
             cambiarColorExcesosFaltantes();
         }
 
+        /// <summary>
+        /// Valida si la cantidad a quitar es mayor a la cantidad actual del producto
+        /// </summary>
+        /// <returns></returns>
 		private bool esValorARestarMayorACantidad()
 		{
             String restar = txt_Ingresar_Cant.Text,
@@ -352,6 +413,12 @@ namespace CapaPresentacion.User_Control
             return false;
         }
 
+        /// <summary>
+        /// Convierte una cadena de texto a un valor Decimal
+        /// </summary>
+        /// <param name="st">La cadena de texto a evaluar</param>
+        /// <returns>El valor de la cadena en Decimal</returns>
+        /// <exception cref="Exception">Error si no hay valores decimales en el texto</exception>
 		private Decimal stringADecimal(String st)
 		{
 			Decimal result;
@@ -360,6 +427,9 @@ namespace CapaPresentacion.User_Control
 			else throw new Exception("Ha ocurrido un error al convertir "+st+" a 'Decimal'");
 		}
 
+        /// <summary>
+        /// Se ejecuta al dar clic al boton de limpiar tabla de transacciones recientes / temporales
+        /// </summary>
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             CD_Parametros[] p = { new CD_Parametros("@inventario_id", inventario_id) };
@@ -370,6 +440,9 @@ namespace CapaPresentacion.User_Control
             actualizarTablas();
         }
 
+        /// <summary>
+        /// Se ejecuta cuando se da clic al botón de eliminar en la tabla de transacciones recientes / temporales
+        /// </summary>
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
             if (dgv_Temp_Transacciones.Rows.Count > 0)
@@ -389,6 +462,9 @@ namespace CapaPresentacion.User_Control
             else MessageBox.Show("No se han encontrado transacciones recientes.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        /// Se ejecuta cuando se da clic al botón de guardar en la tabla de transacciones recientes / temporales
+        /// </summary>
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
             if (dgv_Temp_Transacciones.Rows.Count > 0)
