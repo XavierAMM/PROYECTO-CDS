@@ -441,8 +441,12 @@ CREATE PROCEDURE PD_EVALUAR_EDITAR_NOMBRE_USUARIO_UNICO
 @usuario varchar(50), @usuario_id int, @result int output
 as
 begin
-	declare @temp_usuario_id int
-	select usuario_id from usuario where usuario = @usuario
+	SET NOCOUNT ON;
+    
+    IF EXISTS (SELECT 1 FROM usuario WHERE usuario = @usuario and usuario_id <> @usuario_id)
+        SET @result = 0
+    ELSE
+        SET @result = 1
 end
 
 
