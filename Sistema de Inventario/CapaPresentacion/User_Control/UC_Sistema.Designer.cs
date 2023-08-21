@@ -178,6 +178,7 @@
             this.pnl_Main.Name = "pnl_Main";
             this.pnl_Main.Size = new System.Drawing.Size(617, 380);
             this.pnl_Main.TabIndex = 2;
+            this.pnl_Main.Click += new System.EventHandler(this.btn_Modulos_Click);
             // 
             // UC_Sistema
             // 
