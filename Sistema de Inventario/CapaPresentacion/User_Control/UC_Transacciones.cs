@@ -337,8 +337,8 @@ namespace CapaPresentacion.User_Control
         /// </summary>
         private void btn_Agregar_Quitar(object sender, EventArgs e)
         {
-            CD_Parametros[] p = { new CD_Parametros("@producto_id", selected_product_id) };
-            DataTable producto_selected = objectCN.obtenerTabla("PD_OBTENER_PRODUCTOS_TRANSACCIONES_SEGUN_Id", p);
+            CD_Parametros[] para = new CD_Parametros[] { new CD_Parametros("@producto_id", selected_product_id) };
+            DataTable producto_selected = objectCN.obtenerTabla("PD_OBTENER_PRODUCTOS_TRANSACCIONES_SEGUN_Id", para);
             try
             {
                 if (txt_Ingresar_Cant.Text.Trim() == "") throw new Exception("Rellene todos los formularios.");
@@ -354,16 +354,11 @@ namespace CapaPresentacion.User_Control
                         if (result == DialogResult.No) return;
                     }
                 }
-                p = obtenerDatosTempTransaccion(tipo_transaccion_id, producto_selected);
+                CD_Parametros[] p = obtenerDatosTempTransaccion(tipo_transaccion_id, producto_selected);
                 objectCN.actualizarTabla("PD_ACTUALIZAR_TEMP_TRANSACCION", p);
                 MessageBox.Show("¡Transacción exitosa!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 actualizarTablas();
-                p = new CD_Parametros[] 
-                { new CD_Parametros ("@producto_id", int.Parse( producto_selected.Rows[0]["producto_id"].ToString() ) ) 
-                }; 
-                DataTable dt = objectCN.obtenerTabla("PD_OBTENER_PRODUCTOS_TRANSACCIONES_SEGUN_Id",p);
-                llenarDatosProducto(dt);
-                dgv_Productos.ClearSelection();
+                actualizarDatosProducto();
             }
             catch (Exception ex)
             {
@@ -432,12 +427,20 @@ namespace CapaPresentacion.User_Control
         /// </summary>
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
-            CD_Parametros[] p = { new CD_Parametros("@inventario_id", inventario_id) };
-			DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar todas las transacciones recientes?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-			if (result == DialogResult.Yes) objectCN.actualizarTabla("PD_ELIMINAR_TEMP_TRANSACCION", p);
-			else return;
-			MessageBox.Show("Transacciones recientes eliminadas.","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            actualizarTablas();
+            DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar todas las transacciones recientes?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow r in dgv_Temp_Transacciones.Rows)
+                {
+                    int temp_transaccion_id = (int)r.Cells["temp_transaccion_id"].Value;
+                    CD_Parametros[] p = { new CD_Parametros("@temp_transaccion_id", temp_transaccion_id), new CD_Parametros("@modo", 1) };
+                    objectCN.actualizarTabla("PD_ELIMINAR_1_TEMP_TRANSACCION", p);
+                }
+                MessageBox.Show("Transacciones recientes eliminadas.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                actualizarTablas();
+                actualizarDatosProducto();
+            }
+            else return;
         }
 
         /// <summary>
@@ -450,18 +453,31 @@ namespace CapaPresentacion.User_Control
 				if (dgv_Temp_Transacciones.SelectedRows.Count > 0) 
 				{
 					int temp_transaccion_id = (int)dgv_Temp_Transacciones.SelectedRows[0].Cells["temp_transaccion_id"].Value;
-                    CD_Parametros[] p = { new CD_Parametros("@temp_transaccion_id", temp_transaccion_id) };
+                    CD_Parametros[] p = { new CD_Parametros("@temp_transaccion_id", temp_transaccion_id), new CD_Parametros("@modo", 1) };
                     DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar la transacción "+ temp_transaccion_id +"? ", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes) objectCN.actualizarTabla("PD_ELIMINAR_1_TEMP_TRANSACCION", p);
                     else return;
                     MessageBox.Show("Transacción eliminada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     actualizarTablas();
+                    actualizarDatosProducto();
                 }
                 else MessageBox.Show("Seleccione una transacción de la lista.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else MessageBox.Show("No se han encontrado transacciones recientes.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        /// Actualiza el formulario con los datos del producto seleccionado
+        /// </summary>
+        private void actualizarDatosProducto()
+        {
+            CD_Parametros[] para = new CD_Parametros[] { new CD_Parametros("@producto_id", selected_product_id) };
+            DataTable producto_selected = objectCN.obtenerTabla("PD_OBTENER_PRODUCTOS_TRANSACCIONES_SEGUN_Id", para);
+            para = new CD_Parametros[] { new CD_Parametros("@producto_id", int.Parse(producto_selected.Rows[0]["producto_id"].ToString())) };
+            DataTable dt = objectCN.obtenerTabla("PD_OBTENER_PRODUCTOS_TRANSACCIONES_SEGUN_Id", para);
+            llenarDatosProducto(dt);
+            dgv_Productos.ClearSelection();
+        }
         /// <summary>
         /// Se ejecuta cuando se da clic al botón de guardar en la tabla de transacciones recientes / temporales
         /// </summary>
@@ -474,6 +490,7 @@ namespace CapaPresentacion.User_Control
                 {
                     foreach (DataGridViewRow r in dgv_Temp_Transacciones.Rows)
                     {
+                        int temp_transaccion_id = (int)r.Cells["temp_transaccion_id"].Value;
                         CD_Parametros[] p =
                             {
                                 new CD_Parametros("@tipo_transaccion_id", (int)r.Cells["tipo_transaccion_id"].Value),
@@ -484,10 +501,12 @@ namespace CapaPresentacion.User_Control
                                 new CD_Parametros("@cantidad", stringADecimal(r.Cells["cantidad"].Value.ToString()))
                             };
                         objectCN.actualizarTabla("PD_INSERTAR_TRANSACCION", p);
+                        p = new CD_Parametros[] { new CD_Parametros("@temp_transaccion_id", temp_transaccion_id), new CD_Parametros("@modo", 0) };
+                        objectCN.actualizarTabla("PD_ELIMINAR_1_TEMP_TRANSACCION", p);
                     }
-                    objectCN.actualizarTabla("PD_ELIMINAR_TEMP_TRANSACCION", new CD_Parametros[] { new CD_Parametros("@inventario_id", inventario_id) });
                     MessageBox.Show("Transacciones Guardadas.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     actualizarTablas();
+                    actualizarDatosProducto();
                 }
                 else return; 
             }

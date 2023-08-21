@@ -134,6 +134,7 @@ namespace CapaPresentacion.User_Control
                     pnl_Tabla.Enabled = true;
                     llenarTabla();
                     agregarTooltipCombobox(cmb_Inventario);
+                    date_Fecha_Max.Value = DateTime.Today;
                     return;
                 }
             }

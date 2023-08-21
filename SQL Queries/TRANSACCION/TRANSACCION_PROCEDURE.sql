@@ -120,18 +120,22 @@ begin
 end
 
 GO
-CREATE PROCEDURE PD_ELIMINAR_TEMP_TRANSACCION
-@inventario_id int
-as
-begin
-	DELETE FROM TEMP_TRANSACCION WHERE inventario_id = @inventario_id
-end
-
-GO
 CREATE PROCEDURE PD_ELIMINAR_1_TEMP_TRANSACCION
-@temp_transaccion_id int
+@temp_transaccion_id int, @modo int -- 0 = guardar, 1 = borrar
 as
 begin
+	declare @producto_id int
+	declare @tipo_transacccion_id int
+	declare @cantidad numeric(10,2)
+	SELECT @producto_id = producto_id, @tipo_transacccion_id = tipo_transaccion_id, @cantidad = cantidad from TEMP_TRANSACCION where temp_transaccion_id = @temp_transaccion_id
+	
+	if @modo = 1 begin
+		if @tipo_transacccion_id = 1 begin-- agregar
+			update PRODUCTO set cantidad = cantidad - @cantidad where producto_id = @producto_id
+		end else begin -- quitar
+			update PRODUCTO set cantidad = cantidad + @cantidad where producto_id = @producto_id
+		end
+	end
 	DELETE FROM TEMP_TRANSACCION WHERE temp_transaccion_id = @temp_transaccion_id
 end
 
@@ -157,11 +161,11 @@ begin
 end
 
 GO
-CREATE PROCEDURE PD_OBTENER_TRANSACCION_SEGUN_INVENTARIO
+ALTER PROCEDURE PD_OBTENER_TRANSACCION_SEGUN_INVENTARIO
 @inventario_id int, @fecha_min datetime, @fecha_max datetime
 as
 begin
-	SELECT tt.nombre as tipo_transaccion, concat(pers.nombre1,' ',pers.apellido1) as persona, i.nombre as inventario, p.nombre PRODUCTO, CONCAT(p.cantidad,' ',tu.abreviacion) as cantidad, CONCAT(tr.cantidad,' ',tu.abreviacion) as cantidad_actual, CONCAT(p.cantidad_maxima,' ',tu.abreviacion) as cantidad_maxima, CONCAT(P.cantidad_minima,' ',tu.abreviacion) as cantidad_minima,
+	SELECT tt.nombre as tipo_transaccion, concat(pers.nombre1,' ',pers.apellido1) as persona, i.nombre as inventario, p.nombre PRODUCTO, CONCAT(tr.cantidad,' ',tu.abreviacion) as cantidad, CONCAT(p.cantidad,' ',tu.abreviacion) as cantidad_actual, CONCAT(p.cantidad_maxima,' ',tu.abreviacion) as cantidad_maxima, CONCAT(P.cantidad_minima,' ',tu.abreviacion) as cantidad_minima,
 	tr.fecha_transaccion
 	FROM TRANSACCION tr
 	JOIN TIPO_TRANSACCION tt on tt.tipo_transaccion_id = tr.tipo_transaccion_id
