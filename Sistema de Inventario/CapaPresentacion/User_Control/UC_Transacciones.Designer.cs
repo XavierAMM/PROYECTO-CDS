@@ -256,7 +256,7 @@
             // pic_Warning_Cantidad
             // 
             this.pic_Warning_Cantidad.Image = global::CapaPresentacion.Properties.Resources.ico_warning;
-            this.pic_Warning_Cantidad.Location = new System.Drawing.Point(379, 12);
+            this.pic_Warning_Cantidad.Location = new System.Drawing.Point(379, 7);
             this.pic_Warning_Cantidad.Name = "pic_Warning_Cantidad";
             this.pic_Warning_Cantidad.Size = new System.Drawing.Size(20, 20);
             this.pic_Warning_Cantidad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -271,9 +271,9 @@
             this.panel2.Controls.Add(this.btn_Quitar);
             this.panel2.Controls.Add(this.btn_Agregar);
             this.panel2.Controls.Add(this.txt_Ingresar_Cant);
-            this.panel2.Location = new System.Drawing.Point(400, 7);
+            this.panel2.Location = new System.Drawing.Point(400, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(201, 90);
+            this.panel2.Size = new System.Drawing.Size(201, 86);
             this.panel2.TabIndex = 4;
             // 
             // lbl_Tipo_Unidad
@@ -291,7 +291,7 @@
             // btn_Quitar
             // 
             this.btn_Quitar.Image = global::CapaPresentacion.Properties.Resources.img_minus;
-            this.btn_Quitar.Location = new System.Drawing.Point(132, 51);
+            this.btn_Quitar.Location = new System.Drawing.Point(132, 45);
             this.btn_Quitar.Name = "btn_Quitar";
             this.btn_Quitar.Size = new System.Drawing.Size(35, 35);
             this.btn_Quitar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -302,7 +302,7 @@
             // btn_Agregar
             // 
             this.btn_Agregar.Image = global::CapaPresentacion.Properties.Resources.img_add;
-            this.btn_Agregar.Location = new System.Drawing.Point(26, 51);
+            this.btn_Agregar.Location = new System.Drawing.Point(26, 46);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(35, 35);
             this.btn_Agregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -312,7 +312,7 @@
             // 
             // txt_Ingresar_Cant
             // 
-            this.txt_Ingresar_Cant.Location = new System.Drawing.Point(26, 22);
+            this.txt_Ingresar_Cant.Location = new System.Drawing.Point(26, 18);
             this.txt_Ingresar_Cant.Name = "txt_Ingresar_Cant";
             this.txt_Ingresar_Cant.PlaceholderText = "Ingresar cantidad";
             this.txt_Ingresar_Cant.Size = new System.Drawing.Size(141, 23);
@@ -339,13 +339,13 @@
             this.tableLayoutPanel1.Controls.Add(this.txt_Cantidad, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.txt_Cant_Max, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.txt_Cant_Min, 3, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 7);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(378, 90);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(378, 86);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // label1
@@ -460,57 +460,62 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(22, 3);
+            this.label4.Location = new System.Drawing.Point(525, -1);
+            this.label4.MaximumSize = new System.Drawing.Size(100, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 15);
+            this.label4.Size = new System.Drawing.Size(86, 30);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Agregados recientemente...";
+            this.label4.Text = "Agregados recientemente";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_Guardar
             // 
             this.btn_Guardar.BackColor = System.Drawing.Color.LawnGreen;
             this.btn_Guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Guardar.Location = new System.Drawing.Point(508, 24);
+            this.btn_Guardar.Location = new System.Drawing.Point(525, 34);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(87, 25);
             this.btn_Guardar.TabIndex = 7;
             this.btn_Guardar.Text = "Guardar";
             this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // btn_Limpiar
             // 
             this.btn_Limpiar.BackColor = System.Drawing.Color.Tomato;
             this.btn_Limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Limpiar.Location = new System.Drawing.Point(508, 83);
+            this.btn_Limpiar.Location = new System.Drawing.Point(525, 93);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(87, 25);
             this.btn_Limpiar.TabIndex = 6;
             this.btn_Limpiar.Text = "Limpiar";
             this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // btn_Eliminar
             // 
             this.btn_Eliminar.BackColor = System.Drawing.Color.IndianRed;
             this.btn_Eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Eliminar.Location = new System.Drawing.Point(508, 54);
+            this.btn_Eliminar.Location = new System.Drawing.Point(525, 64);
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(87, 25);
             this.btn_Eliminar.TabIndex = 5;
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.UseVisualStyleBackColor = false;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // dgv_Temp_Transacciones
             // 
             this.dgv_Temp_Transacciones.AllowUserToAddRows = false;
             this.dgv_Temp_Transacciones.AllowUserToDeleteRows = false;
             this.dgv_Temp_Transacciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Temp_Transacciones.Location = new System.Drawing.Point(18, 22);
+            this.dgv_Temp_Transacciones.Location = new System.Drawing.Point(5, 6);
             this.dgv_Temp_Transacciones.MultiSelect = false;
             this.dgv_Temp_Transacciones.Name = "dgv_Temp_Transacciones";
             this.dgv_Temp_Transacciones.ReadOnly = true;
             this.dgv_Temp_Transacciones.RowTemplate.Height = 25;
             this.dgv_Temp_Transacciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Temp_Transacciones.Size = new System.Drawing.Size(471, 86);
+            this.dgv_Temp_Transacciones.Size = new System.Drawing.Size(513, 113);
             this.dgv_Temp_Transacciones.TabIndex = 3;
             // 
             // pnl_Temp_Transaccion
@@ -522,9 +527,9 @@
             this.pnl_Temp_Transaccion.Controls.Add(this.btn_Eliminar);
             this.pnl_Temp_Transaccion.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnl_Temp_Transaccion.Enabled = false;
-            this.pnl_Temp_Transaccion.Location = new System.Drawing.Point(0, 320);
+            this.pnl_Temp_Transaccion.Location = new System.Drawing.Point(0, 312);
             this.pnl_Temp_Transaccion.Name = "pnl_Temp_Transaccion";
-            this.pnl_Temp_Transaccion.Size = new System.Drawing.Size(617, 114);
+            this.pnl_Temp_Transaccion.Size = new System.Drawing.Size(617, 122);
             this.pnl_Temp_Transaccion.TabIndex = 9;
             // 
             // UC_Transacciones

@@ -13,6 +13,21 @@ begin
 	where p.inventario_id = @inventario_id and p.estado_id = 1
 end
 
+go
+CREATE PROCEDURE PD_OBTENER_PRODUCTOS_TRANSACCIONES_SEGUN_Id
+@producto_id int
+as
+begin
+	SELECT p.nombre, concat(p.cantidad,' ',tu.abreviacion) as cantidad, concat(p.cantidad_maxima,' ',tu.abreviacion) AS cantidad_maxima, concat(p.cantidad_minima,' ',tu.abreviacion) as cantidad_minima, p.precio_compra, p.precio_venta,
+	c.nombre as categoria, pr.nombre_empresa as proveedor, p.producto_id, p.tipo_unidad_id, p.categoria_id, tu.descripcion as tipo_unidad, p.proveedor_id
+	FROM producto p
+	JOIN TIPO_UNIDAD tu on tu.tipo_unidad_id = p.tipo_unidad_id
+	join categoria c on c.categoria_id = p.categoria_id
+	join proveedor pr on pr.proveedor_id = p.proveedor_id
+	where p.producto_id= @producto_id and p.estado_id = 1
+end
+
+
 GO
 CREATE PROCEDURE PD_OBTENER_BODEGA_USUARIO_ID
 @usuario_id int
@@ -49,7 +64,7 @@ end
 
 
 GO
-ALTER PROCEDURE PD_OBTENER_TEMP_TRANSACCION
+CREATE PROCEDURE PD_OBTENER_TEMP_TRANSACCION
 @inventario_id int, @usuario_id int
 as
 begin
@@ -57,12 +72,14 @@ begin
 	declare @personal_id int
 	select @personal_id = personal_id from PERSONAL where usuario_id = @usuario_id and estado_id = 1
 	select @personal_x_bodega_id = personal_x_bodega_id from PERSONAL_X_BODEGA where personal_id = @personal_id
-	select tt.nombre as tipo_transaccion, p.nombre as producto, concat(temp.cantidad,' ',tu.abreviacion) as cantidad, temp.fecha_transaccion, temp.temp_transaccion_id
+	select tt.nombre as tipo_transaccion, p.nombre as producto, concat(temp.cantidad,' ',tu.abreviacion) as cantidad, temp.fecha_transaccion, 
+	temp.temp_transaccion_id, tt.tipo_transaccion_id, p.producto_id, tu.tipo_unidad_id
 	from temp_transaccion temp
 	join TIPO_TRANSACCION tt on tt.tipo_transaccion_id = temp.tipo_transaccion_id
 	join producto p on p.producto_id = temp.producto_id
 	join TIPO_UNIDAD tu on tu.tipo_unidad_id = temp.tipo_unidad_id
 	where temp.personal_x_bodega_id = @personal_x_bodega_id and temp.inventario_id = @inventario_id
+	order by temp.temp_transaccion_id desc
 end
 
 
@@ -84,7 +101,7 @@ end
 
 GO
 CREATE PROCEDURE PD_ACTUALIZAR_TEMP_TRANSACCION
-@tipo_transaccion_id int, @usuario_id int, @inventario_id int, @producto_id int, @tipo_unidad_id int, @cantidad int
+@tipo_transaccion_id int, @usuario_id int, @inventario_id int, @producto_id int, @tipo_unidad_id int, @cantidad numeric(10,2)
 as
 begin	
 	declare @personal_x_bodega_id int 
@@ -102,20 +119,34 @@ begin
 	end
 end
 
+GO
+CREATE PROCEDURE PD_ELIMINAR_TEMP_TRANSACCION
+@inventario_id int
+as
+begin
+	DELETE FROM TEMP_TRANSACCION WHERE inventario_id = @inventario_id
+end
 
-DELETE FROM TEMP_TRANSACCION
-DELETE FROM PRODUCTO
+GO
+CREATE PROCEDURE PD_ELIMINAR_1_TEMP_TRANSACCION
+@temp_transaccion_id int
+as
+begin
+	DELETE FROM TEMP_TRANSACCION WHERE temp_transaccion_id = @temp_transaccion_id
+end
 
-INSERT INTO PRODUCTO values
-('Prod1',100,110,1,10,100,1,1,1,1,50),
-('Prod2',100,110,1,10,100,1,1,1,1,60),
-('Prod3',100,110,1,10,100,1,1,1,1,70),
-('Prod1',100,110,1,10,100,1,2,1,1,80),
-('Prod2',100,110,1,10,100,1,2,1,1,90),
-('Prod3',100,110,1,10,100,1,2,1,1,100),
-('Prod1',100,110,1,10,100,1,3,1,1,110),
-('Prod2',100,110,1,10,100,1,3,1,1,120),
-('Prod3',100,110,1,10,100,1,3,1,1,130)
+GO
+CREATE PROCEDURE PD_INSERTAR_TRANSACCION
+@tipo_transaccion_id int, @usuario_id int, @inventario_id int, @producto_id int, @tipo_unidad_id int, @cantidad numeric(10,2)
+as
+begin
+	declare @personal_x_bodega_id int 
+	declare @personal_id int 
+	select @personal_id = personal_id from PERSONAL where usuario_id = @usuario_id and estado_id = 1
+	select @personal_x_bodega_id = personal_x_bodega_id from PERSONAL_X_BODEGA where personal_id = @personal_id
 
-select * from PRODUCTO
+	insert into TRANSACCION (tipo_transaccion_id, personal_x_bodega_id, inventario_id, fecha_transaccion, producto_id, tipo_unidad_id, cantidad, estado_id) values
+	(@tipo_transaccion_id, @personal_x_bodega_id, @inventario_id, CURRENT_TIMESTAMP, @producto_id, @tipo_unidad_id, @cantidad, 1)
+end
+
 
