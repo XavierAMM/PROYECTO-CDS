@@ -161,7 +161,7 @@ CREATE PROCEDURE PD_OBTENER_TRANSACCION_SEGUN_INVENTARIO
 @inventario_id int, @fecha_min datetime, @fecha_max datetime
 as
 begin
-	SELECT tt.nombre as tipo_transaccion, concat(pers.nombre1,' ',pers.apellido1) as persona, i.nombre as inventario, p.nombre PRODUCTO, CONCAT(tr.cantidad,' ',tu.abreviacion) as cantidad,
+	SELECT tt.nombre as tipo_transaccion, concat(pers.nombre1,' ',pers.apellido1) as persona, i.nombre as inventario, p.nombre PRODUCTO, CONCAT(p.cantidad,' ',tu.abreviacion) as cantidad, CONCAT(tr.cantidad,' ',tu.abreviacion) as cantidad_actual, CONCAT(p.cantidad_maxima,' ',tu.abreviacion) as cantidad_maxima, CONCAT(P.cantidad_minima,' ',tu.abreviacion) as cantidad_minima,
 	tr.fecha_transaccion
 	FROM TRANSACCION tr
 	JOIN TIPO_TRANSACCION tt on tt.tipo_transaccion_id = tr.tipo_transaccion_id
@@ -181,7 +181,7 @@ CREATE PROCEDURE PD_OBTENER_TRANSACCION_SEGUN_INVENTARIO_FILTRO
 @inventario_id int, @fecha_min datetime, @fecha_max datetime, @filtro varchar(50)
 as
 begin
-	SELECT tt.nombre as tipo_transaccion, concat(pers.nombre1,' ',pers.apellido1) as persona, i.nombre as inventario, p.nombre PRODUCTO, CONCAT(tr.cantidad,' ',tu.abreviacion) as cantidad,
+	SELECT tt.nombre as tipo_transaccion, concat(pers.nombre1,' ',pers.apellido1) as persona, i.nombre as inventario, p.nombre PRODUCTO, CONCAT(p.cantidad,' ',tu.abreviacion) as cantidad, CONCAT(tr.cantidad,' ',tu.abreviacion) as cantidad_actual, CONCAT(p.cantidad_maxima,' ',tu.abreviacion) as cantidad_maxima, CONCAT(P.cantidad_minima,' ',tu.abreviacion) as cantidad_minima,
 	tr.fecha_transaccion
 	FROM TRANSACCION tr
 	JOIN TIPO_TRANSACCION tt on tt.tipo_transaccion_id = tr.tipo_transaccion_id
