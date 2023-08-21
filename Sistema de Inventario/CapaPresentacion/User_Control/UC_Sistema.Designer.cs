@@ -28,169 +28,170 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-			btn_Modulos = new Guna.UI2.WinForms.Guna2Button();
-			panel1 = new Panel();
-			btn_Usuarios = new Guna.UI2.WinForms.Guna2Button();
-			btn_Menú = new Guna.UI2.WinForms.Guna2Button();
-			btn_Perfiles = new Guna.UI2.WinForms.Guna2Button();
-			btn_Opciones = new Guna.UI2.WinForms.Guna2Button();
-			pnl_Main = new Panel();
-			panel1.SuspendLayout();
-			SuspendLayout();
-			// 
-			// btn_Modulos
-			// 
-			btn_Modulos.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-			btn_Modulos.Checked = true;
-			btn_Modulos.CheckedState.CustomBorderColor = Color.Blue;
-			btn_Modulos.CustomBorderThickness = new Padding(0, 0, 0, 3);
-			btn_Modulos.CustomizableEdges = customizableEdges1;
-			btn_Modulos.DisabledState.BorderColor = Color.DarkGray;
-			btn_Modulos.DisabledState.CustomBorderColor = Color.DarkGray;
-			btn_Modulos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-			btn_Modulos.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-			btn_Modulos.Dock = DockStyle.Left;
-			btn_Modulos.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-			btn_Modulos.ForeColor = Color.White;
-			btn_Modulos.HoverState.CustomBorderColor = Color.Blue;
-			btn_Modulos.Location = new Point(0, 0);
-			btn_Modulos.Name = "btn_Modulos";
-			btn_Modulos.ShadowDecoration.CustomizableEdges = customizableEdges2;
-			btn_Modulos.Size = new Size(123, 54);
-			btn_Modulos.TabIndex = 0;
-			btn_Modulos.Text = "Módulos";
-			btn_Modulos.Click += btn_Modulos_Click;
-			// 
-			// panel1
-			// 
-			panel1.Controls.Add(btn_Usuarios);
-			panel1.Controls.Add(btn_Menú);
-			panel1.Controls.Add(btn_Perfiles);
-			panel1.Controls.Add(btn_Opciones);
-			panel1.Controls.Add(btn_Modulos);
-			panel1.Dock = DockStyle.Top;
-			panel1.Location = new Point(0, 0);
-			panel1.Name = "panel1";
-			panel1.Size = new Size(617, 54);
-			panel1.TabIndex = 1;
-			// 
-			// btn_Usuarios
-			// 
-			btn_Usuarios.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-			btn_Usuarios.CheckedState.CustomBorderColor = Color.Blue;
-			btn_Usuarios.CustomBorderThickness = new Padding(0, 0, 0, 3);
-			btn_Usuarios.CustomizableEdges = customizableEdges3;
-			btn_Usuarios.DisabledState.BorderColor = Color.DarkGray;
-			btn_Usuarios.DisabledState.CustomBorderColor = Color.DarkGray;
-			btn_Usuarios.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-			btn_Usuarios.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-			btn_Usuarios.Dock = DockStyle.Left;
-			btn_Usuarios.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-			btn_Usuarios.ForeColor = Color.White;
-			btn_Usuarios.HoverState.CustomBorderColor = Color.Blue;
-			btn_Usuarios.Location = new Point(492, 0);
-			btn_Usuarios.Name = "btn_Usuarios";
-			btn_Usuarios.ShadowDecoration.CustomizableEdges = customizableEdges4;
-			btn_Usuarios.Size = new Size(124, 54);
-			btn_Usuarios.TabIndex = 4;
-			btn_Usuarios.Text = "Usuarios";
-			btn_Usuarios.Click += btn_Usuarios_Click;
-			// 
-			// btn_Menú
-			// 
-			btn_Menú.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-			btn_Menú.CheckedState.CustomBorderColor = Color.Blue;
-			btn_Menú.CustomBorderThickness = new Padding(0, 0, 0, 3);
-			btn_Menú.CustomizableEdges = customizableEdges5;
-			btn_Menú.DisabledState.BorderColor = Color.DarkGray;
-			btn_Menú.DisabledState.CustomBorderColor = Color.DarkGray;
-			btn_Menú.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-			btn_Menú.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-			btn_Menú.Dock = DockStyle.Left;
-			btn_Menú.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-			btn_Menú.ForeColor = Color.White;
-			btn_Menú.HoverState.CustomBorderColor = Color.Blue;
-			btn_Menú.Location = new Point(369, 0);
-			btn_Menú.Name = "btn_Menú";
-			btn_Menú.ShadowDecoration.CustomizableEdges = customizableEdges6;
-			btn_Menú.Size = new Size(123, 54);
-			btn_Menú.TabIndex = 3;
-			btn_Menú.Text = "Opciones a Perfil";
-			btn_Menú.Click += btn_Menú_Click;
-			// 
-			// btn_Perfiles
-			// 
-			btn_Perfiles.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-			btn_Perfiles.CheckedState.CustomBorderColor = Color.Blue;
-			btn_Perfiles.CustomBorderThickness = new Padding(0, 0, 0, 3);
-			btn_Perfiles.CustomizableEdges = customizableEdges7;
-			btn_Perfiles.DisabledState.BorderColor = Color.DarkGray;
-			btn_Perfiles.DisabledState.CustomBorderColor = Color.DarkGray;
-			btn_Perfiles.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-			btn_Perfiles.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-			btn_Perfiles.Dock = DockStyle.Left;
-			btn_Perfiles.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-			btn_Perfiles.ForeColor = Color.White;
-			btn_Perfiles.HoverState.CustomBorderColor = Color.Blue;
-			btn_Perfiles.Location = new Point(246, 0);
-			btn_Perfiles.Name = "btn_Perfiles";
-			btn_Perfiles.ShadowDecoration.CustomizableEdges = customizableEdges8;
-			btn_Perfiles.Size = new Size(123, 54);
-			btn_Perfiles.TabIndex = 2;
-			btn_Perfiles.Text = "Perfiles";
-			btn_Perfiles.Click += btn_Perfiles_Click;
-			// 
-			// btn_Opciones
-			// 
-			btn_Opciones.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-			btn_Opciones.CheckedState.CustomBorderColor = Color.Blue;
-			btn_Opciones.CustomBorderThickness = new Padding(0, 0, 0, 3);
-			btn_Opciones.CustomizableEdges = customizableEdges9;
-			btn_Opciones.DisabledState.BorderColor = Color.DarkGray;
-			btn_Opciones.DisabledState.CustomBorderColor = Color.DarkGray;
-			btn_Opciones.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-			btn_Opciones.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-			btn_Opciones.Dock = DockStyle.Left;
-			btn_Opciones.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-			btn_Opciones.ForeColor = Color.White;
-			btn_Opciones.HoverState.CustomBorderColor = Color.Blue;
-			btn_Opciones.Location = new Point(123, 0);
-			btn_Opciones.Name = "btn_Opciones";
-			btn_Opciones.ShadowDecoration.CustomizableEdges = customizableEdges10;
-			btn_Opciones.Size = new Size(123, 54);
-			btn_Opciones.TabIndex = 1;
-			btn_Opciones.Text = "Opciones";
-			btn_Opciones.Click += btn_Opciones_Click;
-			// 
-			// pnl_Main
-			// 
-			pnl_Main.Dock = DockStyle.Fill;
-			pnl_Main.Location = new Point(0, 54);
-			pnl_Main.Name = "pnl_Main";
-			pnl_Main.Size = new Size(617, 380);
-			pnl_Main.TabIndex = 2;
-			// 
-			// UC_Sistema
-			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
-			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = Color.White;
-			Controls.Add(pnl_Main);
-			Controls.Add(panel1);
-			Name = "UC_Sistema";
-			Size = new Size(617, 434);
-			panel1.ResumeLayout(false);
-			ResumeLayout(false);
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            this.btn_Modulos = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Usuarios = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Menú = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Perfiles = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Opciones = new Guna.UI2.WinForms.Guna2Button();
+            this.pnl_Main = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // btn_Modulos
+            // 
+            this.btn_Modulos.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_Modulos.Checked = true;
+            this.btn_Modulos.CheckedState.CustomBorderColor = System.Drawing.Color.Blue;
+            this.btn_Modulos.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_Modulos.CustomizableEdges = customizableEdges1;
+            this.btn_Modulos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Modulos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Modulos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Modulos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Modulos.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_Modulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Modulos.ForeColor = System.Drawing.Color.White;
+            this.btn_Modulos.HoverState.CustomBorderColor = System.Drawing.Color.Blue;
+            this.btn_Modulos.Location = new System.Drawing.Point(0, 0);
+            this.btn_Modulos.Name = "btn_Modulos";
+            this.btn_Modulos.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.btn_Modulos.Size = new System.Drawing.Size(123, 54);
+            this.btn_Modulos.TabIndex = 0;
+            this.btn_Modulos.Text = "Módulos";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_Usuarios);
+            this.panel1.Controls.Add(this.btn_Menú);
+            this.panel1.Controls.Add(this.btn_Perfiles);
+            this.panel1.Controls.Add(this.btn_Opciones);
+            this.panel1.Controls.Add(this.btn_Modulos);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(617, 54);
+            this.panel1.TabIndex = 1;
+            // 
+            // btn_Usuarios
+            // 
+            this.btn_Usuarios.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_Usuarios.CheckedState.CustomBorderColor = System.Drawing.Color.Blue;
+            this.btn_Usuarios.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_Usuarios.CustomizableEdges = customizableEdges3;
+            this.btn_Usuarios.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Usuarios.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Usuarios.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Usuarios.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Usuarios.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_Usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Usuarios.ForeColor = System.Drawing.Color.White;
+            this.btn_Usuarios.HoverState.CustomBorderColor = System.Drawing.Color.Blue;
+            this.btn_Usuarios.Location = new System.Drawing.Point(492, 0);
+            this.btn_Usuarios.Name = "btn_Usuarios";
+            this.btn_Usuarios.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.btn_Usuarios.Size = new System.Drawing.Size(124, 54);
+            this.btn_Usuarios.TabIndex = 4;
+            this.btn_Usuarios.Text = "Usuarios";
+            this.btn_Usuarios.Click += new System.EventHandler(this.btn_Usuarios_Click);
+            // 
+            // btn_Menú
+            // 
+            this.btn_Menú.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_Menú.CheckedState.CustomBorderColor = System.Drawing.Color.Blue;
+            this.btn_Menú.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_Menú.CustomizableEdges = customizableEdges5;
+            this.btn_Menú.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Menú.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Menú.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Menú.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Menú.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_Menú.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Menú.ForeColor = System.Drawing.Color.White;
+            this.btn_Menú.HoverState.CustomBorderColor = System.Drawing.Color.Blue;
+            this.btn_Menú.Location = new System.Drawing.Point(369, 0);
+            this.btn_Menú.Name = "btn_Menú";
+            this.btn_Menú.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.btn_Menú.Size = new System.Drawing.Size(123, 54);
+            this.btn_Menú.TabIndex = 3;
+            this.btn_Menú.Text = "Opciones a Perfil";
+            this.btn_Menú.Click += new System.EventHandler(this.btn_Menú_Click);
+            // 
+            // btn_Perfiles
+            // 
+            this.btn_Perfiles.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_Perfiles.CheckedState.CustomBorderColor = System.Drawing.Color.Blue;
+            this.btn_Perfiles.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_Perfiles.CustomizableEdges = customizableEdges7;
+            this.btn_Perfiles.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Perfiles.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Perfiles.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Perfiles.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Perfiles.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_Perfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Perfiles.ForeColor = System.Drawing.Color.White;
+            this.btn_Perfiles.HoverState.CustomBorderColor = System.Drawing.Color.Blue;
+            this.btn_Perfiles.Location = new System.Drawing.Point(246, 0);
+            this.btn_Perfiles.Name = "btn_Perfiles";
+            this.btn_Perfiles.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.btn_Perfiles.Size = new System.Drawing.Size(123, 54);
+            this.btn_Perfiles.TabIndex = 2;
+            this.btn_Perfiles.Text = "Perfiles";
+            this.btn_Perfiles.Click += new System.EventHandler(this.btn_Perfiles_Click);
+            // 
+            // btn_Opciones
+            // 
+            this.btn_Opciones.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_Opciones.CheckedState.CustomBorderColor = System.Drawing.Color.Blue;
+            this.btn_Opciones.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_Opciones.CustomizableEdges = customizableEdges9;
+            this.btn_Opciones.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Opciones.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Opciones.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Opciones.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Opciones.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_Opciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Opciones.ForeColor = System.Drawing.Color.White;
+            this.btn_Opciones.HoverState.CustomBorderColor = System.Drawing.Color.Blue;
+            this.btn_Opciones.Location = new System.Drawing.Point(123, 0);
+            this.btn_Opciones.Name = "btn_Opciones";
+            this.btn_Opciones.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            this.btn_Opciones.Size = new System.Drawing.Size(123, 54);
+            this.btn_Opciones.TabIndex = 1;
+            this.btn_Opciones.Text = "Opciones";
+            this.btn_Opciones.Click += new System.EventHandler(this.btn_Opciones_Click);
+            // 
+            // pnl_Main
+            // 
+            this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Main.Location = new System.Drawing.Point(0, 54);
+            this.pnl_Main.Name = "pnl_Main";
+            this.pnl_Main.Size = new System.Drawing.Size(617, 380);
+            this.pnl_Main.TabIndex = 2;
+            // 
+            // UC_Sistema
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pnl_Main);
+            this.Controls.Add(this.panel1);
+            this.Name = "UC_Sistema";
+            this.Size = new System.Drawing.Size(617, 434);
+            this.Click += new System.EventHandler(this.btn_Modulos_Click);
+            this.panel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
 		}
 
 		#endregion

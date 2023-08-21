@@ -28,112 +28,113 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			panel5 = new Panel();
-			pictureBox1 = new PictureBox();
-			txt_Filtro_Nombre = new TextBox();
-			chb_Inactivos = new CheckBox();
-			panel4 = new Panel();
-			btn_Inactivar_Activar = new Button();
-			dgv_Usuarios = new DataGridView();
-			panel5.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-			panel4.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)dgv_Usuarios).BeginInit();
-			SuspendLayout();
-			// 
-			// panel5
-			// 
-			panel5.Controls.Add(pictureBox1);
-			panel5.Controls.Add(txt_Filtro_Nombre);
-			panel5.Controls.Add(chb_Inactivos);
-			panel5.Dock = DockStyle.Top;
-			panel5.Location = new Point(0, 0);
-			panel5.Name = "panel5";
-			panel5.Size = new Size(626, 28);
-			panel5.TabIndex = 7;
-			// 
-			// pictureBox1
-			// 
-			pictureBox1.Image = Properties.Resources.ico_search;
-			pictureBox1.Location = new Point(145, 4);
-			pictureBox1.Name = "pictureBox1";
-			pictureBox1.Size = new Size(20, 20);
-			pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-			pictureBox1.TabIndex = 4;
-			pictureBox1.TabStop = false;
-			// 
-			// txt_Filtro_Nombre
-			// 
-			txt_Filtro_Nombre.Location = new Point(165, 3);
-			txt_Filtro_Nombre.Name = "txt_Filtro_Nombre";
-			txt_Filtro_Nombre.PlaceholderText = "Buscar por perfil, módulo, opción";
-			txt_Filtro_Nombre.Size = new Size(232, 23);
-			txt_Filtro_Nombre.TabIndex = 3;
-			txt_Filtro_Nombre.TextChanged += txt_Filtro_Nombre_TextChanged;
-			// 
-			// chb_Inactivos
-			// 
-			chb_Inactivos.AutoSize = true;
-			chb_Inactivos.Location = new Point(6, 6);
-			chb_Inactivos.Name = "chb_Inactivos";
-			chb_Inactivos.Size = new Size(117, 19);
-			chb_Inactivos.TabIndex = 2;
-			chb_Inactivos.Text = "Mostrar Inactivos";
-			chb_Inactivos.UseVisualStyleBackColor = true;
-			chb_Inactivos.CheckedChanged += chb_Inactivos_CheckedChanged;
-			// 
-			// panel4
-			// 
-			panel4.Controls.Add(btn_Inactivar_Activar);
-			panel4.Dock = DockStyle.Bottom;
-			panel4.Location = new Point(0, 340);
-			panel4.Name = "panel4";
-			panel4.Size = new Size(626, 40);
-			panel4.TabIndex = 8;
-			// 
-			// btn_Inactivar_Activar
-			// 
-			btn_Inactivar_Activar.BackColor = Color.Red;
-			btn_Inactivar_Activar.ForeColor = Color.White;
-			btn_Inactivar_Activar.Location = new Point(259, 4);
-			btn_Inactivar_Activar.Name = "btn_Inactivar_Activar";
-			btn_Inactivar_Activar.Size = new Size(97, 33);
-			btn_Inactivar_Activar.TabIndex = 4;
-			btn_Inactivar_Activar.Text = "Inactivar";
-			btn_Inactivar_Activar.UseVisualStyleBackColor = false;
-			btn_Inactivar_Activar.Click += btn_Inactivar_Activar_Click;
-			// 
-			// dgv_Usuarios
-			// 
-			dgv_Usuarios.AllowUserToAddRows = false;
-			dgv_Usuarios.AllowUserToDeleteRows = false;
-			dgv_Usuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgv_Usuarios.Location = new Point(7, 34);
-			dgv_Usuarios.MultiSelect = false;
-			dgv_Usuarios.Name = "dgv_Usuarios";
-			dgv_Usuarios.ReadOnly = true;
-			dgv_Usuarios.RowTemplate.Height = 25;
-			dgv_Usuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dgv_Usuarios.Size = new Size(604, 286);
-			dgv_Usuarios.TabIndex = 9;
-			dgv_Usuarios.CellClick += dgv_Usuarios_CellClick;
-			// 
-			// UC_Sistema_Usuarios
-			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
-			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = Color.White;
-			Controls.Add(dgv_Usuarios);
-			Controls.Add(panel4);
-			Controls.Add(panel5);
-			Name = "UC_Sistema_Usuarios";
-			Size = new Size(626, 380);
-			panel5.ResumeLayout(false);
-			panel5.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-			panel4.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)dgv_Usuarios).EndInit();
-			ResumeLayout(false);
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_Filtro_Nombre = new System.Windows.Forms.TextBox();
+            this.chb_Inactivos = new System.Windows.Forms.CheckBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_Inactivar_Activar = new System.Windows.Forms.Button();
+            this.dgv_Usuarios = new System.Windows.Forms.DataGridView();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Usuarios)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.txt_Filtro_Nombre);
+            this.panel5.Controls.Add(this.chb_Inactivos);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(626, 28);
+            this.panel5.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.ico_search;
+            this.pictureBox1.Location = new System.Drawing.Point(145, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txt_Filtro_Nombre
+            // 
+            this.txt_Filtro_Nombre.Location = new System.Drawing.Point(165, 3);
+            this.txt_Filtro_Nombre.Name = "txt_Filtro_Nombre";
+            this.txt_Filtro_Nombre.PlaceholderText = "Buscar por perfil, módulo, opción";
+            this.txt_Filtro_Nombre.Size = new System.Drawing.Size(232, 23);
+            this.txt_Filtro_Nombre.TabIndex = 3;
+            this.txt_Filtro_Nombre.TextChanged += new System.EventHandler(this.txt_Filtro_Nombre_TextChanged);
+            // 
+            // chb_Inactivos
+            // 
+            this.chb_Inactivos.AutoSize = true;
+            this.chb_Inactivos.Location = new System.Drawing.Point(6, 6);
+            this.chb_Inactivos.Name = "chb_Inactivos";
+            this.chb_Inactivos.Size = new System.Drawing.Size(117, 19);
+            this.chb_Inactivos.TabIndex = 2;
+            this.chb_Inactivos.Text = "Mostrar Inactivos";
+            this.chb_Inactivos.UseVisualStyleBackColor = true;
+            this.chb_Inactivos.CheckedChanged += new System.EventHandler(this.chb_Inactivos_CheckedChanged);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btn_Inactivar_Activar);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 340);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(626, 40);
+            this.panel4.TabIndex = 8;
+            // 
+            // btn_Inactivar_Activar
+            // 
+            this.btn_Inactivar_Activar.BackColor = System.Drawing.Color.Red;
+            this.btn_Inactivar_Activar.ForeColor = System.Drawing.Color.White;
+            this.btn_Inactivar_Activar.Location = new System.Drawing.Point(259, 4);
+            this.btn_Inactivar_Activar.Name = "btn_Inactivar_Activar";
+            this.btn_Inactivar_Activar.Size = new System.Drawing.Size(97, 33);
+            this.btn_Inactivar_Activar.TabIndex = 4;
+            this.btn_Inactivar_Activar.Text = "Inactivar";
+            this.btn_Inactivar_Activar.UseVisualStyleBackColor = false;
+            this.btn_Inactivar_Activar.Click += new System.EventHandler(this.btn_Inactivar_Activar_Click);
+            // 
+            // dgv_Usuarios
+            // 
+            this.dgv_Usuarios.AllowUserToAddRows = false;
+            this.dgv_Usuarios.AllowUserToDeleteRows = false;
+            this.dgv_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Usuarios.Location = new System.Drawing.Point(7, 34);
+            this.dgv_Usuarios.MultiSelect = false;
+            this.dgv_Usuarios.Name = "dgv_Usuarios";
+            this.dgv_Usuarios.ReadOnly = true;
+            this.dgv_Usuarios.RowTemplate.Height = 25;
+            this.dgv_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Usuarios.Size = new System.Drawing.Size(604, 286);
+            this.dgv_Usuarios.TabIndex = 9;
+            this.dgv_Usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Usuarios_CellClick);
+            // 
+            // UC_Sistema_Usuarios
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dgv_Usuarios);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel5);
+            this.Name = "UC_Sistema_Usuarios";
+            this.Size = new System.Drawing.Size(626, 380);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Usuarios)).EndInit();
+            this.ResumeLayout(false);
+
 		}
 
 		#endregion

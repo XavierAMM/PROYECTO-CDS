@@ -80,6 +80,7 @@
             this.dgv_Modulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Modulos.Size = new System.Drawing.Size(442, 312);
             this.dgv_Modulos.TabIndex = 0;
+            this.dgv_Modulos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Modulos_CellClick_1);
             // 
             // btn_Nuevo
             // 
@@ -91,6 +92,7 @@
             this.btn_Nuevo.TabIndex = 1;
             this.btn_Nuevo.Text = "Nuevo";
             this.btn_Nuevo.UseVisualStyleBackColor = false;
+            this.btn_Nuevo.Click += new System.EventHandler(this.btn_Nuevo_Click);
             // 
             // chb_Inactivos
             // 
@@ -115,6 +117,7 @@
             this.btn_Editar.TabIndex = 3;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.UseVisualStyleBackColor = false;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // btn_Inactivar_Activar
             // 
@@ -126,6 +129,7 @@
             this.btn_Inactivar_Activar.TabIndex = 4;
             this.btn_Inactivar_Activar.Text = "Inactivar";
             this.btn_Inactivar_Activar.UseVisualStyleBackColor = false;
+            this.btn_Inactivar_Activar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // panel1
             // 
@@ -176,6 +180,7 @@
             this.txt_Filtro_Nombre.PlaceholderText = "Buscar por nombre";
             this.txt_Filtro_Nombre.Size = new System.Drawing.Size(145, 23);
             this.txt_Filtro_Nombre.TabIndex = 3;
+            this.txt_Filtro_Nombre.TextChanged += new System.EventHandler(this.txt_Filtro_Nombre_TextChanged);
             // 
             // panel2
             // 
@@ -219,6 +224,7 @@
             this.btn_Aceptar.TabIndex = 6;
             this.btn_Aceptar.Text = "Aceptar";
             this.btn_Aceptar.UseVisualStyleBackColor = false;
+            this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
             // pnl_Fondo
             // 
@@ -257,6 +263,7 @@
             this.txt_Orden.PlaceholderText = "Orden";
             this.txt_Orden.Size = new System.Drawing.Size(103, 23);
             this.txt_Orden.TabIndex = 4;
+            this.txt_Orden.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Orden_KeyPress);
             // 
             // txt_Objeto
             // 
@@ -265,6 +272,7 @@
             this.txt_Objeto.PlaceholderText = "Nombre del Objeto";
             this.txt_Objeto.Size = new System.Drawing.Size(154, 23);
             this.txt_Objeto.TabIndex = 3;
+            this.txt_Objeto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Objeto_Nuevo_KeyPress);
             // 
             // label1
             // 
@@ -314,6 +322,7 @@
             this.lbl_Cancelar.Size = new System.Drawing.Size(15, 15);
             this.lbl_Cancelar.TabIndex = 3;
             this.lbl_Cancelar.Text = "X";
+            this.lbl_Cancelar.Click += new System.EventHandler(this.lbl_Cancelar_Click);
             // 
             // UC_Sistema_Modulo
             // 

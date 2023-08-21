@@ -239,22 +239,6 @@ namespace CapaPresentacion.User_Control
 		}
 
 		/// <summary>
-		/// Va a evaluar que en nombre no se ingresen números.
-		/// </summary>		
-		private void txt_Nombre_KeyPress_1(object sender, KeyPressEventArgs e)
-		{
-			if (Char.IsDigit(e.KeyChar)) { e.Handled = true; }
-		}
-
-		/// <summary>
-		/// Va a evaluar que en apellido no se ingresen números.
-		/// </summary>		
-		private void txt_Apellido_KeyPress_1(object sender, KeyPressEventArgs e)
-		{
-			if (Char.IsDigit(e.KeyChar)) { e.Handled = true; }
-		}
-
-		/// <summary>
 		/// Va a evaluar que en correo no se ingresen espacios en blanco.
 		/// </summary>
 		private void txt_Correo_KeyPress(object sender, KeyPressEventArgs e)

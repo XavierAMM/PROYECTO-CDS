@@ -347,18 +347,19 @@ namespace CapaPresentacion.User_Control.UC_Sistemas_Views
 		/// <summary>
 		/// Este método va a llenar la tabla de perfiles filtrando el texto del textbox.
 		/// </summary>
-		private void txt_Filtro_Nombre_KeyPress(object sender, KeyPressEventArgs e)
-		{
-			llenarTablaPerfiles();
-		}
+		private void txt_Filtro_Nombre_KeyPress(object sender, EventArgs e)
+        {
+            llenarTablaPerfiles();
+        }
 
-		/// <summary>
-		/// Este método va a controlar que en el textbox de prioridad solo se ingresen
-		/// números.
-		/// </summary>
-		private void txt_Prioridad_KeyPress(object sender, KeyPressEventArgs e)
+        /// <summary>
+        /// Este método va a controlar que en el textbox de prioridad solo se ingresen
+        /// números.
+        /// </summary>
+        private void txt_Prioridad_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if (!Char.IsDigit(e.KeyChar)) e.Handled = true;
 		}
-	}
+
+    }
 }

@@ -97,6 +97,7 @@
             this.btn_Aceptar.TabIndex = 7;
             this.btn_Aceptar.Text = "Aceptar";
             this.btn_Aceptar.UseVisualStyleBackColor = false;
+            this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
             // panel8
             // 
@@ -119,6 +120,7 @@
             this.txt_Orden.PlaceholderText = "Orden";
             this.txt_Orden.Size = new System.Drawing.Size(103, 23);
             this.txt_Orden.TabIndex = 6;
+            this.txt_Orden.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Orden_KeyPress);
             // 
             // label1
             // 
@@ -146,6 +148,7 @@
             this.cmb_Modulos.Name = "cmb_Modulos";
             this.cmb_Modulos.Size = new System.Drawing.Size(154, 23);
             this.cmb_Modulos.TabIndex = 2;
+            this.cmb_Modulos.SelectedIndexChanged += new System.EventHandler(this.cmb_Modulos_SelectedIndexChanged);
             // 
             // txt_Objeto
             // 
@@ -154,6 +157,7 @@
             this.txt_Objeto.PlaceholderText = "Nombre de Objeto";
             this.txt_Objeto.Size = new System.Drawing.Size(154, 23);
             this.txt_Objeto.TabIndex = 1;
+            this.txt_Objeto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Objeto_KeyPress);
             // 
             // txt_Nombre
             // 
@@ -202,6 +206,7 @@
             this.lbl_Cancelar.Size = new System.Drawing.Size(15, 15);
             this.lbl_Cancelar.TabIndex = 4;
             this.lbl_Cancelar.Text = "X";
+            this.lbl_Cancelar.Click += new System.EventHandler(this.lbl_Cancelar_Click);
             // 
             // panel2
             // 
@@ -237,6 +242,7 @@
             this.dgv_Opciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Opciones.Size = new System.Drawing.Size(442, 308);
             this.dgv_Opciones.TabIndex = 1;
+            this.dgv_Opciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Opciones_CellClick);
             // 
             // panel4
             // 
@@ -259,6 +265,7 @@
             this.btn_Inactivar_Activar.TabIndex = 5;
             this.btn_Inactivar_Activar.Text = "Inactivar";
             this.btn_Inactivar_Activar.UseVisualStyleBackColor = false;
+            this.btn_Inactivar_Activar.Click += new System.EventHandler(this.btn_Inactivar_Activar_Click);
             // 
             // btn_Editar
             // 
@@ -272,6 +279,7 @@
             this.btn_Editar.TabIndex = 4;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.UseVisualStyleBackColor = false;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // btn_Nuevo
             // 
@@ -283,6 +291,7 @@
             this.btn_Nuevo.TabIndex = 2;
             this.btn_Nuevo.Text = "Nuevo";
             this.btn_Nuevo.UseVisualStyleBackColor = false;
+            this.btn_Nuevo.Click += new System.EventHandler(this.btn_Nuevo_Click);
             // 
             // panel3
             // 
@@ -323,6 +332,7 @@
             this.chb_Inactivos.TabIndex = 3;
             this.chb_Inactivos.Text = "Mostrar Inactivos";
             this.chb_Inactivos.UseVisualStyleBackColor = true;
+            this.chb_Inactivos.CheckedChanged += new System.EventHandler(this.chb_Inactivos_CheckedChanged);
             // 
             // UC_Sistema_Opciones
             // 

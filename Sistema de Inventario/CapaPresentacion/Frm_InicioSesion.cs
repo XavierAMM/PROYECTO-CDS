@@ -121,10 +121,10 @@ namespace CapaPresentacion
 		/// Al darle click a olvidé mi contraseña, se abrirá el formulario principal 
 		/// junto con el control de usuario UC_Recuperar_Contraseña
 		/// </summary>		
-		private void lbl_OlvideContraseña_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-		{
-			Frm_Principal frm = new Frm_Principal(false);
-			frm.ShowDialog();
-		}
-	}
+		private void lbl_OlvideContraseña_LinkClicked(object sender, EventArgs e)
+        {
+            Frm_Principal frm = new Frm_Principal(false);
+            frm.ShowDialog();
+        }
+    }
 }

@@ -28,407 +28,408 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			lbl_Titulo = new Label();
-			pnl_Titulo = new Panel();
-			lbl_Mensaje = new Label();
-			pnl_Mensaje = new Panel();
-			panel1 = new Panel();
-			pnl_Contraseña = new Panel();
-			label3 = new Label();
-			tableLayoutPanel2 = new TableLayoutPanel();
-			pictureBox2 = new PictureBox();
-			pictureBox9 = new PictureBox();
-			txt_Contraseña = new TextBox();
-			txt_Contraseña2 = new TextBox();
-			btn_Guardar = new Button();
-			pnl_Pregunta = new Panel();
-			label2 = new Label();
-			cmb_Pregunta_Seguridad = new ComboBox();
-			txt_Respuesta = new TextBox();
-			btn_Aceptar = new Button();
-			panel2 = new Panel();
-			label1 = new Label();
-			tableLayoutPanel1 = new TableLayoutPanel();
-			pictureBox3 = new PictureBox();
-			txt_Correo = new TextBox();
-			txt_Usuario = new TextBox();
-			pictureBox1 = new PictureBox();
-			btn_Buscar = new Button();
-			tableLayoutPanel3 = new TableLayoutPanel();
-			pictureBox4 = new PictureBox();
-			textBox3 = new TextBox();
-			panel3 = new Panel();
-			pnl_Titulo.SuspendLayout();
-			pnl_Mensaje.SuspendLayout();
-			panel1.SuspendLayout();
-			pnl_Contraseña.SuspendLayout();
-			tableLayoutPanel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-			((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-			pnl_Pregunta.SuspendLayout();
-			panel2.SuspendLayout();
-			tableLayoutPanel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-			tableLayoutPanel3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-			panel3.SuspendLayout();
-			SuspendLayout();
-			// 
-			// lbl_Titulo
-			// 
-			lbl_Titulo.AutoSize = true;
-			lbl_Titulo.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-			lbl_Titulo.Location = new Point(163, 5);
-			lbl_Titulo.Name = "lbl_Titulo";
-			lbl_Titulo.Size = new Size(289, 31);
-			lbl_Titulo.TabIndex = 0;
-			lbl_Titulo.Text = "Recuperar Contraseña";
-			// 
-			// pnl_Titulo
-			// 
-			pnl_Titulo.Controls.Add(lbl_Titulo);
-			pnl_Titulo.Dock = DockStyle.Top;
-			pnl_Titulo.Location = new Point(0, 0);
-			pnl_Titulo.Name = "pnl_Titulo";
-			pnl_Titulo.Size = new Size(617, 56);
-			pnl_Titulo.TabIndex = 8;
-			// 
-			// lbl_Mensaje
-			// 
-			lbl_Mensaje.AutoSize = true;
-			lbl_Mensaje.Dock = DockStyle.Top;
-			lbl_Mensaje.ForeColor = Color.Red;
-			lbl_Mensaje.Location = new Point(0, 0);
-			lbl_Mensaje.MaximumSize = new Size(617, 0);
-			lbl_Mensaje.Name = "lbl_Mensaje";
-			lbl_Mensaje.Size = new Size(95, 15);
-			lbl_Mensaje.TabIndex = 1;
-			lbl_Mensaje.Text = "Mensaje de error";
-			// 
-			// pnl_Mensaje
-			// 
-			pnl_Mensaje.Controls.Add(lbl_Mensaje);
-			pnl_Mensaje.Dock = DockStyle.Top;
-			pnl_Mensaje.Location = new Point(0, 56);
-			pnl_Mensaje.Name = "pnl_Mensaje";
-			pnl_Mensaje.Size = new Size(617, 26);
-			pnl_Mensaje.TabIndex = 9;
-			// 
-			// panel1
-			// 
-			panel1.AutoScroll = true;
-			panel1.BackColor = SystemColors.Control;
-			panel1.Controls.Add(pnl_Contraseña);
-			panel1.Controls.Add(pnl_Pregunta);
-			panel1.Controls.Add(panel2);
-			panel1.Location = new Point(156, 16);
-			panel1.Name = "panel1";
-			panel1.Size = new Size(307, 311);
-			panel1.TabIndex = 10;
-			// 
-			// pnl_Contraseña
-			// 
-			pnl_Contraseña.Controls.Add(label3);
-			pnl_Contraseña.Controls.Add(tableLayoutPanel2);
-			pnl_Contraseña.Controls.Add(btn_Guardar);
-			pnl_Contraseña.Dock = DockStyle.Top;
-			pnl_Contraseña.Location = new Point(0, 310);
-			pnl_Contraseña.Name = "pnl_Contraseña";
-			pnl_Contraseña.Size = new Size(290, 155);
-			pnl_Contraseña.TabIndex = 8;
-			// 
-			// label3
-			// 
-			label3.AutoSize = true;
-			label3.Location = new Point(31, 13);
-			label3.Name = "label3";
-			label3.Size = new Size(156, 15);
-			label3.TabIndex = 13;
-			label3.Text = "Ingrese la contraseña nueva.";
-			// 
-			// tableLayoutPanel2
-			// 
-			tableLayoutPanel2.ColumnCount = 2;
-			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
-			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
-			tableLayoutPanel2.Controls.Add(pictureBox2, 0, 1);
-			tableLayoutPanel2.Controls.Add(pictureBox9, 0, 0);
-			tableLayoutPanel2.Controls.Add(txt_Contraseña, 1, 0);
-			tableLayoutPanel2.Controls.Add(txt_Contraseña2, 1, 1);
-			tableLayoutPanel2.Location = new Point(35, 41);
-			tableLayoutPanel2.Name = "tableLayoutPanel2";
-			tableLayoutPanel2.RowCount = 2;
-			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-			tableLayoutPanel2.Size = new Size(235, 71);
-			tableLayoutPanel2.TabIndex = 12;
-			// 
-			// pictureBox2
-			// 
-			pictureBox2.Image = Properties.Resources.ico_contraseña;
-			pictureBox2.Location = new Point(3, 38);
-			pictureBox2.Name = "pictureBox2";
-			pictureBox2.Size = new Size(23, 23);
-			pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-			pictureBox2.TabIndex = 14;
-			pictureBox2.TabStop = false;
-			// 
-			// pictureBox9
-			// 
-			pictureBox9.Image = Properties.Resources.ico_contraseña;
-			pictureBox9.Location = new Point(3, 3);
-			pictureBox9.Name = "pictureBox9";
-			pictureBox9.Size = new Size(23, 23);
-			pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
-			pictureBox9.TabIndex = 13;
-			pictureBox9.TabStop = false;
-			// 
-			// txt_Contraseña
-			// 
-			txt_Contraseña.Location = new Point(32, 3);
-			txt_Contraseña.Name = "txt_Contraseña";
-			txt_Contraseña.PasswordChar = '*';
-			txt_Contraseña.PlaceholderText = "Contraseña";
-			txt_Contraseña.Size = new Size(200, 23);
-			txt_Contraseña.TabIndex = 0;
-			txt_Contraseña.UseSystemPasswordChar = true;
-			// 
-			// txt_Contraseña2
-			// 
-			txt_Contraseña2.Location = new Point(32, 38);
-			txt_Contraseña2.Name = "txt_Contraseña2";
-			txt_Contraseña2.PasswordChar = '*';
-			txt_Contraseña2.PlaceholderText = "Confirmar Contraseña";
-			txt_Contraseña2.Size = new Size(200, 23);
-			txt_Contraseña2.TabIndex = 1;
-			txt_Contraseña2.UseSystemPasswordChar = true;
-			// 
-			// btn_Guardar
-			// 
-			btn_Guardar.BackColor = Color.White;
-			btn_Guardar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-			btn_Guardar.Location = new Point(112, 118);
-			btn_Guardar.Name = "btn_Guardar";
-			btn_Guardar.Size = new Size(94, 23);
-			btn_Guardar.TabIndex = 2;
-			btn_Guardar.Text = "Guardar";
-			btn_Guardar.UseVisualStyleBackColor = false;
-			btn_Guardar.Click += btn_Guardar_Click;
-			// 
-			// pnl_Pregunta
-			// 
-			pnl_Pregunta.BackColor = SystemColors.Control;
-			pnl_Pregunta.Controls.Add(label2);
-			pnl_Pregunta.Controls.Add(cmb_Pregunta_Seguridad);
-			pnl_Pregunta.Controls.Add(txt_Respuesta);
-			pnl_Pregunta.Controls.Add(btn_Aceptar);
-			pnl_Pregunta.Dock = DockStyle.Top;
-			pnl_Pregunta.Location = new Point(0, 155);
-			pnl_Pregunta.Name = "pnl_Pregunta";
-			pnl_Pregunta.Size = new Size(290, 155);
-			pnl_Pregunta.TabIndex = 7;
-			// 
-			// label2
-			// 
-			label2.AutoSize = true;
-			label2.Location = new Point(21, 16);
-			label2.Name = "label2";
-			label2.Size = new Size(230, 15);
-			label2.TabIndex = 13;
-			label2.Text = "Ingrese la respuesta de seguridad correcta.";
-			// 
-			// cmb_Pregunta_Seguridad
-			// 
-			cmb_Pregunta_Seguridad.DropDownStyle = ComboBoxStyle.DropDownList;
-			cmb_Pregunta_Seguridad.FormattingEnabled = true;
-			cmb_Pregunta_Seguridad.Location = new Point(21, 49);
-			cmb_Pregunta_Seguridad.Name = "cmb_Pregunta_Seguridad";
-			cmb_Pregunta_Seguridad.Size = new Size(255, 23);
-			cmb_Pregunta_Seguridad.TabIndex = 3;
-			cmb_Pregunta_Seguridad.SelectedIndexChanged += cmb_Pregunta_Seguridad_SelectedIndexChanged;
-			// 
-			// txt_Respuesta
-			// 
-			txt_Respuesta.Location = new Point(21, 88);
-			txt_Respuesta.Name = "txt_Respuesta";
-			txt_Respuesta.PlaceholderText = "Escriba la Respuesta";
-			txt_Respuesta.Size = new Size(255, 23);
-			txt_Respuesta.TabIndex = 4;
-			// 
-			// btn_Aceptar
-			// 
-			btn_Aceptar.BackColor = Color.Yellow;
-			btn_Aceptar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-			btn_Aceptar.Location = new Point(112, 124);
-			btn_Aceptar.Name = "btn_Aceptar";
-			btn_Aceptar.Size = new Size(94, 23);
-			btn_Aceptar.TabIndex = 5;
-			btn_Aceptar.Text = "Aceptar";
-			btn_Aceptar.UseVisualStyleBackColor = false;
-			btn_Aceptar.Click += btn_Aceptar_Click;
-			// 
-			// panel2
-			// 
-			panel2.Controls.Add(label1);
-			panel2.Controls.Add(tableLayoutPanel1);
-			panel2.Controls.Add(btn_Buscar);
-			panel2.Dock = DockStyle.Top;
-			panel2.Location = new Point(0, 0);
-			panel2.Name = "panel2";
-			panel2.Size = new Size(290, 155);
-			panel2.TabIndex = 6;
-			// 
-			// label1
-			// 
-			label1.AutoSize = true;
-			label1.Location = new Point(35, 11);
-			label1.Name = "label1";
-			label1.Size = new Size(236, 15);
-			label1.TabIndex = 12;
-			label1.Text = "Ingrese sus credenciales de inicio de sesión.";
-			// 
-			// tableLayoutPanel1
-			// 
-			tableLayoutPanel1.ColumnCount = 2;
-			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
-			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
-			tableLayoutPanel1.Controls.Add(pictureBox3, 0, 1);
-			tableLayoutPanel1.Controls.Add(txt_Correo, 1, 1);
-			tableLayoutPanel1.Controls.Add(txt_Usuario, 1, 0);
-			tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
-			tableLayoutPanel1.Location = new Point(35, 40);
-			tableLayoutPanel1.Name = "tableLayoutPanel1";
-			tableLayoutPanel1.RowCount = 2;
-			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-			tableLayoutPanel1.Size = new Size(235, 71);
-			tableLayoutPanel1.TabIndex = 11;
-			// 
-			// pictureBox3
-			// 
-			pictureBox3.Image = Properties.Resources.ico_correo_electronico;
-			pictureBox3.Location = new Point(3, 38);
-			pictureBox3.Name = "pictureBox3";
-			pictureBox3.Size = new Size(23, 23);
-			pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-			pictureBox3.TabIndex = 12;
-			pictureBox3.TabStop = false;
-			// 
-			// txt_Correo
-			// 
-			txt_Correo.Location = new Point(32, 38);
-			txt_Correo.Name = "txt_Correo";
-			txt_Correo.PlaceholderText = "Ingrese su Correo";
-			txt_Correo.Size = new Size(203, 23);
-			txt_Correo.TabIndex = 1;
-			// 
-			// txt_Usuario
-			// 
-			txt_Usuario.Location = new Point(32, 3);
-			txt_Usuario.Name = "txt_Usuario";
-			txt_Usuario.PlaceholderText = "Ingrese su Usuario";
-			txt_Usuario.Size = new Size(203, 23);
-			txt_Usuario.TabIndex = 0;
-			// 
-			// pictureBox1
-			// 
-			pictureBox1.BackgroundImageLayout = ImageLayout.None;
-			pictureBox1.Image = Properties.Resources.ico_usuario;
-			pictureBox1.Location = new Point(3, 3);
-			pictureBox1.Name = "pictureBox1";
-			pictureBox1.Size = new Size(23, 23);
-			pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-			pictureBox1.TabIndex = 5;
-			pictureBox1.TabStop = false;
-			// 
-			// btn_Buscar
-			// 
-			btn_Buscar.BackColor = Color.Green;
-			btn_Buscar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-			btn_Buscar.ForeColor = Color.White;
-			btn_Buscar.Location = new Point(112, 117);
-			btn_Buscar.Name = "btn_Buscar";
-			btn_Buscar.Size = new Size(94, 23);
-			btn_Buscar.TabIndex = 2;
-			btn_Buscar.Text = "Buscar";
-			btn_Buscar.UseVisualStyleBackColor = false;
-			btn_Buscar.Click += btn_Buscar_Click;
-			// 
-			// tableLayoutPanel3
-			// 
-			tableLayoutPanel3.ColumnCount = 2;
-			tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
-			tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
-			tableLayoutPanel3.Controls.Add(pictureBox4, 0, 1);
-			tableLayoutPanel3.Location = new Point(0, 0);
-			tableLayoutPanel3.Name = "tableLayoutPanel3";
-			tableLayoutPanel3.RowCount = 2;
-			tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-			tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-			tableLayoutPanel3.Size = new Size(200, 100);
-			tableLayoutPanel3.TabIndex = 0;
-			// 
-			// pictureBox4
-			// 
-			pictureBox4.Image = Properties.Resources.ico_correo_electronico;
-			pictureBox4.Location = new Point(3, 23);
-			pictureBox4.Name = "pictureBox4";
-			pictureBox4.Size = new Size(23, 23);
-			pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-			pictureBox4.TabIndex = 12;
-			pictureBox4.TabStop = false;
-			// 
-			// textBox3
-			// 
-			textBox3.Location = new Point(32, 3);
-			textBox3.Name = "textBox3";
-			textBox3.PlaceholderText = "Ingrese su Correo";
-			textBox3.Size = new Size(188, 23);
-			textBox3.TabIndex = 1;
-			// 
-			// panel3
-			// 
-			panel3.Controls.Add(panel1);
-			panel3.Dock = DockStyle.Fill;
-			panel3.Location = new Point(0, 82);
-			panel3.Name = "panel3";
-			panel3.Size = new Size(617, 352);
-			panel3.TabIndex = 11;
-			// 
-			// UC_Recuperar_Contraseña
-			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
-			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = SystemColors.Window;
-			Controls.Add(panel3);
-			Controls.Add(pnl_Mensaje);
-			Controls.Add(pnl_Titulo);
-			Name = "UC_Recuperar_Contraseña";
-			Size = new Size(617, 434);
-			pnl_Titulo.ResumeLayout(false);
-			pnl_Titulo.PerformLayout();
-			pnl_Mensaje.ResumeLayout(false);
-			pnl_Mensaje.PerformLayout();
-			panel1.ResumeLayout(false);
-			pnl_Contraseña.ResumeLayout(false);
-			pnl_Contraseña.PerformLayout();
-			tableLayoutPanel2.ResumeLayout(false);
-			tableLayoutPanel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-			((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-			pnl_Pregunta.ResumeLayout(false);
-			pnl_Pregunta.PerformLayout();
-			panel2.ResumeLayout(false);
-			panel2.PerformLayout();
-			tableLayoutPanel1.ResumeLayout(false);
-			tableLayoutPanel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-			tableLayoutPanel3.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-			panel3.ResumeLayout(false);
-			ResumeLayout(false);
+            this.lbl_Titulo = new System.Windows.Forms.Label();
+            this.pnl_Titulo = new System.Windows.Forms.Panel();
+            this.lbl_Mensaje = new System.Windows.Forms.Label();
+            this.pnl_Mensaje = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnl_Contraseña = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.txt_Contraseña = new System.Windows.Forms.TextBox();
+            this.txt_Contraseña2 = new System.Windows.Forms.TextBox();
+            this.btn_Guardar = new System.Windows.Forms.Button();
+            this.pnl_Pregunta = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmb_Pregunta_Seguridad = new System.Windows.Forms.ComboBox();
+            this.txt_Respuesta = new System.Windows.Forms.TextBox();
+            this.btn_Aceptar = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.txt_Correo = new System.Windows.Forms.TextBox();
+            this.txt_Usuario = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnl_Titulo.SuspendLayout();
+            this.pnl_Mensaje.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.pnl_Contraseña.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.pnl_Pregunta.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // lbl_Titulo
+            // 
+            this.lbl_Titulo.AutoSize = true;
+            this.lbl_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Titulo.Location = new System.Drawing.Point(163, 5);
+            this.lbl_Titulo.Name = "lbl_Titulo";
+            this.lbl_Titulo.Size = new System.Drawing.Size(289, 31);
+            this.lbl_Titulo.TabIndex = 0;
+            this.lbl_Titulo.Text = "Recuperar Contraseña";
+            // 
+            // pnl_Titulo
+            // 
+            this.pnl_Titulo.Controls.Add(this.lbl_Titulo);
+            this.pnl_Titulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_Titulo.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Titulo.Name = "pnl_Titulo";
+            this.pnl_Titulo.Size = new System.Drawing.Size(617, 56);
+            this.pnl_Titulo.TabIndex = 8;
+            // 
+            // lbl_Mensaje
+            // 
+            this.lbl_Mensaje.AutoSize = true;
+            this.lbl_Mensaje.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_Mensaje.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Mensaje.Location = new System.Drawing.Point(0, 0);
+            this.lbl_Mensaje.MaximumSize = new System.Drawing.Size(617, 0);
+            this.lbl_Mensaje.Name = "lbl_Mensaje";
+            this.lbl_Mensaje.Size = new System.Drawing.Size(95, 15);
+            this.lbl_Mensaje.TabIndex = 1;
+            this.lbl_Mensaje.Text = "Mensaje de error";
+            // 
+            // pnl_Mensaje
+            // 
+            this.pnl_Mensaje.Controls.Add(this.lbl_Mensaje);
+            this.pnl_Mensaje.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_Mensaje.Location = new System.Drawing.Point(0, 56);
+            this.pnl_Mensaje.Name = "pnl_Mensaje";
+            this.pnl_Mensaje.Size = new System.Drawing.Size(617, 26);
+            this.pnl_Mensaje.TabIndex = 9;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.pnl_Contraseña);
+            this.panel1.Controls.Add(this.pnl_Pregunta);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(156, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(307, 311);
+            this.panel1.TabIndex = 10;
+            // 
+            // pnl_Contraseña
+            // 
+            this.pnl_Contraseña.Controls.Add(this.label3);
+            this.pnl_Contraseña.Controls.Add(this.tableLayoutPanel2);
+            this.pnl_Contraseña.Controls.Add(this.btn_Guardar);
+            this.pnl_Contraseña.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_Contraseña.Location = new System.Drawing.Point(0, 310);
+            this.pnl_Contraseña.Name = "pnl_Contraseña";
+            this.pnl_Contraseña.Size = new System.Drawing.Size(290, 155);
+            this.pnl_Contraseña.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(156, 15);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Ingrese la contraseña nueva.";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox2, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox9, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txt_Contraseña, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txt_Contraseña2, 1, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(35, 41);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(235, 71);
+            this.tableLayoutPanel2.TabIndex = 12;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.ico_contraseña;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 38);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::CapaPresentacion.Properties.Resources.ico_contraseña;
+            this.pictureBox9.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 13;
+            this.pictureBox9.TabStop = false;
+            // 
+            // txt_Contraseña
+            // 
+            this.txt_Contraseña.Location = new System.Drawing.Point(32, 3);
+            this.txt_Contraseña.Name = "txt_Contraseña";
+            this.txt_Contraseña.PasswordChar = '*';
+            this.txt_Contraseña.PlaceholderText = "Contraseña";
+            this.txt_Contraseña.Size = new System.Drawing.Size(200, 23);
+            this.txt_Contraseña.TabIndex = 0;
+            this.txt_Contraseña.UseSystemPasswordChar = true;
+            // 
+            // txt_Contraseña2
+            // 
+            this.txt_Contraseña2.Location = new System.Drawing.Point(32, 38);
+            this.txt_Contraseña2.Name = "txt_Contraseña2";
+            this.txt_Contraseña2.PasswordChar = '*';
+            this.txt_Contraseña2.PlaceholderText = "Confirmar Contraseña";
+            this.txt_Contraseña2.Size = new System.Drawing.Size(200, 23);
+            this.txt_Contraseña2.TabIndex = 1;
+            this.txt_Contraseña2.UseSystemPasswordChar = true;
+            // 
+            // btn_Guardar
+            // 
+            this.btn_Guardar.BackColor = System.Drawing.Color.White;
+            this.btn_Guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Guardar.Location = new System.Drawing.Point(112, 118);
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.Size = new System.Drawing.Size(94, 23);
+            this.btn_Guardar.TabIndex = 2;
+            this.btn_Guardar.Text = "Guardar";
+            this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            // 
+            // pnl_Pregunta
+            // 
+            this.pnl_Pregunta.BackColor = System.Drawing.SystemColors.Control;
+            this.pnl_Pregunta.Controls.Add(this.label2);
+            this.pnl_Pregunta.Controls.Add(this.cmb_Pregunta_Seguridad);
+            this.pnl_Pregunta.Controls.Add(this.txt_Respuesta);
+            this.pnl_Pregunta.Controls.Add(this.btn_Aceptar);
+            this.pnl_Pregunta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_Pregunta.Location = new System.Drawing.Point(0, 155);
+            this.pnl_Pregunta.Name = "pnl_Pregunta";
+            this.pnl_Pregunta.Size = new System.Drawing.Size(290, 155);
+            this.pnl_Pregunta.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(230, 15);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Ingrese la respuesta de seguridad correcta.";
+            // 
+            // cmb_Pregunta_Seguridad
+            // 
+            this.cmb_Pregunta_Seguridad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Pregunta_Seguridad.FormattingEnabled = true;
+            this.cmb_Pregunta_Seguridad.Location = new System.Drawing.Point(21, 49);
+            this.cmb_Pregunta_Seguridad.Name = "cmb_Pregunta_Seguridad";
+            this.cmb_Pregunta_Seguridad.Size = new System.Drawing.Size(255, 23);
+            this.cmb_Pregunta_Seguridad.TabIndex = 3;
+            this.cmb_Pregunta_Seguridad.SelectedIndexChanged += new System.EventHandler(this.cmb_Pregunta_Seguridad_SelectedIndexChanged);
+            // 
+            // txt_Respuesta
+            // 
+            this.txt_Respuesta.Location = new System.Drawing.Point(21, 88);
+            this.txt_Respuesta.Name = "txt_Respuesta";
+            this.txt_Respuesta.PlaceholderText = "Escriba la Respuesta";
+            this.txt_Respuesta.Size = new System.Drawing.Size(255, 23);
+            this.txt_Respuesta.TabIndex = 4;
+            // 
+            // btn_Aceptar
+            // 
+            this.btn_Aceptar.BackColor = System.Drawing.Color.Yellow;
+            this.btn_Aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Aceptar.Location = new System.Drawing.Point(112, 124);
+            this.btn_Aceptar.Name = "btn_Aceptar";
+            this.btn_Aceptar.Size = new System.Drawing.Size(94, 23);
+            this.btn_Aceptar.TabIndex = 5;
+            this.btn_Aceptar.Text = "Aceptar";
+            this.btn_Aceptar.UseVisualStyleBackColor = false;
+            this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.tableLayoutPanel1);
+            this.panel2.Controls.Add(this.btn_Buscar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(290, 155);
+            this.panel2.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(236, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Ingrese sus credenciales de inicio de sesión.";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Correo, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Usuario, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(35, 40);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(235, 71);
+            this.tableLayoutPanel1.TabIndex = 11;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources.ico_correo_electronico;
+            this.pictureBox3.Location = new System.Drawing.Point(3, 38);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 12;
+            this.pictureBox3.TabStop = false;
+            // 
+            // txt_Correo
+            // 
+            this.txt_Correo.Location = new System.Drawing.Point(32, 38);
+            this.txt_Correo.Name = "txt_Correo";
+            this.txt_Correo.PlaceholderText = "Ingrese su Correo";
+            this.txt_Correo.Size = new System.Drawing.Size(203, 23);
+            this.txt_Correo.TabIndex = 1;
+            // 
+            // txt_Usuario
+            // 
+            this.txt_Usuario.Location = new System.Drawing.Point(32, 3);
+            this.txt_Usuario.Name = "txt_Usuario";
+            this.txt_Usuario.PlaceholderText = "Ingrese su Usuario";
+            this.txt_Usuario.Size = new System.Drawing.Size(203, 23);
+            this.txt_Usuario.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.ico_usuario;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.BackColor = System.Drawing.Color.Green;
+            this.btn_Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Buscar.ForeColor = System.Drawing.Color.White;
+            this.btn_Buscar.Location = new System.Drawing.Point(112, 117);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(94, 23);
+            this.btn_Buscar.TabIndex = 2;
+            this.btn_Buscar.Text = "Buscar";
+            this.btn_Buscar.UseVisualStyleBackColor = false;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.pictureBox4, 0, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::CapaPresentacion.Properties.Resources.ico_correo_electronico;
+            this.pictureBox4.Location = new System.Drawing.Point(3, 23);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 12;
+            this.pictureBox4.TabStop = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(32, 3);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.PlaceholderText = "Ingrese su Correo";
+            this.textBox3.Size = new System.Drawing.Size(188, 23);
+            this.textBox3.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 82);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(617, 352);
+            this.panel3.TabIndex = 11;
+            // 
+            // UC_Recuperar_Contraseña
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnl_Mensaje);
+            this.Controls.Add(this.pnl_Titulo);
+            this.Name = "UC_Recuperar_Contraseña";
+            this.Size = new System.Drawing.Size(617, 434);
+            this.pnl_Titulo.ResumeLayout(false);
+            this.pnl_Titulo.PerformLayout();
+            this.pnl_Mensaje.ResumeLayout(false);
+            this.pnl_Mensaje.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.pnl_Contraseña.ResumeLayout(false);
+            this.pnl_Contraseña.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            this.pnl_Pregunta.ResumeLayout(false);
+            this.pnl_Pregunta.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.ResumeLayout(false);
+
 		}
 
 		#endregion

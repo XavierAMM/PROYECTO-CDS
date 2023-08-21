@@ -28,247 +28,248 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			txt_Usuario = new TextBox();
-			txt_Contraseña = new TextBox();
-			btn_Ingresar = new Button();
-			panel1 = new Panel();
-			lbl_Cerrar = new Label();
-			panel2 = new Panel();
-			panel6 = new Panel();
-			pictureBox1 = new PictureBox();
-			lbl_OlvideContraseña = new LinkLabel();
-			pictureBox2 = new PictureBox();
-			pnl_Mensaje = new Panel();
-			lbl_Mensaje = new Label();
-			panel4 = new Panel();
-			label1 = new Label();
-			panel3 = new Panel();
-			btn_Registrarse = new Button();
-			label2 = new Label();
-			panel1.SuspendLayout();
-			panel2.SuspendLayout();
-			panel6.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-			((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-			pnl_Mensaje.SuspendLayout();
-			panel4.SuspendLayout();
-			panel3.SuspendLayout();
-			SuspendLayout();
-			// 
-			// txt_Usuario
-			// 
-			txt_Usuario.Location = new Point(54, 6);
-			txt_Usuario.Name = "txt_Usuario";
-			txt_Usuario.PlaceholderText = "Usuario";
-			txt_Usuario.Size = new Size(152, 23);
-			txt_Usuario.TabIndex = 0;
-			// 
-			// txt_Contraseña
-			// 
-			txt_Contraseña.Location = new Point(54, 35);
-			txt_Contraseña.Name = "txt_Contraseña";
-			txt_Contraseña.PasswordChar = '*';
-			txt_Contraseña.PlaceholderText = "Contraseña";
-			txt_Contraseña.Size = new Size(152, 23);
-			txt_Contraseña.TabIndex = 1;
-			txt_Contraseña.UseSystemPasswordChar = true;
-			// 
-			// btn_Ingresar
-			// 
-			btn_Ingresar.BackColor = SystemColors.MenuHighlight;
-			btn_Ingresar.FlatStyle = FlatStyle.Popup;
-			btn_Ingresar.ForeColor = SystemColors.Window;
-			btn_Ingresar.Location = new Point(68, 67);
-			btn_Ingresar.Name = "btn_Ingresar";
-			btn_Ingresar.Size = new Size(91, 23);
-			btn_Ingresar.TabIndex = 2;
-			btn_Ingresar.Text = "Ingresar";
-			btn_Ingresar.UseVisualStyleBackColor = false;
-			btn_Ingresar.Click += btn_Ingresar_Click;
-			// 
-			// panel1
-			// 
-			panel1.BackColor = Color.LightSeaGreen;
-			panel1.Controls.Add(lbl_Cerrar);
-			panel1.Dock = DockStyle.Top;
-			panel1.Location = new Point(0, 0);
-			panel1.Name = "panel1";
-			panel1.Size = new Size(330, 16);
-			panel1.TabIndex = 3;
-			// 
-			// lbl_Cerrar
-			// 
-			lbl_Cerrar.AutoSize = true;
-			lbl_Cerrar.Dock = DockStyle.Right;
-			lbl_Cerrar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-			lbl_Cerrar.ForeColor = Color.White;
-			lbl_Cerrar.Location = new Point(314, 0);
-			lbl_Cerrar.Name = "lbl_Cerrar";
-			lbl_Cerrar.Size = new Size(16, 16);
-			lbl_Cerrar.TabIndex = 0;
-			lbl_Cerrar.Text = "X";
-			lbl_Cerrar.Click += lbl_Cerrar_Click;
-			// 
-			// panel2
-			// 
-			panel2.BackColor = Color.WhiteSmoke;
-			panel2.Controls.Add(panel6);
-			panel2.Controls.Add(pnl_Mensaje);
-			panel2.Controls.Add(panel4);
-			panel2.ImeMode = ImeMode.On;
-			panel2.Location = new Point(50, 39);
-			panel2.Name = "panel2";
-			panel2.Size = new Size(231, 198);
-			panel2.TabIndex = 6;
-			// 
-			// panel6
-			// 
-			panel6.Controls.Add(pictureBox1);
-			panel6.Controls.Add(txt_Usuario);
-			panel6.Controls.Add(lbl_OlvideContraseña);
-			panel6.Controls.Add(txt_Contraseña);
-			panel6.Controls.Add(btn_Ingresar);
-			panel6.Controls.Add(pictureBox2);
-			panel6.Dock = DockStyle.Fill;
-			panel6.Location = new Point(0, 63);
-			panel6.Name = "panel6";
-			panel6.Size = new Size(231, 135);
-			panel6.TabIndex = 9;
-			// 
-			// pictureBox1
-			// 
-			pictureBox1.BackgroundImageLayout = ImageLayout.None;
-			pictureBox1.Image = Properties.Resources.ico_usuario;
-			pictureBox1.Location = new Point(25, 6);
-			pictureBox1.Name = "pictureBox1";
-			pictureBox1.Size = new Size(23, 23);
-			pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-			pictureBox1.TabIndex = 4;
-			pictureBox1.TabStop = false;
-			// 
-			// lbl_OlvideContraseña
-			// 
-			lbl_OlvideContraseña.AutoSize = true;
-			lbl_OlvideContraseña.Location = new Point(57, 104);
-			lbl_OlvideContraseña.Name = "lbl_OlvideContraseña";
-			lbl_OlvideContraseña.Size = new Size(119, 15);
-			lbl_OlvideContraseña.TabIndex = 6;
-			lbl_OlvideContraseña.TabStop = true;
-			lbl_OlvideContraseña.Text = "Olvidé mi contraseña";
-			lbl_OlvideContraseña.LinkClicked += lbl_OlvideContraseña_LinkClicked;
-			// 
-			// pictureBox2
-			// 
-			pictureBox2.BackgroundImageLayout = ImageLayout.None;
-			pictureBox2.Image = Properties.Resources.ico_contraseña;
-			pictureBox2.Location = new Point(25, 35);
-			pictureBox2.Name = "pictureBox2";
-			pictureBox2.Size = new Size(23, 23);
-			pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-			pictureBox2.TabIndex = 5;
-			pictureBox2.TabStop = false;
-			// 
-			// pnl_Mensaje
-			// 
-			pnl_Mensaje.Controls.Add(lbl_Mensaje);
-			pnl_Mensaje.Dock = DockStyle.Top;
-			pnl_Mensaje.Location = new Point(0, 35);
-			pnl_Mensaje.Name = "pnl_Mensaje";
-			pnl_Mensaje.Size = new Size(231, 28);
-			pnl_Mensaje.TabIndex = 8;
-			// 
-			// lbl_Mensaje
-			// 
-			lbl_Mensaje.AutoSize = true;
-			lbl_Mensaje.Dock = DockStyle.Top;
-			lbl_Mensaje.ForeColor = Color.Red;
-			lbl_Mensaje.Location = new Point(0, 0);
-			lbl_Mensaje.MaximumSize = new Size(231, 0);
-			lbl_Mensaje.Name = "lbl_Mensaje";
-			lbl_Mensaje.Size = new Size(95, 15);
-			lbl_Mensaje.TabIndex = 0;
-			lbl_Mensaje.Text = "Mensaje de error";
-			// 
-			// panel4
-			// 
-			panel4.Controls.Add(label1);
-			panel4.Dock = DockStyle.Top;
-			panel4.Location = new Point(0, 0);
-			panel4.Name = "panel4";
-			panel4.Size = new Size(231, 35);
-			panel4.TabIndex = 7;
-			// 
-			// label1
-			// 
-			label1.AutoSize = true;
-			label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label1.ForeColor = Color.DarkCyan;
-			label1.Location = new Point(45, 5);
-			label1.Name = "label1";
-			label1.Size = new Size(141, 25);
-			label1.TabIndex = 3;
-			label1.Text = "Iniciar Sesión";
-			// 
-			// panel3
-			// 
-			panel3.Controls.Add(btn_Registrarse);
-			panel3.Controls.Add(label2);
-			panel3.Location = new Point(50, 243);
-			panel3.Name = "panel3";
-			panel3.Size = new Size(231, 81);
-			panel3.TabIndex = 7;
-			// 
-			// btn_Registrarse
-			// 
-			btn_Registrarse.BackColor = Color.GreenYellow;
-			btn_Registrarse.FlatStyle = FlatStyle.Popup;
-			btn_Registrarse.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			btn_Registrarse.ForeColor = SystemColors.ActiveCaptionText;
-			btn_Registrarse.Location = new Point(37, 34);
-			btn_Registrarse.Name = "btn_Registrarse";
-			btn_Registrarse.Size = new Size(161, 33);
-			btn_Registrarse.TabIndex = 1;
-			btn_Registrarse.Text = "Registrarse ahora";
-			btn_Registrarse.UseVisualStyleBackColor = false;
-			btn_Registrarse.Click += btn_Registrarse_Click;
-			// 
-			// label2
-			// 
-			label2.AutoSize = true;
-			label2.Font = new Font("Bahnschrift Condensed", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-			label2.Location = new Point(64, 13);
-			label2.Name = "label2";
-			label2.Size = new Size(101, 18);
-			label2.TabIndex = 0;
-			label2.Text = "¿No tienes cuenta?";
-			// 
-			// Frm_InicioSesion
-			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
-			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = SystemColors.Window;
-			ClientSize = new Size(330, 377);
-			Controls.Add(panel3);
-			Controls.Add(panel2);
-			Controls.Add(panel1);
-			FormBorderStyle = FormBorderStyle.None;
-			Name = "Frm_InicioSesion";
-			StartPosition = FormStartPosition.CenterScreen;
-			Text = "Frm_InicioSesion";
-			panel1.ResumeLayout(false);
-			panel1.PerformLayout();
-			panel2.ResumeLayout(false);
-			panel6.ResumeLayout(false);
-			panel6.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-			((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-			pnl_Mensaje.ResumeLayout(false);
-			pnl_Mensaje.PerformLayout();
-			panel4.ResumeLayout(false);
-			panel4.PerformLayout();
-			panel3.ResumeLayout(false);
-			panel3.PerformLayout();
-			ResumeLayout(false);
+            this.txt_Usuario = new System.Windows.Forms.TextBox();
+            this.txt_Contraseña = new System.Windows.Forms.TextBox();
+            this.btn_Ingresar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_Cerrar = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_OlvideContraseña = new System.Windows.Forms.LinkLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pnl_Mensaje = new System.Windows.Forms.Panel();
+            this.lbl_Mensaje = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_Registrarse = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnl_Mensaje.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // txt_Usuario
+            // 
+            this.txt_Usuario.Location = new System.Drawing.Point(54, 6);
+            this.txt_Usuario.Name = "txt_Usuario";
+            this.txt_Usuario.PlaceholderText = "Usuario";
+            this.txt_Usuario.Size = new System.Drawing.Size(152, 23);
+            this.txt_Usuario.TabIndex = 0;
+            // 
+            // txt_Contraseña
+            // 
+            this.txt_Contraseña.Location = new System.Drawing.Point(54, 35);
+            this.txt_Contraseña.Name = "txt_Contraseña";
+            this.txt_Contraseña.PasswordChar = '*';
+            this.txt_Contraseña.PlaceholderText = "Contraseña";
+            this.txt_Contraseña.Size = new System.Drawing.Size(152, 23);
+            this.txt_Contraseña.TabIndex = 1;
+            this.txt_Contraseña.UseSystemPasswordChar = true;
+            // 
+            // btn_Ingresar
+            // 
+            this.btn_Ingresar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Ingresar.ForeColor = System.Drawing.SystemColors.Window;
+            this.btn_Ingresar.Location = new System.Drawing.Point(68, 67);
+            this.btn_Ingresar.Name = "btn_Ingresar";
+            this.btn_Ingresar.Size = new System.Drawing.Size(91, 23);
+            this.btn_Ingresar.TabIndex = 2;
+            this.btn_Ingresar.Text = "Ingresar";
+            this.btn_Ingresar.UseVisualStyleBackColor = false;
+            this.btn_Ingresar.Click += new System.EventHandler(this.btn_Ingresar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panel1.Controls.Add(this.lbl_Cerrar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(330, 16);
+            this.panel1.TabIndex = 3;
+            // 
+            // lbl_Cerrar
+            // 
+            this.lbl_Cerrar.AutoSize = true;
+            this.lbl_Cerrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbl_Cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Cerrar.ForeColor = System.Drawing.Color.White;
+            this.lbl_Cerrar.Location = new System.Drawing.Point(314, 0);
+            this.lbl_Cerrar.Name = "lbl_Cerrar";
+            this.lbl_Cerrar.Size = new System.Drawing.Size(16, 16);
+            this.lbl_Cerrar.TabIndex = 0;
+            this.lbl_Cerrar.Text = "X";
+            this.lbl_Cerrar.Click += new System.EventHandler(this.lbl_Cerrar_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.pnl_Mensaje);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.panel2.Location = new System.Drawing.Point(50, 39);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(231, 198);
+            this.panel2.TabIndex = 6;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.pictureBox1);
+            this.panel6.Controls.Add(this.txt_Usuario);
+            this.panel6.Controls.Add(this.lbl_OlvideContraseña);
+            this.panel6.Controls.Add(this.txt_Contraseña);
+            this.panel6.Controls.Add(this.btn_Ingresar);
+            this.panel6.Controls.Add(this.pictureBox2);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 63);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(231, 135);
+            this.panel6.TabIndex = 9;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.ico_usuario;
+            this.pictureBox1.Location = new System.Drawing.Point(25, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lbl_OlvideContraseña
+            // 
+            this.lbl_OlvideContraseña.AutoSize = true;
+            this.lbl_OlvideContraseña.Location = new System.Drawing.Point(57, 104);
+            this.lbl_OlvideContraseña.Name = "lbl_OlvideContraseña";
+            this.lbl_OlvideContraseña.Size = new System.Drawing.Size(119, 15);
+            this.lbl_OlvideContraseña.TabIndex = 6;
+            this.lbl_OlvideContraseña.TabStop = true;
+            this.lbl_OlvideContraseña.Text = "Olvidé mi contraseña";
+            this.lbl_OlvideContraseña.Click += new System.EventHandler(this.lbl_OlvideContraseña_LinkClicked);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.ico_contraseña;
+            this.pictureBox2.Location = new System.Drawing.Point(25, 35);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pnl_Mensaje
+            // 
+            this.pnl_Mensaje.Controls.Add(this.lbl_Mensaje);
+            this.pnl_Mensaje.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_Mensaje.Location = new System.Drawing.Point(0, 35);
+            this.pnl_Mensaje.Name = "pnl_Mensaje";
+            this.pnl_Mensaje.Size = new System.Drawing.Size(231, 28);
+            this.pnl_Mensaje.TabIndex = 8;
+            // 
+            // lbl_Mensaje
+            // 
+            this.lbl_Mensaje.AutoSize = true;
+            this.lbl_Mensaje.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_Mensaje.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Mensaje.Location = new System.Drawing.Point(0, 0);
+            this.lbl_Mensaje.MaximumSize = new System.Drawing.Size(231, 0);
+            this.lbl_Mensaje.Name = "lbl_Mensaje";
+            this.lbl_Mensaje.Size = new System.Drawing.Size(95, 15);
+            this.lbl_Mensaje.TabIndex = 0;
+            this.lbl_Mensaje.Text = "Mensaje de error";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(231, 35);
+            this.panel4.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label1.Location = new System.Drawing.Point(45, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Iniciar Sesión";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btn_Registrarse);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(50, 243);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(231, 81);
+            this.panel3.TabIndex = 7;
+            // 
+            // btn_Registrarse
+            // 
+            this.btn_Registrarse.BackColor = System.Drawing.Color.GreenYellow;
+            this.btn_Registrarse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Registrarse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Registrarse.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Registrarse.Location = new System.Drawing.Point(37, 34);
+            this.btn_Registrarse.Name = "btn_Registrarse";
+            this.btn_Registrarse.Size = new System.Drawing.Size(161, 33);
+            this.btn_Registrarse.TabIndex = 1;
+            this.btn_Registrarse.Text = "Registrarse ahora";
+            this.btn_Registrarse.UseVisualStyleBackColor = false;
+            this.btn_Registrarse.Click += new System.EventHandler(this.btn_Registrarse_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(64, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 18);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "¿No tienes cuenta?";
+            // 
+            // Frm_InicioSesion
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(330, 377);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Frm_InicioSesion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Frm_InicioSesion";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnl_Mensaje.ResumeLayout(false);
+            this.pnl_Mensaje.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.ResumeLayout(false);
+
 		}
 
 		#endregion

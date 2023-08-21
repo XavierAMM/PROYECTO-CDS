@@ -148,14 +148,18 @@ namespace CapaPresentacion.User_Control
 			CD_Parametros[] p = { new CD_Parametros("@inventario_id", inventario_id) };
 			DataTable dt = objectCN.obtenerTabla("PD_OBTENER_PRODUCTOS_TRANSACCIONES", p);
 			dgv_Productos.DataSource = dt;
-			p = new CD_Parametros[] 
-			{ 
-				new CD_Parametros("@inventario_id", inventario_id),
+		}
+
+        private void activarTablaTempTransaccion()
+        {
+            CD_Parametros[] p = new CD_Parametros[]
+            {
+                new CD_Parametros("@inventario_id", inventario_id),
                 new CD_Parametros("@usuario_id", usuario_id)
             };
-			dt = objectCN.obtenerTabla("PD_OBTENER_TEMP_TRANSACCION", p);
-			dgv_Temp_Transacciones.DataSource = dt;			
-		}
+            DataTable dt = objectCN.obtenerTabla("PD_OBTENER_TEMP_TRANSACCION", p);
+            dgv_Temp_Transacciones.DataSource = dt;
+        }
 
         private void dgv_Productos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -228,8 +232,12 @@ namespace CapaPresentacion.User_Control
 
         private void txt_Buscar_TextChanged(object sender, EventArgs e)
         {
-			if (txt_Buscar.Text.Length > 0) buscarPorFiltro();
-			else activarPanelTablaProductos();
+            if (txt_Buscar.Text.Length > 0)
+            {
+                buscarPorFiltro();
+                //activarTablaTempTransaccion();
+            }
+            else actualizarTablas();
         }
 
 		private void buscarPorFiltro()
@@ -331,7 +339,8 @@ namespace CapaPresentacion.User_Control
 		private void actualizarTablas()
 		{
 			if (txt_Buscar.Text.Length > 0) buscarPorFiltro();
-            else activarPanelTablaProductos();            
+            else activarPanelTablaProductos();
+            activarTablaTempTransaccion();
             cambiarColorExcesosFaltantes();
         }
 
