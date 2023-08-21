@@ -31,6 +31,7 @@ namespace CapaPresentacion.User_Control
             InitializeComponent();
             CD_Parametros[] p = { new CD_Parametros("@usuario_id", usuario_id) };
             llenarComboBox(cmb_Bodega, "VISTA_BODEGAS", "bodega_id", "Seleccione bodega...");
+            date_Fecha_Max.Value = DateTime.Today;
         }
 
         /// <summary>
@@ -134,7 +135,6 @@ namespace CapaPresentacion.User_Control
                     pnl_Tabla.Enabled = true;
                     llenarTabla();
                     agregarTooltipCombobox(cmb_Inventario);
-                    date_Fecha_Max.Value = DateTime.Today;
                     return;
                 }
             }
