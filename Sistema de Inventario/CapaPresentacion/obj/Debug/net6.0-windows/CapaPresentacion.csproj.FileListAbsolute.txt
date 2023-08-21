@@ -184,3 +184,4 @@ C:\Users\Usuario\Desktop\PROYECTO CDS\PROYECTO-CDS\Sistema de Inventario\CapaPre
 C:\Users\Usuario\Desktop\PROYECTO CDS\PROYECTO-CDS\Sistema de Inventario\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.User_Control.UC_Sistemas_Views.UC_Sistema_Usuarios.resources
 C:\Users\Usuario\Desktop\PROYECTO CDS\PROYECTO-CDS\Sistema de Inventario\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.User_Control.UC_Transacciones.resources
 C:\Users\Usuario\Desktop\PROYECTO CDS\PROYECTO-CDS\Sistema de Inventario\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.User_Control.UC_Ver_Movimientos.resources
+C:\Users\Rocío\Desktop\PROYECTO-CDS\Sistema de Inventario\CapaPresentacion\obj\Debug\net6.0-windows\CapaPresentacion.User_Control.UC_Ver_Movimientos.resources
