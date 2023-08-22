@@ -32,6 +32,7 @@ namespace CapaPresentacion.User_Control
             CD_Parametros[] p = { new CD_Parametros("@usuario_id", usuario_id) };
             llenarComboBox(cmb_Bodega, "VISTA_BODEGAS", "bodega_id", "Seleccione bodega...");
             date_Fecha_Max.Value = DateTime.Today;
+            cmb_Inventario.DataSource = null;
         }
 
         /// <summary>
@@ -159,23 +160,24 @@ namespace CapaPresentacion.User_Control
 
         private void txt_Buscar_TextChanged(object sender, EventArgs e)
         {
-            if (txt_Buscar.Text.Length > 0)
+            if(cmb_Inventario.Enabled)
             {
-                int inv_id = (int)cmb_Inventario.SelectedValue;
-                CD_Parametros[] p =
+                if (txt_Buscar.Text.Length > 0)
                 {
+                    int inv_id = (int)cmb_Inventario.SelectedValue;
+                    CD_Parametros[] p =
+                    {
                         new CD_Parametros("@inventario_id",inv_id),
                         new CD_Parametros("@fecha_min", date_Fecha_Min.Value),
                         new CD_Parametros("@fecha_max", date_Fecha_Max.Value),
                         new CD_Parametros("@filtro", txt_Buscar.Text)
                     };
-                DataTable dt = objectCN.obtenerTabla("PD_OBTENER_TRANSACCION_SEGUN_INVENTARIO_FILTRO", p);
-                dgv_Transacciones.DataSource = dt;
-                dgv_Transacciones.ClearSelection();
+                    DataTable dt = objectCN.obtenerTabla("PD_OBTENER_TRANSACCION_SEGUN_INVENTARIO_FILTRO", p);
+                    dgv_Transacciones.DataSource = dt;
+                    dgv_Transacciones.ClearSelection();
+                }
+                else llenarTabla();
             }
-            else llenarTabla();            
-            
         }
-
     }
 }
